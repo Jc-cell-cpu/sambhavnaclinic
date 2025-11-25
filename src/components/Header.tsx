@@ -10,9 +10,9 @@ export default function Header() {
     return (
         <header className="bg-background py-4 shadow-sm sticky top-0 z-50">
             <div className="container mx-auto flex justify-between items-center px-4">
-                <div className="flex items-center">
+                <Link href="/" className="flex items-center">
                     <Image src="/images/logo.svg" alt="Sambhavna Clinic Logo" width={120} height={60} className="h-auto" />
-                </div>
+                </Link>
 
                 <nav className="hidden md:flex items-center gap-8 font-medium text-foreground/80">
                     <Link href="#" className="text-primary font-semibold border-b-2 border-primary">
@@ -53,8 +53,8 @@ export default function Header() {
                     >
                         Request A Call
                     </Button>
-                </div>
-            </div>
-        </header>
+                </div >
+            </div >
+        </header >
     )
 }
