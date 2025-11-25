@@ -1,14 +1,13 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { Activity, ShieldCheck, Stethoscope, Utensils } from "lucide-react";
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
+import { Activity, ShieldCheck, Stethoscope, Utensils } from "lucide-react"
 
 export default function Hero() {
     return (
-        <section className="relative w-full min-h-[80vh] flex flex-col justify-center">
-            {/* Background Image Wrapper */}
+        <section className="relative w-full min-h-[85vh] flex flex-col justify-center">
             <div className="absolute inset-0 -z-10 overflow-hidden">
                 <Image
                     src="/images/hero.jpg"
@@ -17,7 +16,6 @@ export default function Hero() {
                     className="object-cover object-top brightness-[0.8] scale-x-[-1]"
                     priority
                 />
-                {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-black/40" />
             </div>
 
@@ -28,23 +26,25 @@ export default function Hero() {
                     transition={{ duration: 0.8 }}
                     className="max-w-2xl text-white"
                 >
-                    <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-2">
-                        We are No. 1
-                    </h1>
-                    <h2 className="text-5xl md:text-5xl font-bold leading-tight mb-4">
-                        Cancer Clinic Treatment
-                    </h2>
+                    <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-2">We are No. 1</h1>
+                    <h2 className="text-5xl md:text-5xl font-bold leading-tight mb-4">Cancer Clinic Treatment</h2>
                     <p className="text-lg md:text-xl mb-8 text-white/90 max-w-lg">
                         Explore our website today and discover how we can partner with you on your journey to better health.
                     </p>
-                    <Button className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6 rounded-md">
+                    <Button
+                        className="text-white text-lg px-8 py-6 rounded-md border-0"
+                        style={{
+                            background: "linear-gradient(184.51deg, #17899B 4.02%, #109C8E 96.72%)",
+                        }}
+                    >
                         Book an Appointment
                     </Button>
                 </motion.div>
             </div>
 
+
             {/* Cards Section */}
-            <div className="container mx-auto px-4 relative z-20 mt-auto pb-10 md:pb-0 md:-mb-20">
+            <div className="container mx-auto px-4 relative z-20 mt-auto pb-10 md:pb-0 md:mb-1.5">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 shadow-xl">
                     {/* Card 1: Cancer Care - Dark Teal Background */}
                     <motion.div
@@ -100,5 +100,5 @@ export default function Hero() {
                 </div>
             </div>
         </section>
-    );
+    )
 }
