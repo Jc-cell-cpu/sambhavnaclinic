@@ -10,7 +10,7 @@ export default function Hero() {
         <section className="relative w-full min-h-[85vh] flex flex-col justify-center">
             <div className="absolute inset-0 -z-10 overflow-hidden">
                 <Image
-                    src="/images/hero.jpg"
+                    src="/images/heroone.jpg"
                     alt="Hero Background"
                     fill
                     className="object-cover object-top brightness-[0.8] scale-x-[-1]"
@@ -27,7 +27,7 @@ export default function Hero() {
                     className="max-w-2xl text-white"
                 >
                     <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-2">We are No. 1</h1>
-                    <h2 className="text-5xl md:text-5xl font-bold leading-tight mb-4">Cancer Clinic Treatment</h2>
+                    <h2 className="text-5xl md:text-5xl font-bold leading-tight mb-4">Cancer Treatment Clinic</h2>
                     <p className="text-lg md:text-xl mb-8 text-white/90 max-w-lg">
                         Explore our website today and discover how we can partner with you on your journey to better health.
                     </p>
