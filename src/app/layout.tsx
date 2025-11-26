@@ -28,7 +28,7 @@ export default function RootLayout({
       >
         <TopBanner />
         <Header />
-        <main className="flex-grow">
+        <main className="grow">
           {children}
         </main>
       </body>

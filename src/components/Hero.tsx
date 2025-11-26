@@ -53,7 +53,7 @@ export default function Hero() {
                         transition={{ delay: 0.1 }}
                         className="bg-[#005f6b] text-white p-8 flex items-center gap-4 h-40"
                     >
-                        <div className="bg-white rounded-full p-3 flex-shrink-0">
+                        <div className="bg-white rounded-full p-3 shrink-0">
                             <Activity className="w-8 h-8 text-[#005f6b]" />
                         </div>
                         <h3 className="text-xl font-bold">Cancer Care</h3>
@@ -66,7 +66,7 @@ export default function Hero() {
                         transition={{ delay: 0.2 }}
                         className="bg-white dark:bg-zinc-900 text-[#005f6b] dark:text-teal-400 p-8 flex items-center gap-4 h-40 border-r border-gray-100 dark:border-zinc-800"
                     >
-                        <div className="bg-gray-100 dark:bg-zinc-800 rounded-full p-3 shadow-sm flex-shrink-0">
+                        <div className="bg-gray-100 dark:bg-zinc-800 rounded-full p-3 shadow-sm shrink-0">
                             <ShieldCheck className="w-8 h-8 text-[#005f6b] dark:text-teal-400" />
                         </div>
                         <h3 className="text-xl font-bold">Detox and Immunity</h3>
@@ -79,7 +79,7 @@ export default function Hero() {
                         transition={{ delay: 0.3 }}
                         className="bg-white dark:bg-zinc-900 text-[#005f6b] dark:text-teal-400 p-8 flex items-center gap-4 h-40 border-r border-gray-100 dark:border-zinc-800"
                     >
-                        <div className="bg-gray-100 dark:bg-zinc-800 rounded-full p-3 shadow-sm flex-shrink-0">
+                        <div className="bg-gray-100 dark:bg-zinc-800 rounded-full p-3 shadow-sm shrink-0">
                             <Stethoscope className="w-8 h-8 text-[#005f6b] dark:text-teal-400" />
                         </div>
                         <h3 className="text-xl font-bold">Expert Doctors</h3>
@@ -92,7 +92,7 @@ export default function Hero() {
                         transition={{ delay: 0.4 }}
                         className="bg-white dark:bg-zinc-900 text-[#005f6b] dark:text-teal-400 p-8 flex items-center gap-4 h-40"
                     >
-                        <div className="bg-gray-100 dark:bg-zinc-800 rounded-full p-3 shadow-sm flex-shrink-0">
+                        <div className="bg-gray-100 dark:bg-zinc-800 rounded-full p-3 shadow-sm shrink-0">
                             <Utensils className="w-8 h-8 text-[#005f6b] dark:text-teal-400" />
                         </div>
                         <h3 className="text-xl font-bold">Lifestyle and Diet</h3>
