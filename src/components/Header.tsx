@@ -36,92 +36,88 @@ export default function Header() {
     ]
 
     return (
-        <header className="sticky top-4 z-50">
-            <div className="md:container md:mx-auto md:max-w-7xl">
-                <div className="relative z-50 backdrop-blur-md bg-white/60 md:rounded-[50px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-b md:border border-white/30">
-                    <div className="container mx-auto flex justify-between items-center px-4 md:px-8 py-3 md:py-4">
-                        {/* Logo */}
-                        <Link href="/" className="flex items-center z-50">
-                            <Image
-                                src="/images/logo.svg"
-                                alt="Sambhavna Clinic Logo"
-                                width={110}
-                                height={55}
-                                className="h-auto"
-                            />
-                        </Link>
+        <header className="sticky top-0 z-50 backdrop-blur-md bg-white/60 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-b border-white/30">
+            <div className="container mx-auto md:max-w-7xl flex justify-between items-center px-4 md:px-8 py-3 md:py-4">
+                {/* Logo */}
+                <Link href="/" className="flex items-center z-50">
+                    <Image
+                        src="/images/logo.svg"
+                        alt="Sambhavna Clinic Logo"
+                        width={110}
+                        height={55}
+                        className="h-auto"
+                    />
+                </Link>
 
-                        {/* Desktop Navigation */}
-                        <nav className="hidden md:flex items-center gap-8 font-medium text-gray-600">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.label}
-                                    href={link.href}
-                                    className={
-                                        link.isActive
-                                            ? "relative text-teal-600 font-semibold px-4 py-2 rounded-full bg-teal-50 transition-all duration-200 ease-out"
-                                            : "transition-all duration-200 ease-out hover:text-teal-600 hover:-translate-y-px"
-                                    }
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
-                        </nav>
-
-                        {/* Desktop Right Side: Language Dropdown + CTA */}
-                        <div className="hidden md:flex items-center gap-6">
-                            {/* Language Dropdown */}
-                            <DropdownMenu>
-                                <DropdownMenuTrigger asChild>
-                                    <Button
-                                        variant="ghost"
-                                        className="flex items-center gap-2 text-gray-600 bg-gray-50 hover:bg-gray-100 border border-gray-200 shadow-sm rounded-xl px-4 py-2 h-auto transition-all duration-200"
-                                    >
-                                        <Globe className="w-4 h-4" />
-                                        <span className="text-sm font-medium">{selectedLanguage}</span>
-                                        <ChevronDown className="w-4 h-4" />
-                                    </Button>
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent align="end" className="rounded-xl">
-                                    {languages.map((lang) => (
-                                        <DropdownMenuItem
-                                            key={lang.code}
-                                            className="cursor-pointer"
-                                            onClick={() => setSelectedLanguage(lang.code)}
-                                        >
-                                            <Globe className="w-4 h-4 mr-2" />
-                                            {lang.label}
-                                        </DropdownMenuItem>
-                                    ))}
-                                </DropdownMenuContent>
-                            </DropdownMenu>
-
-                            {/* CTA Button */}
-                            <Button
-                                className="bg-linear-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-semibold rounded-xl px-6 py-2.5 shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"
-                            >
-                                Request A Call
-                            </Button>
-                        </div>
-
-                        {/* Mobile Hamburger Menu */}
-                        <button
-                            className="md:hidden text-teal-600 z-50 p-2 hover:bg-teal-50 rounded-lg transition-all duration-300"
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            aria-expanded={isMobileMenuOpen}
-                            aria-controls="mobile-menu"
-                            aria-label="Toggle mobile menu"
+                {/* Desktop Navigation */}
+                <nav className="hidden md:flex items-center gap-8 font-medium text-gray-600">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.label}
+                            href={link.href}
+                            className={
+                                link.isActive
+                                    ? "relative text-teal-600 font-semibold px-4 py-2 rounded-full bg-teal-50 transition-all duration-200 ease-out"
+                                    : "transition-all duration-200 ease-out hover:text-teal-600 hover:-translate-y-px"
+                            }
                         >
-                            <div className={`transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-90' : 'rotate-0'}`}>
-                                {isMobileMenuOpen ? (
-                                    <X className="w-6 h-6" />
-                                ) : (
-                                    <Menu className="w-6 h-6" />
-                                )}
-                            </div>
-                        </button>
-                    </div>
+                            {link.label}
+                        </Link>
+                    ))}
+                </nav>
+
+                {/* Desktop Right Side: Language Dropdown + CTA */}
+                <div className="hidden md:flex items-center gap-6">
+                    {/* Language Dropdown */}
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button
+                                variant="ghost"
+                                className="flex items-center gap-2 text-gray-600 bg-gray-50 hover:bg-gray-100 border border-gray-200 shadow-sm rounded-xl px-4 py-2 h-auto transition-all duration-200"
+                            >
+                                <Globe className="w-4 h-4" />
+                                <span className="text-sm font-medium">{selectedLanguage}</span>
+                                <ChevronDown className="w-4 h-4" />
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end" className="rounded-xl">
+                            {languages.map((lang) => (
+                                <DropdownMenuItem
+                                    key={lang.code}
+                                    className="cursor-pointer"
+                                    onClick={() => setSelectedLanguage(lang.code)}
+                                >
+                                    <Globe className="w-4 h-4 mr-2" />
+                                    {lang.label}
+                                </DropdownMenuItem>
+                            ))}
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+
+                    {/* CTA Button */}
+                    <Button
+                        className="bg-linear-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-semibold rounded-xl px-6 py-2.5 shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"
+                    >
+                        Request A Call
+                    </Button>
                 </div>
+
+                {/* Mobile Hamburger Menu */}
+                <button
+                    className="md:hidden text-teal-600 z-50 p-2 hover:bg-teal-50 rounded-lg transition-all duration-300"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    aria-expanded={isMobileMenuOpen}
+                    aria-controls="mobile-menu"
+                    aria-label="Toggle mobile menu"
+                >
+                    <div className={`transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-90' : 'rotate-0'}`}>
+                        {isMobileMenuOpen ? (
+                            <X className="w-6 h-6" />
+                        ) : (
+                            <Menu className="w-6 h-6" />
+                        )}
+                    </div>
+                </button>
             </div>
 
             {/* Mobile Menu */}

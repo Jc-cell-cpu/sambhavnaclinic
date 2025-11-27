@@ -146,7 +146,7 @@ export default function AboutUs() {
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInUp}
               className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3 md:mb-4"
-              style={{ color: "#17899B" }}
+              style={{ color: "#00256E" }}
             >
               ABOUT US
             </motion.p>
