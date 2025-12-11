@@ -2,6 +2,7 @@ import Aboutus from "@/components/Aboutus";
 import HeroSection from "@/components/HeroSection";
 import HistoryTimeline from "@/components/HistoryTimeline";
 import MoreAboutUs from "@/components/MoreAboutUs";
+import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 
 export default function AboutUs() {
   return (
@@ -15,6 +16,7 @@ export default function AboutUs() {
       <Aboutus />
       <HistoryTimeline />
       <MoreAboutUs />
+      <WhyChooseUsSection />
     </div>
   );
 }

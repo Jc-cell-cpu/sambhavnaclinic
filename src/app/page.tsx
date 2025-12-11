@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import Aboutus from "@/components/Aboutus";
+import TrustedExperts from "@/components/TrustedExperts";
 
 export default function Home() {
   return (
