@@ -3,6 +3,7 @@ import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import TopBanner from "@/components/TopBanner";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -28,9 +29,8 @@ export default function RootLayout({
       >
         <TopBanner />
         <Header />
-        <main className="grow">
-          {children}
-        </main>
+        <main className="grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );

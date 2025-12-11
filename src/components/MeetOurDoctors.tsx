@@ -1,0 +1,104 @@
+"use client";
+
+import Image from "next/image";
+
+const featuredDoctor = {
+  name: "Suresh Kumar",
+  title: "Cancer Specialist",
+  image: "/images/Doc_1.svg", // Placeholder
+};
+
+const teamDoctors = [
+  {
+    name: "Dr. Keshav Kumar",
+    designation: "Designation",
+    image: "/images/Doc_2.svg",
+  },
+  {
+    name: "Dr. Suparna Kusre",
+    designation: "Designation",
+    image: "/images/Doc_3.svg",
+  },
+  {
+    name: "Dr. Suparna Kusre",
+    designation: "Designation",
+    image: "/images/Doc_3.svg",
+  },
+];
+
+export default function MeetOurDoctors() {
+  return (
+    <section className="py-20 px-4 md:px-8 font-sans bg-white">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h3 className="text-blue-900 font-bold uppercase tracking-wider text-sm mb-4">
+            MEET OUR DOCTORS
+          </h3>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+            Meet the smile behind your care
+          </h2>
+        </div>
+
+        {/* Content Container */}
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Column 1: Featured Doctor (Left Side - approx 40%) */}
+          <div className="w-full lg:w-[40%] relative rounded-3xl overflow-hidden min-h-[500px] lg:min-h-[600px] group shadow-xl">
+            <Image
+              src={featuredDoctor.image}
+              alt={featuredDoctor.name}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+
+            {/* Glass Overlay */}
+            <div className="absolute inset-x-0 bottom-0 bg-white/5 backdrop-blur-2xl border-t border-white/20 flex flex-col justify-center items-center text-center p-8">
+              <h3 className="text-white text-4xl font-bold mb-2">
+                {featuredDoctor.name}
+              </h3>
+              <p className="text-gray-100 text-xl font-medium mb-6">
+                {featuredDoctor.title}
+              </p>
+
+              <button className="bg-white text-rose-500 border-2 border-rose-500 hover:bg-rose-50 font-bold py-3 px-8 rounded-full flex items-center gap-3 transition-colors shadow-lg">
+                <Image
+                  src="/images/AlaramIcon.svg"
+                  alt="Alarm"
+                  width={20}
+                  height={20}
+                  className="w-5 h-5"
+                />
+                <span>Book An Appointment</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Column 2: The Team Container (Right Side - approx 60%) */}
+          <div className="w-full lg:w-[60%] bg-cyan-50 rounded-3xl p-8 lg:p-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 h-full items-center">
+              {teamDoctors.map((doc, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center text-center"
+                >
+                  <div className="relative w-full aspect-2/4 rounded-4xl overflow-hidden mb-4 shadow-md bg-white">
+                    <Image
+                      src={doc.image}
+                      alt={doc.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <h4 className="text-gray-900 font-bold text-lg mb-1">
+                    {doc.name}
+                  </h4>
+                  <p className="text-teal-600 font-medium">{doc.designation}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
