@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+
 import { ArrowRight } from "lucide-react";
 import {
   motion,
@@ -47,6 +49,7 @@ function CountUp({
 }
 
 export default function Aboutus() {
+  const router = useRouter();
   const shouldReduceMotion = useReducedMotion();
 
   // Animation variants
@@ -313,6 +316,7 @@ export default function Aboutus() {
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInUp}
               transition={{ delay: 0.4 }}
+              onClick={() => router.push("/about-us")}
               className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full text-white font-semibold text-sm md:text-base transition-all hover:opacity-95 hover:gap-3"
               style={{ backgroundColor: "#056271" }}
             >

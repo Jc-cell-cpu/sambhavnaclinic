@@ -1,5 +1,7 @@
 import Aboutus from "@/components/Aboutus";
 import HeroSection from "@/components/HeroSection";
+import HistoryTimeline from "@/components/HistoryTimeline";
+import MoreAboutUs from "@/components/MoreAboutUs";
 
 export default function AboutUs() {
   return (
@@ -11,6 +13,8 @@ export default function AboutUs() {
         currentPage="About"
       />
       <Aboutus />
+      <HistoryTimeline />
+      <MoreAboutUs />
     </div>
   );
 }

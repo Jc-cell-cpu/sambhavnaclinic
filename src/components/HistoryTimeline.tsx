@@ -1,0 +1,139 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
+
+const historyData = [
+  {
+    year: "2000",
+    title: "Foundation Year",
+    description:
+      "Our Ayurvedic Cancer Hospital was founded with a vision to provide holistic, natural, and compassionate cancer care rooted in Ayurveda. The first center was established with a small team of dedicated Ayurvedic doctors and herbal specialists.",
+    mainImage: "/images/Rectangle 18.svg", // Using available placeholder
+    galleryImages: ["/images/Rectangle 14.svg", "/images/Rectangle 15.svg"], // Placeholders
+  },
+  {
+    year: "2010",
+    title: "Expansion & Research",
+    description:
+      "A decade later, we expanded our facilities to include a dedicated research wing for Ayurvedic oncology. We began documenting patient outcomes and integrating modern diagnostic tools with traditional practices.",
+    mainImage: "/images/Rectangle 18.svg",
+    galleryImages: ["/images/Rectangle 14.svg", "/images/Rectangle 15.svg"],
+  },
+  {
+    year: "2020",
+    title: "Global Recognition",
+    description:
+      "By 2020, our unique approach gained international recognition. We launched our telemedicine services, allowing patients from around the globe to access our specialized care protocols.",
+    mainImage: "/images/Rectangle 18.svg",
+    galleryImages: ["/images/Vector 1 (1).svg", "/images/Vector 1 (2).svg"],
+  },
+  {
+    year: "2025",
+    title: "Future of Holistic Care",
+    description:
+      "Looking ahead, we are establishing a new state-of-the-art integrative care center. Our mission continues: to bring the healing power of Ayurveda to every cancer patient in need.",
+    mainImage: "/images/Rectangle 18.svg",
+    galleryImages: ["/images/Rectangle 14.svg", "/images/Rectangle 15.svg"],
+  },
+];
+
+export default function HistoryTimeline() {
+  const [activeYear, setActiveYear] = useState("2000");
+
+  const currentData = historyData.find((data) => data.year === activeYear);
+
+  return (
+    <section className="py-20 px-4 md:px-8 bg-cyan-50 font-sans">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h3 className="text-blue-900 font-bold uppercase tracking-wider text-sm mb-4">
+            OUR HISTORY
+          </h3>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+            We appreciate our journey
+          </h2>
+        </div>
+
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-[120px_1fr] gap-8 lg:gap-16">
+          {/* Left Column: Timeline Sidebar */}
+          <div className="relative flex flex-col items-center pt-2">
+            {/* Dashed Vertical Line */}
+            <div className="absolute top-4 bottom-4 left-1/2 w-0.5 -translate-x-1/2 border-l-2 border-dashed border-teal-800/40 z-0 hidden lg:block" />
+
+            {/* Year List */}
+            <div className="flex flex-row lg:flex-col gap-12 lg:gap-20 overflow-x-auto lg:overflow-visible w-full justify-between lg:justify-center items-center py-4 lg:py-0 relative z-10 px-2 lg:px-0 scrollbar-hide">
+              {historyData.map((data) => (
+                <button
+                  key={data.year}
+                  onClick={() => setActiveYear(data.year)}
+                  className={cn(
+                    "relative z-20 py-1 transition-all duration-300 bg-cyan-50 px-3 md:px-4",
+                    activeYear === data.year
+                      ? "text-4xl font-bold text-[#0e5c66] border-b-4 border-[#0e5c66]"
+                      : "text-xl text-gray-800 font-medium hover:text-[#0e5c66]"
+                  )}
+                >
+                  {data.year}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column: Dynamic Content */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeYear}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+            >
+              {/* Part A: Main Image */}
+              <div className="relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-xl">
+                <Image
+                  src={currentData?.mainImage || ""}
+                  alt={currentData?.title || ""}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Part B: Info & Gallery */}
+              <div className="flex flex-col h-full justify-center">
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                  {currentData?.year} – {currentData?.title}
+                </h3>
+                <p className="text-gray-500 leading-relaxed mb-8">
+                  {currentData?.description}
+                </p>
+
+                {/* Gallery Images */}
+                <div className="grid grid-cols-2 gap-4">
+                  {currentData?.galleryImages.map((img, idx) => (
+                    <div
+                      key={idx}
+                      className="relative h-40 rounded-2xl overflow-hidden shadow-md bg-white"
+                    >
+                      <Image
+                        src={img}
+                        alt={`Gallery ${idx + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
+  );
+}
