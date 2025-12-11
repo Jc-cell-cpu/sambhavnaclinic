@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -15,6 +16,7 @@ import { ChevronDown, Globe, Menu, X } from "lucide-react";
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("ENG");
+  const pathname = usePathname();
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -29,10 +31,22 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { href: "/", label: "Home", isActive: true },
-    { href: "/about-us", label: "About Us", isActive: false },
-    { href: "/services", label: "Services", isActive: false },
-    { href: "/contact", label: "Contact Us", isActive: false },
+    { href: "/", label: "Home", isActive: pathname === "/" },
+    {
+      href: "/about-us",
+      label: "About Us",
+      isActive: pathname === "/about-us",
+    },
+    {
+      href: "/services",
+      label: "Services",
+      isActive: pathname === "/services",
+    },
+    {
+      href: "/contact",
+      label: "Contact Us",
+      isActive: pathname === "/contact",
+    },
   ];
 
   const languages = [
