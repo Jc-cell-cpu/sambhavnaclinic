@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import HowWeWork from "@/components/HowWeWork";
+import MoreInfo from "@/components/MoreInfo";
 import OurServices from "@/components/OurServices";
 export default function Services() {
   return (
@@ -12,6 +13,7 @@ export default function Services() {
       />
       <OurServices />
       <HowWeWork />
+      <MoreInfo />
     </div>
   );
 }
