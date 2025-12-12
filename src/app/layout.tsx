@@ -4,6 +4,7 @@ import "./globals.css";
 import TopBanner from "@/components/TopBanner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import UnderDevelopmentPopup from "@/components/UnderDevelopmentPopup";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
         <Header />
         <main className="grow">{children}</main>
         <Footer />
+        <UnderDevelopmentPopup />
       </body>
     </html>
   );
