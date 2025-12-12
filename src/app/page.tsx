@@ -4,14 +4,14 @@ import MeetOurDoctors from "@/components/MeetOurDoctors";
 import Hero from "@/components/Hero";
 
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
-import Aboutus from "@/components/Aboutus";
+import AboutUs from "@/components/AboutUs";
 // import TrustedExperts from "@/components/TrustedExperts";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Aboutus />
+      <AboutUs />
       <WhyChooseUsSection />
       <Departments />
       <AppointmentWithTestimonials />

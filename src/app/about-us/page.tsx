@@ -1,4 +1,4 @@
-import Aboutus from "@/components/Aboutus";
+import AboutUsSection from "@/components/AboutUs";
 import AppointmentWithTestimonials from "@/components/AppointmentWithTestimonials";
 import HeroSection from "@/components/HeroSection";
 import HistoryTimeline from "@/components/HistoryTimeline";
@@ -16,7 +16,7 @@ export default function AboutUs() {
         backgroundImage="/images/About-us.svg"
         currentPage="About"
       />
-      <Aboutus />
+      <AboutUsSection />
       <HistoryTimeline />
       <MoreAboutUs />
       {/* <WhyChooseUsSection /> */}
