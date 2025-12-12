@@ -1,6 +1,8 @@
 import Aboutus from "@/components/Aboutus";
+import AppointmentWithTestimonials from "@/components/AppointmentWithTestimonials";
 import HeroSection from "@/components/HeroSection";
 import HistoryTimeline from "@/components/HistoryTimeline";
+import MeetOurDoctors from "@/components/MeetOurDoctors";
 import MoreAboutUs from "@/components/MoreAboutUs";
 import MoreInfo from "@/components/MoreInfo";
 // import WhyChooseUsSection from "@/components/WhyChooseUsSection";
@@ -19,6 +21,8 @@ export default function AboutUs() {
       <MoreAboutUs />
       {/* <WhyChooseUsSection /> */}
       <MoreInfo />
+      <AppointmentWithTestimonials />
+      <MeetOurDoctors />
     </div>
   );
 }
