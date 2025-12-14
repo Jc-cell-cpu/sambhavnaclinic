@@ -8,7 +8,7 @@ export default function Departments() {
   return (
     <div className="font-sans">
       <HeroSection
-        title="Our Departments"
+        title="Departments"
         subtitle="Specialized care units combining Ayurvedic wisdom with modern oncology for holistic healing."
         backgroundImage="/images/About-us.svg"
         currentPage="Departments"

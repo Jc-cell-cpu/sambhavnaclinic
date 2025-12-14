@@ -45,12 +45,12 @@ export default function Header() {
     {
       href: "/departments",
       label: "Departments",
-      isActive: false,
+      isActive: pathname === "/departments",
     },
     {
       href: "/testimonials",
       label: "Testimonials",
-      isActive: false,
+      isActive: pathname === "/testimonials",
     },
     {
       href: "/contact",
