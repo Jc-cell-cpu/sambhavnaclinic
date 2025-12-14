@@ -1,7 +1,4 @@
 "use client";
-
-import React from "react";
-import Image from "next/image";
 import { Play } from "lucide-react";
 
 export default function VideoTestimonials() {
@@ -43,7 +40,7 @@ export default function VideoTestimonials() {
                 </div>
               </div>
 
-              <div className="absolute bottom-0 left-0 w-full p-6 text-white bg-gradient-to-t from-black/80 to-transparent">
+              <div className="absolute bottom-0 left-0 w-full p-6 text-white bg-linear-to-t from-black/80 to-transparent">
                 <h4 className="font-bold text-lg">
                   Patient Success Story {idx + 1}
                 </h4>
