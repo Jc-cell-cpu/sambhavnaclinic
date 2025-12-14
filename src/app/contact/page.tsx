@@ -1,3 +1,4 @@
+import ContactUs from "@/components/ContactUs";
 import HeroSection from "@/components/HeroSection";
 // import HowWeWork from "@/components/HowWeWork";
 // import MoreInfo from "@/components/MoreInfo";
@@ -11,6 +12,7 @@ export default function Services() {
         backgroundImage="/images/About-us.svg"
         currentPage="Contact Us"
       />
+      <ContactUs />
       {/* <OurServices />
       <HowWeWork />
       <MoreInfo /> */}

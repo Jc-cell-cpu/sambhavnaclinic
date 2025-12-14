@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import AboutUs from "@/components/AboutUs";
+import ContactUs from "@/components/ContactUs";
 // import TrustedExperts from "@/components/TrustedExperts";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Departments />
       <AppointmentWithTestimonials />
       <MeetOurDoctors />
+      <ContactUs />
     </>
   );
 }
