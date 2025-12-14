@@ -1,9 +1,12 @@
 import ContactUs from "@/components/ContactUs";
+import ClinicMap from "@/components/ClinicMap";
+import FAQSection from "@/components/FAQSection";
+import PatientJourney from "@/components/PatientJourney";
 import HeroSection from "@/components/HeroSection";
 // import HowWeWork from "@/components/HowWeWork";
 // import MoreInfo from "@/components/MoreInfo";
 // import OurServices from "@/components/OurServices";
-export default function Services() {
+export default function Contact() {
   return (
     <div className="font-sans">
       <HeroSection
@@ -13,9 +16,9 @@ export default function Services() {
         currentPage="Contact Us"
       />
       <ContactUs />
-      {/* <OurServices />
-      <HowWeWork />
-      <MoreInfo /> */}
+      <PatientJourney />
+      <ClinicMap />
+      <FAQSection />
     </div>
   );
 }
