@@ -39,7 +39,10 @@ export default function AppointmentWithTestimonials() {
   }, []);
 
   return (
-    <section className="py-20 px-4 md:px-8 font-sans bg-white overflow-hidden">
+    <section
+      id="testimonials"
+      className="py-20 px-4 md:px-8 font-sans bg-white overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-0">
           {/* Left Column: Appointment Form (approx 60%) */}

@@ -50,7 +50,10 @@ const departments: Department[] = [
 
 export default function Departments() {
   return (
-    <section className="bg-cyan-50 py-20 px-4 md:px-8 font-sans">
+    <section
+      id="departments"
+      className="bg-cyan-50 py-20 px-4 md:px-8 font-sans"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

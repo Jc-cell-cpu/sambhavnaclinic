@@ -43,6 +43,16 @@ export default function Header() {
       isActive: pathname === "/services",
     },
     {
+      href: "/departments",
+      label: "Departments",
+      isActive: false,
+    },
+    {
+      href: "/testimonials",
+      label: "Testimonials",
+      isActive: false,
+    },
+    {
       href: "/contact",
       label: "Contact Us",
       isActive: pathname === "/contact",
