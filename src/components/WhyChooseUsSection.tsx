@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function WhyChooseUsSection() {
   const leftBullets = [
@@ -257,7 +258,7 @@ function TrustedExperts() {
                   className="object-contain"
                 />
               </div>
-              Book Appointment
+              <Link href={"/appointment"}>Book Appointment</Link>
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
             </motion.button>
           </div>

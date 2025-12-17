@@ -7,6 +7,7 @@ import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import AboutUs from "@/components/AboutUs";
 // import ContactUs from "@/components/ContactUs";
 import FAQSection from "@/components/FAQSection";
+import ClinicMap from "@/components/ClinicMap";
 // import TrustedExperts from "@/components/TrustedExperts";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <FAQSection />
       <AppointmentWithTestimonials />
       {/* <ContactUs /> */}
+      <ClinicMap />
     </>
   );
 }

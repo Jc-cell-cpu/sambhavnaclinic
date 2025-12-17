@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const featuredDoctor = {
   name: "Suresh Kumar",
@@ -60,16 +61,19 @@ export default function MeetOurDoctors() {
                 {featuredDoctor.title}
               </p>
 
-              <button className="bg-white text-rose-500 border-2 border-rose-500 hover:bg-rose-50 font-bold py-3 px-8 rounded-full flex items-center gap-3 transition-colors shadow-lg">
-                <Image
-                  src="/images/AlaramIcon.svg"
-                  alt="Alarm"
-                  width={20}
-                  height={20}
-                  className="w-5 h-5"
-                />
-                <span>Book An Appointment</span>
-              </button>
+              <Link href={"/appointment"}>
+                {" "}
+                <button className="bg-white text-rose-500 border-2 border-rose-500 hover:bg-rose-50 font-bold py-3 px-8 rounded-full flex items-center gap-3 transition-colors shadow-lg">
+                  <Image
+                    src="/images/AlaramIcon.svg"
+                    alt="Alarm"
+                    width={20}
+                    height={20}
+                    className="w-5 h-5"
+                  />
+                  <span>Book An Appointment</span>
+                </button>{" "}
+              </Link>
             </div>
           </div>
 

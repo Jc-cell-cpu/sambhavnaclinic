@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Department {
   title: string;
@@ -109,12 +110,15 @@ export default function Departments() {
               </div>
 
               {/* Floating Button - positioned in the empty space */}
-              <button
-                className="absolute top-8 right-0 w-12 h-12 hover:bg-teal-600 text-teal-600 hover:text-white border-teal-600 border transition-colors duration-300 rounded-full flex items-center justify-center shadow-lg z-20"
-                aria-label={`Learn more about ${dept.title}`}
-              >
-                <ArrowRight className="w-5 h-5" />
-              </button>
+              <Link href={"/departments"}>
+                {" "}
+                <button
+                  className="absolute top-8 right-0 w-12 h-12 hover:bg-teal-600 text-teal-600 hover:text-white border-teal-600 border transition-colors duration-300 rounded-full flex items-center justify-center shadow-lg z-20"
+                  aria-label={`Learn more about ${dept.title}`}
+                >
+                  <ArrowRight className="w-5 h-5" />
+                </button>{" "}
+              </Link>
             </div>
           ))}
         </div>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Phone, Mail, Globe, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function MoreInfo() {
   return (
@@ -14,10 +15,10 @@ export default function MoreInfo() {
               GET STARTED
             </h4>
             <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-8">
-              Order Care in 60 Seconds To Be A Healthy Patient
+              Book Care in 60 Seconds To Be A Healthy Patient
             </h2>
             <button className="flex items-center gap-3 px-8 py-3.5 rounded-full border border-white/20 text-white text-sm font-medium hover:bg-white hover:text-[#0e5a65] transition-all group w-fit">
-              About Us
+              <Link href={"/appointment"}>Book now</Link>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
