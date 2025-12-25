@@ -1,0 +1,59 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": {
+      "label": "About",
+      "aboutUs": "About Us",
+      "testimonials": "Testimonials"
+    },
+    "medicalServices": {
+      "label": "Medical Services",
+      "services": "Services",
+      "departments": "Departments",
+      "bookAppointment": "Book an Appointment"
+    },
+    "contact": "Contact Us",
+    "requestCall": "Request A Call"
+  },
+  "footer": {
+    "address": "Meerut, Uttar Pradesh 250001",
+    "quickLinks": "Quick Links",
+    "stayUpdated": {
+      "title": "Stay Updated",
+      "description": "Receive integrative cancer care Insights recover stories and wellness rituals curated by our clinical experts",
+      "placeholder": "Email address",
+      "button": "Join"
+    },
+    "connect": "Connect",
+    "links": {
+      "home": "Home",
+      "about": "About Us",
+      "services": "Services",
+      "departments": "Departments",
+      "testimonials": "Testimonials",
+      "faqs": "FAQs",
+      "contact": "Contact Us"
+    }
+  },
+  "hero": {
+    "cta": "Book an Appointment",
+    "slides": [
+      {
+        "title": "We are No. 1",
+        "subtitle": "Cancer Treatment Clinic",
+        "description": "Explore our website today and discover how we can partner with you on your journey to better health."
+      },
+      {
+        "title": "Expert Medical Care",
+        "subtitle": "World-Class Specialists",
+        "description": "Providing exceptional healthcare services with state-of-the-art facilities and compassionate support for all patients."
+      }
+    ],
+    "cards": [
+      { "title": "Cancer Care" },
+      { "title": "Detox and Immunity" },
+      { "title": "Expert Doctors" },
+      { "title": "Lifestyle and Diet" }
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,11 +12,35 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown, Globe, Menu, X } from "lucide-react";
+import { i18n, type Locale } from "@/i18n-config";
 
-export default function Header() {
+export default function Header({
+  dictionary,
+}: {
+  dictionary: {
+    home: string;
+    about: {
+      label: string;
+      aboutUs: string;
+      testimonials: string;
+    };
+    medicalServices: {
+      label: string;
+      services: string;
+      departments: string;
+      bookAppointment: string;
+    };
+    contact: string;
+    requestCall: string;
+  };
+}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("ENG");
   const pathname = usePathname();
+  const router = useRouter();
+
+  // Determine current language from the path
+  const currentLocale = pathname.split("/")[1] || i18n.defaultLocale;
+  const isHindi = currentLocale === "hi";
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -30,60 +54,79 @@ export default function Header() {
     };
   }, [isMobileMenuOpen]);
 
+  // Handle language switch
+  const handleLanguageChange = (newLocale: string) => {
+    if (!pathname) return;
+    const segments = pathname.split("/");
+    // If the path already has a locale, replace it
+    if (i18n.locales.includes(segments[1] as Locale)) {
+      segments[1] = newLocale;
+    } else {
+      // If no locale in path (shouldn't happen with middleware, but safe fallback), insert it
+      segments.splice(1, 0, newLocale);
+    }
+    const newPath = segments.join("/");
+    router.push(newPath);
+  };
+
   const navLinks = [
-    { href: "/", label: "Home", isActive: pathname === "/" },
     {
-      label: "About",
+      href: "/",
+      label: dictionary.home,
+      isActive: pathname === `/${currentLocale}` || pathname === "/",
+    },
+    {
+      label: dictionary.about.label,
       children: [
         {
           href: "/about-us",
-          label: "About Us",
-          isActive: pathname === "/about-us",
+          label: dictionary.about.aboutUs,
+          isActive: pathname.includes("/about-us"),
         },
         {
           href: "/testimonials",
-          label: "Testimonials",
-          isActive: pathname === "/testimonials",
+          label: dictionary.about.testimonials,
+          isActive: pathname.includes("/testimonials"),
         },
       ],
     },
     {
-      label: "Medical Services",
+      label: dictionary.medicalServices.label,
       children: [
         {
           href: "/services",
-          label: "Services",
-          isActive: pathname === "/services",
+          label: dictionary.medicalServices.services,
+          isActive: pathname.includes("/services"),
         },
         {
           href: "/departments",
-          label: "Departments",
-          isActive: pathname === "/departments",
+          label: dictionary.medicalServices.departments,
+          isActive: pathname.includes("/departments"),
         },
         {
           href: "/appointment",
-          label: "Book an Appointment",
-          isActive: pathname === "/appointment",
+          label: dictionary.medicalServices.bookAppointment,
+          isActive: pathname.includes("/appointment"),
         },
       ],
     },
     {
       href: "/contact",
-      label: "Contact Us",
-      isActive: pathname === "/contact",
+      label: dictionary.contact,
+      isActive: pathname.includes("/contact"),
     },
   ];
 
   const languages = [
-    { code: "ENG", label: "ENG | ENGLISH" },
-    { code: "HIN", label: "HIN | HINDI" },
+    { code: "en", label: "ENG | ENGLISH" },
+    { code: "hi", label: "हिन | हिंदी" },
   ];
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-white/60 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-b border-white/30">
       <div className="container mx-auto md:max-w-7xl flex justify-between items-center px-4 md:px-8 py-3 md:py-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center z-50">
+        <Link href={`/${currentLocale}`} className="flex items-center z-50">
           <Image
             src="/images/logo.svg"
             alt="Sambhavna Clinic Logo"
@@ -98,10 +141,6 @@ export default function Header() {
           {navLinks.map((link) => {
             if (link.children) {
               const isActive = link.children.some((child) => child.isActive);
-              // We need to control the open state to rotate the chevron, but using 'asChild' and hover
-              // interactions with shadcn's DropdownMenu can be tricky for simple CSS states.
-              // Instead, we'll rely on group-data-state from the trigger or just keep it simple.
-              // Actually, shadcn DropdownMenu adds data-state="open" to the trigger.
               return (
                 <DropdownMenu key={link.label}>
                   <DropdownMenuTrigger asChild>
@@ -122,7 +161,7 @@ export default function Header() {
                     {link.children.map((child) => (
                       <DropdownMenuItem key={child.label} asChild>
                         <Link
-                          href={child.href}
+                          href={`/${currentLocale}${child.href}`}
                           className={`w-full cursor-pointer flex items-center justify-between rounded-xl px-4 py-3 mb-1 last:mb-0 transition-all duration-200 group ${
                             child.isActive
                               ? "bg-teal-50 text-teal-700 font-semibold"
@@ -130,7 +169,6 @@ export default function Header() {
                           }`}
                         >
                           {child.label}
-                          {/* Optional: Add a small arrow on hover */}
                           <ChevronDown
                             className={`w-3 h-3 -rotate-90 opacity-0 -translate-x-2 transition-all duration-200 ${
                               child.isActive
@@ -148,7 +186,7 @@ export default function Header() {
             return (
               <Link
                 key={link.label}
-                href={link.href!}
+                href={`/${currentLocale}${link.href === "/" ? "" : link.href}`}
                 className={
                   link.isActive
                     ? "relative text-teal-600 font-semibold px-4 py-2 rounded-full bg-teal-50 transition-all duration-200 ease-out"
@@ -171,7 +209,9 @@ export default function Header() {
                 className="flex items-center gap-2 text-gray-600 bg-gray-50 hover:bg-gray-100 border border-gray-200 shadow-sm rounded-xl px-4 py-2 h-auto transition-all duration-200"
               >
                 <Globe className="w-4 h-4" />
-                <span className="text-sm font-medium">{selectedLanguage}</span>
+                <span className="text-sm font-medium">
+                  {isHindi ? "हिन्दी" : "ENG"}
+                </span>
                 <ChevronDown className="w-4 h-4" />
               </Button>
             </DropdownMenuTrigger>
@@ -180,7 +220,7 @@ export default function Header() {
                 <DropdownMenuItem
                   key={lang.code}
                   className="cursor-pointer"
-                  onClick={() => setSelectedLanguage(lang.code)}
+                  onClick={() => handleLanguageChange(lang.code)}
                 >
                   <Globe className="w-4 h-4 mr-2" />
                   {lang.label}
@@ -191,7 +231,7 @@ export default function Header() {
 
           {/* CTA Button */}
           <Button className="bg-linear-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-semibold rounded-xl px-6 py-2.5 shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.02]">
-            Request A Call
+            {dictionary.requestCall}
           </Button>
         </div>
 
@@ -238,7 +278,7 @@ export default function Header() {
                   {link.children.map((child) => (
                     <Link
                       key={child.label}
-                      href={child.href}
+                      href={`/${currentLocale}${child.href}`}
                       className={
                         child.isActive
                           ? "block text-teal-600 font-bold text-lg py-3 px-4 rounded-xl bg-teal-50 transition-colors ml-2 border-l-2 border-teal-500"
@@ -255,7 +295,7 @@ export default function Header() {
             return (
               <Link
                 key={link.label}
-                href={link.href!}
+                href={`/${currentLocale}${link.href === "/" ? "" : link.href}`}
                 className={
                   link.isActive
                     ? "block text-teal-600 font-bold text-lg py-3 px-4 rounded-xl bg-teal-50 transition-colors mt-2"
@@ -278,11 +318,12 @@ export default function Header() {
                 <button
                   key={lang.code}
                   className={`flex items-center w-full text-left py-3 px-4 rounded-xl transition-colors ${
-                    selectedLanguage === lang.code
+                    (lang.code === "hi" && isHindi) ||
+                    (lang.code === "en" && !isHindi)
                       ? "bg-teal-50 text-teal-600 font-semibold"
                       : "text-gray-700 hover:bg-gray-50"
                   }`}
-                  onClick={() => setSelectedLanguage(lang.code)}
+                  onClick={() => handleLanguageChange(lang.code)}
                 >
                   <Globe className="w-4 h-4 mr-3" />
                   {lang.label}
@@ -297,7 +338,7 @@ export default function Header() {
               className="w-full py-3 bg-linear-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Request A Call
+              {dictionary.requestCall}
             </Button>
           </div>
         </nav>

@@ -1,3 +1,4 @@
+
 import Departments from "@/components/Departments";
 import AppointmentWithTestimonials from "@/components/AppointmentWithTestimonials";
 import MeetOurDoctors from "@/components/MeetOurDoctors";
@@ -9,11 +10,20 @@ import AboutUs from "@/components/AboutUs";
 import FAQSection from "@/components/FAQSection";
 import ClinicMap from "@/components/ClinicMap";
 // import TrustedExperts from "@/components/TrustedExperts";
+import { getDictionary } from "../../get-dictionary";
+import { Locale } from "../../i18n-config";
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}) {
+  const { lang } = await params;
+  const dictionary = await getDictionary(lang);
+
   return (
     <>
-      <Hero />
+      <Hero dictionary={dictionary.hero} />
       <AboutUs />
       <WhyChooseUsSection />
       <Departments />

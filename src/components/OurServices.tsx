@@ -5,51 +5,51 @@ import { ArrowRight } from "lucide-react";
 const services = [
   {
     id: 1,
-    title: "Services 1",
+    title: "Panchakarma Therapy",
     description:
-      "Nec tristiqu sed rutrum fringilla. it egestas fringilla condimentum purus.",
-    image: "/images/Rectangle 14.svg", // Using existing placeholder
-    link: "#",
+      "Deep detoxification therapies including Vamana, Virechana, and Basti to cleanse the body of toxins and restore balance.",
+    image: "/images/Rectangle 14.svg",
+    link: "/departments",
   },
   {
     id: 2,
-    title: "Services 1",
+    title: "Rasayana Rejuvenation",
     description:
-      "Nec tristiqu sed rutrum fringilla. it egestas fringilla condimentum purus.",
-    image: "/images/Rectangle 15.svg", // Using existing placeholder
-    link: "#",
+      "Specialized herbal formulations to boost immunity, enhance vitality (Ojas), and promote cellular repair during recovery.",
+    image: "/images/Rectangle 15.svg",
+    link: "/departments",
   },
   {
     id: 3,
-    title: "Services 1",
+    title: "Diet & Lifestyle",
     description:
-      "Nec tristiqu sed rutrum fringilla. it egestas fringilla condimentum purus.",
-    image: "/images/Rectangle 18.svg", // Using existing placeholder
-    link: "#",
+      "Personalized Ayurvedic diet plans (Pathya-Apathya) and lifestyle guidance to support healing and prevent recurrence.",
+    image: "/images/Rectangle 18.svg",
+    link: "/departments",
   },
   {
     id: 4,
-    title: "Services 1",
+    title: "Yoga & Meditation",
     description:
-      "Nec tristiqu sed rutrum fringilla. it egestas fringilla condimentum purus.",
-    image: "/images/Rectangle 19.svg", // Using existing placeholder
-    link: "#",
+      "Therapeutic yoga asanas and Pranayama to reduce stress, improve mental resilience, and support physical well-being.",
+    image: "/images/Rectangle 19.svg",
+    link: "/departments",
   },
   {
     id: 5,
-    title: "Services 1",
+    title: "Palliative Care",
     description:
-      "Nec tristiqu sed rutrum fringilla. it egestas fringilla condimentum purus.",
-    image: "/images/Rectangle 20.svg", // Using existing placeholder
-    link: "#",
+      "Integrative care focus on pain management and improving quality of life for patients with advanced stages of cancer.",
+    image: "/images/Rectangle 20.svg",
+    link: "/departments",
   },
   {
     id: 6,
-    title: "Services 1",
+    title: "Preventive Oncology",
     description:
-      "Nec tristiqu sed rutrum fringilla. it egestas fringilla condimentum purus.",
-    image: "/images/Rectangle 14.svg", // Reusing placeholder
-    link: "#",
+      "Holistic strategies for high-risk individuals focusing on immune strengthening and early detection through Ayurveda.",
+    image: "/images/Rectangle 14.svg",
+    link: "/departments",
   },
 ];
 

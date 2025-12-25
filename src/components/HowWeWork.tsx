@@ -3,27 +3,27 @@ import React from "react";
 const steps = [
   {
     number: "01",
-    title: "Schedule Online",
+    title: "Book Appointment",
     description:
-      "Eget leo facilisi at egestas massa in libero pretium. Dictum tortor nibh enim vivamus arcu volutpat. Integer mi at nunc amet.",
+      "Schedule your visit online or via phone. Our team will guide you through the initial requirements.",
   },
   {
     number: "02",
-    title: "Join Secure Video Call",
+    title: "Initial Consultation",
     description:
-      "Eget leo facilisi at egestas massa in libero pretium. Dictum tortor nibh enim vivamus arcu volutpat. Integer mi at nunc amet.",
+      "Meet with our Ayurvedic experts for a detailed pulse diagnosis (Nadi Pariksha) and health assessment.",
   },
   {
     number: "03",
-    title: "Join Secure Video Call",
+    title: "Personalized Treatment",
     description:
-      "Eget leo facilisi at egestas massa in libero pretium. Dictum tortor nibh enim vivamus arcu volutpat. Integer mi at nunc amet.",
+      "Receive a customized plan including Rasayana therapies, dietary changes, and herbal medicines.",
   },
   {
     number: "04",
-    title: "Join Secure Video Call",
+    title: "Recovery & Follow-up",
     description:
-      "Eget leo facilisi at egestas massa in libero pretium. Dictum tortor nibh enim vivamus arcu volutpat. Integer mi at nunc amet.",
+      "Regular monitoring and support to ensure your path to holistic healing and well-being.",
   },
 ];
 
@@ -37,8 +37,7 @@ export default function HowWeWork() {
             How We Work
           </h3>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#333333] max-w-4xl mx-auto leading-tight">
-            Nec et tristique aenean leo est. Orci in eget amet ut amet sed
-            rutrum fringilla. Rhoncus dolor eget vitae feugiat.
+            Your Path to Holistic Recovery
           </h2>
         </div>
 

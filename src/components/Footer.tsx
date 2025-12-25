@@ -8,15 +8,38 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({
+  dictionary,
+}: {
+  dictionary: {
+    address: string;
+    quickLinks: string;
+    stayUpdated: {
+      title: string;
+      description: string;
+      placeholder: string;
+      button: string;
+    };
+    connect: string;
+    links: {
+      home: string;
+      about: string;
+      services: string;
+      departments: string;
+      testimonials: string;
+      faqs: string;
+      contact: string;
+    };
+  };
+}) {
   const quickLinks = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about-us" },
-    { name: "Services", path: "/services" },
-    { name: "Departments", path: "/departments" },
-    { name: "Testimonials", path: "/testimonials" },
-    { name: "FAQs", path: "/faqs" },
-    { name: "Contact Us", path: "/contact" },
+    { name: dictionary.links.home, path: "/" },
+    { name: dictionary.links.about, path: "/about-us" },
+    { name: dictionary.links.services, path: "/services" },
+    { name: dictionary.links.departments, path: "/departments" },
+    { name: dictionary.links.testimonials, path: "/testimonials" },
+    { name: dictionary.links.faqs, path: "/faqs" },
+    { name: dictionary.links.contact, path: "/contact" },
   ];
 
   return (
@@ -39,7 +62,7 @@ export default function Footer() {
             <li className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-teal-600 shrink-0 mt-1" />
               <span className="text-gray-700 font-medium">
-                Meerut, Uttar Pradesh 250001
+                {dictionary.address}
               </span>
             </li>
             <li className="flex items-center gap-3">
@@ -60,7 +83,7 @@ export default function Footer() {
         {/* Column 2: Quick Links */}
         <div className="flex flex-col gap-6">
           <h3 className="text-lg font-semibold text-[#0e5c66] uppercase tracking-wide">
-            Quick Links
+            {dictionary.quickLinks}
           </h3>
           <ul className="flex flex-col gap-3">
             {/* Hardcode About Us to verify functionality first, or add to array */}
@@ -90,20 +113,19 @@ export default function Footer() {
           {/* Stay Updated */}
           <div className="flex flex-col gap-4">
             <h3 className="text-lg font-semibold text-[#0e5c66] uppercase tracking-wide">
-              Stay Updated
+              {dictionary.stayUpdated.title}
             </h3>
             <p className="text-gray-500 text-sm leading-relaxed">
-              Receive integrative cancer care Insights recover stories and
-              wellness rituals curated by our clinical experts
+              {dictionary.stayUpdated.description}
             </p>
             <div className="flex gap-2">
               <input
                 type="email"
-                placeholder="Email address"
+                placeholder={dictionary.stayUpdated.placeholder}
                 className="grow bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-100"
               />
               <button className="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-2 rounded-lg transition-colors">
-                Join
+                {dictionary.stayUpdated.button}
               </button>
             </div>
           </div>
@@ -111,7 +133,7 @@ export default function Footer() {
           {/* Connect */}
           <div className="flex flex-col gap-4">
             <h3 className="text-lg font-semibold text-[#0e5c66] uppercase tracking-wide">
-              Connect
+              {dictionary.connect}
             </h3>
             <div className="flex gap-4">
               <a

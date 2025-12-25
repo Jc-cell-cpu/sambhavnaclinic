@@ -17,21 +17,27 @@ import Autoplay from "embla-carousel-autoplay";
 const SLIDES = [
   {
     image: "/images/heroone.jpg",
-    title: "We are No. 1",
-    subtitle: "Cancer Treatment Clinic",
-    description:
-      "Explore our website today and discover how we can partner with you on your journey to better health.",
   },
   {
     image: "/images/hero.jpg",
-    title: "Expert Medical Care",
-    subtitle: "World-Class Specialists",
-    description:
-      "Providing exceptional healthcare services with state-of-the-art facilities and compassionate support for all patients.",
   },
 ];
 
-export default function Hero() {
+export default function Hero({
+  dictionary,
+}: {
+  dictionary: {
+    cta: string;
+    slides: {
+      title: string;
+      subtitle: string;
+      description: string;
+    }[];
+    cards: {
+      title: string;
+    }[];
+  };
+}) {
   const [emblaRef] = useEmblaCarousel({ loop: true, duration: 30 }, [
     Autoplay({ delay: 6000, stopOnInteraction: false }),
   ]);
@@ -59,7 +65,7 @@ export default function Hero() {
             >
               <Image
                 src={slide.image}
-                alt={slide.title}
+                alt={dictionary.slides[index].title}
                 fill
                 className="object-cover object-top brightness-[0.7]"
                 priority={index === 0}
@@ -76,13 +82,13 @@ export default function Hero() {
                     className="max-w-2xl text-white"
                   >
                     <h1 className="text-3xl md:text-6xl font-bold leading-tight mb-2 drop-shadow-md">
-                      {slide.title}
+                      {dictionary.slides[index].title}
                     </h1>
                     <h2 className="text-2xl md:text-5xl font-bold leading-tight mb-4 md:mb-6 text-teal-300 drop-shadow-md">
-                      {slide.subtitle}
+                      {dictionary.slides[index].subtitle}
                     </h2>
                     <p className="text-base md:text-xl mb-6 md:mb-8 text-white/95 max-w-xl leading-relaxed drop-shadow-sm">
-                      {slide.description}
+                      {dictionary.slides[index].description}
                     </p>
                     <Button
                       asChild
@@ -98,7 +104,7 @@ export default function Hero() {
                         className="flex items-center gap-2"
                       >
                         <Calendar className="w-5 h-5" />
-                        <span>Book an Appointment</span>
+                        <span>{dictionary.cta}</span>
                       </Link>
                     </Button>
                   </motion.div>
@@ -127,7 +133,9 @@ export default function Hero() {
               <div className="bg-white rounded-full p-2 md:p-3 shrink-0 group-hover:scale-110 transition-transform duration-300">
                 <Activity className="w-6 h-6 md:w-8 md:h-8 text-[#005f6b]" />
               </div>
-              <h3 className="text-lg md:text-xl font-bold">Cancer Care</h3>
+              <h3 className="text-lg md:text-xl font-bold">
+                {dictionary.cards[0].title}
+              </h3>
             </motion.div>
 
             {/* Card 2: Detox and Immunity */}
@@ -142,7 +150,7 @@ export default function Hero() {
                 <ShieldCheck className="w-6 h-6 md:w-8 md:h-8 text-[#005f6b] dark:text-teal-400" />
               </div>
               <h3 className="text-lg md:text-xl font-bold">
-                Detox and Immunity
+                {dictionary.cards[1].title}
               </h3>
             </motion.div>
 
@@ -157,7 +165,9 @@ export default function Hero() {
               <div className="bg-gray-100 dark:bg-zinc-800 rounded-full p-2 md:p-3 shadow-sm shrink-0 group-hover:scale-110 transition-transform duration-300 group-hover:bg-white dark:group-hover:bg-zinc-700">
                 <Stethoscope className="w-6 h-6 md:w-8 md:h-8 text-[#005f6b] dark:text-teal-400" />
               </div>
-              <h3 className="text-lg md:text-xl font-bold">Expert Doctors</h3>
+              <h3 className="text-lg md:text-xl font-bold">
+                {dictionary.cards[2].title}
+              </h3>
             </motion.div>
 
             {/* Card 4: Lifestyle and Diet */}
@@ -172,7 +182,7 @@ export default function Hero() {
                 <Utensils className="w-6 h-6 md:w-8 md:h-8 text-[#005f6b] dark:text-teal-400" />
               </div>
               <h3 className="text-lg md:text-xl font-bold">
-                Lifestyle and Diet
+                {dictionary.cards[3].title}
               </h3>
             </motion.div>
           </div>
