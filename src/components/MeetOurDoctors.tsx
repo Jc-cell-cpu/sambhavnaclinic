@@ -4,26 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 
 const featuredDoctor = {
-  name: "Suresh Kumar",
-  title: "Cancer Specialist",
+  name: "Dr. Azad",
+  title: "Oncologist (Ayurvedic Cancer Specialist)",
   image: "/images/Doc_1.svg", // Placeholder
 };
 
 const teamDoctors = [
   {
-    name: "Dr. Keshav Kumar",
-    designation: "Designation",
+    name: "Dr. Nargish Tyagi",
+    designation: "Orthopaedic Specialist",
     image: "/images/Doc_2.svg",
   },
   {
-    name: "Dr. Suparna Kusre",
-    designation: "Designation",
+    name: "Dr. Malhotra",
+    designation: "Gastroenterologist",
     image: "/images/Doc_3.svg",
   },
   {
-    name: "Dr. Suparna Kusre",
-    designation: "Designation",
-    image: "/images/Doc_3.svg",
+    name: "Dr. Mohtram Tyagi",
+    designation: "BAMS, Ayurveda Chariya",
+    image: "/images/Doc_2.svg", // Reusing placeholder as we only have 3 unique ones for now
   },
 ];
 

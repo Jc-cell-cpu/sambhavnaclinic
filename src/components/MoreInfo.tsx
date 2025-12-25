@@ -66,11 +66,13 @@ export default function MoreInfo() {
 
           <div className="relative z-10 mt-6">
             <h3 className="text-2xl font-bold text-[#0e5a65] mb-6 leading-snug max-w-[80%]">
-              Is There Anything I Can Do For You?
+              Need Personalized Guidance?
             </h3>
             <p className="text-[#5b6c6c] text-sm leading-relaxed mb-10">
-              Et phasellus turpis vel fermentum cursus. Cursus mi placerat
-              faucibus sapien arcu in met dui.
+              Our expert Ayurvedic oncologists are here to provide
+              comprehensive, personalized care. From initial consultation to
+              post-treatment support, we are dedicated to your holistic
+              well-being.
             </p>
 
             <div className="space-y-7">

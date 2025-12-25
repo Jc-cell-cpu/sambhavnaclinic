@@ -7,73 +7,45 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const departments = [
   {
-    id: "gyn-oncology",
-    title: "Ayurvedic Gynecologic Oncology",
-    shortTitle: "Gyn. Oncology",
+    id: "gynaecology",
+    title: "Gynaecology (Ayurvedic)",
+    shortTitle: "Gynaecology",
     description:
-      "Our specialized department focuses on women's reproductive cancers including ovarian, cervical, and uterine cancers. We combine ancient Ayurvedic wisdom with modern diagnostics to provide comprehensive care that addresses the root cause while managing symptoms and side effects of conventional treatments.",
+      "Our Gynaecology department offers specialized Ayurvedic care for women's reproductive health. We focus on hormonal balance, menstrual disorders, PCOD/PCOS, and uterine health using natural herbal therapies and lifestyle modifications.",
     image: "/images/Vector 1.svg",
     features: [
-      "Personalized hormone balancing",
-      "Rasayana therapy for tissue rejuvenation",
-      "Stress management & counseling",
-      "Dietary protocols for women's health",
+      "Hormonal balance correction",
+      "PCOD/PCOS management",
+      "Menstrual disorder treatments",
+      "Fertility support",
     ],
   },
   {
-    id: "gi-oncology",
-    title: "Gastrointestinal Oncology",
-    shortTitle: "GI Oncology",
+    id: "oncology",
+    title: "Oncology (Ayurvedic Cancer Care)",
+    shortTitle: "Oncology",
     description:
-      "Focusing on cancers of the digestive system such as stomach, liver, colorectal, and pancreatic cancers. Our treatments aim to restore Agni (digestive fire), improve metabolism, and enhance the body's natural detoxification processes.",
-    image: "/images/Vector 1 (1).svg",
-    features: [
-      "Deep detoxification (Panchakarma)",
-      "Metabolic restoration",
-      "Liver health support",
-      "Gut immunity enhancement",
-    ],
-  },
-  {
-    id: "immuno-oncology",
-    title: "Integrative Immuno-Oncology",
-    shortTitle: "Immuno-Oncology",
-    description:
-      "A specialized approach for boosting the body's immune defense against various types of tumors. This department works on strengthening Ojas (vitality) and building resistance against recurrence.",
-    image: "/images/Vector 1 (2).svg",
-    features: [
-      "Immunomodulatory herbs",
-      "Ojas-building therapies",
-      "Cellular rejuvenation",
-      "Recurrence prevention protocols",
-    ],
-  },
-  {
-    id: "palliative-care",
-    title: "Palliative & Supportive Care",
-    shortTitle: "Palliative Care",
-    description:
-      "Focused on improving the quality of life for patients with advanced illness. We provide symptomatic relief from pain, fatigue, and other side effects using safe, gentle Ayurvedic therapies.",
+      "Our Oncology department provides comprehensive cancer treatment focusing on stopping tumor growth, preventing metastasis, and reducing the side effects of conventional treatments like chemotherapy and radiation.",
     image: "/images/Vector 1 (3).svg",
     features: [
-      "Pain management therapies",
-      "Mental & emotional support",
-      "Sleep quality improvement",
-      "Family counseling",
+      "Tumor growth management",
+      "Immunity boosting",
+      "Side-effect reduction",
+      "Metastasis prevention",
     ],
   },
   {
-    id: "preventive-oncology",
-    title: "Preventive Oncology",
-    shortTitle: "Preventive Care",
+    id: "orthopaedics",
+    title: "Orthopaedics",
+    shortTitle: "Orthopaedics",
     description:
-      "Designed for individuals at high risk or those in remission. We focus on lifestyle modifications, dietary plans, and seasonal cleansing to maintain health and prevent disease occurrence.",
-    image: "/images/Vector 1 (4).svg",
+      "The Orthopaedics department specializes in natural treatments for joint pain, arthritis, osteoarthritis, and other musculoskeletal disorders. We use Vata-balancing herbs and therapies to restore mobility and reduce pain.",
+    image: "/images/Vector 1 (5).svg",
     features: [
-      "Genetic risk assessment",
-      "Seasonal detox plans",
-      "Lifestyle correction",
-      "Nutritional guidance",
+      "Joint pain relief",
+      "Arthritis management",
+      "Spine & back care",
+      "Mobility restoration",
     ],
   },
 ];

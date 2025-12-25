@@ -12,39 +12,21 @@ interface Department {
 
 const departments: Department[] = [
   {
-    title: "Ayurvedic Gynecologic Oncology",
+    title: "Gynaecology (Ayurvedic)",
     description:
-      "Ayurvedic therapies to support women's reproductive health during cancer care using herbal medicines, Panchakarma, and lifestyle correction.",
+      "Specialized Ayurvedic care for women's reproductive health, hormonal balance, and wellness.",
     image: "/images/Vector 1.svg",
   },
   {
-    title: "Ayurvedic Gynecologic Oncology",
+    title: "Oncology (Ayurvedic Cancer Care)",
     description:
-      "Ayurvedic therapies to support women's reproductive health during cancer care using herbal medicines, Panchakarma, and lifestyle correction.",
-    image: "/images/Vector 1 (1).svg",
-  },
-  {
-    title: "Ayurvedic Gynecologic Oncology",
-    description:
-      "Ayurvedic therapies to support women's reproductive health during cancer care using herbal medicines, Panchakarma, and lifestyle correction.",
-    image: "/images/Vector 1 (2).svg",
-  },
-  {
-    title: "Ayurvedic Gynecologic Oncology",
-    description:
-      "Ayurvedic therapies to support women's reproductive health during cancer care using herbal medicines, Panchakarma, and lifestyle correction.",
+      "Comprehensive cancer treatment focusing on stopping tumor growth and reducing side effects naturally.",
     image: "/images/Vector 1 (3).svg",
   },
   {
-    title: "Ayurvedic Gynecologic Oncology",
+    title: "Orthopaedics",
     description:
-      "Ayurvedic therapies to support women's reproductive health during cancer care using herbal medicines, Panchakarma, and lifestyle correction.",
-    image: "/images/Vector 1 (4).svg",
-  },
-  {
-    title: "Ayurvedic Gynecologic Oncology",
-    description:
-      "Ayurvedic therapies to support women's reproductive health during cancer care using herbal medicines, Panchakarma, and lifestyle correction.",
+      "Natural treatments for joint pain, arthritis, and musculoskeletal disorders using Vata-balancing therapies.",
     image: "/images/Vector 1 (5).svg",
   },
 ];

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUsSection() {
@@ -102,7 +102,7 @@ export default function WhyChooseUsSection() {
           <div className="flex justify-center order-2 lg:order-2">
             <div className="relative w-full max-w-[300px] md:max-w-[350px] lg:max-w-full -mb-5 aspect-3/4 lg:aspect-auto lg:h-[500px]">
               <Image
-                src="/images/doctor.svg"
+                src="/images/doco.png"
                 alt="Ayurvedic doctor"
                 fill
                 className="object-contain object-center"
@@ -170,56 +170,33 @@ function TrustedExperts() {
               Ayurveda, the science of life, offers natural and effective cancer
               care. Our Ayurvedic doctors use centuries-old wisdom and
               personalized herbal treatments to support healing, reduce side
-              effects, and enhance quality of life for patients at every stage.
+              effects, and enhance quality of life for patients at every stage.{" "}
+              <span className="font-semibold text-[#056271]">
+                All types and all stages of cancer are treated with a healthy
+                and holistic approach.
+              </span>
             </p>
           </div>
 
           {/* Features and Stat Card Row */}
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Features List */}
-            <div className="flex-1 space-y-8">
-              {/* Feature 1 */}
-              <div className="flex gap-4">
-                <div className="shrink-0 w-12 h-12 rounded-full bg-[#056271] flex items-center justify-center text-white">
-                  <Image
-                    src="/images/RedcrosImage.svg"
-                    alt="Leaf Icon"
-                    width={29}
-                    height={29}
-                    className="w-9 h-9"
-                  />
+            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-6">
+              {[
+                "Natural Treatment Method",
+                "No Chemotherapy",
+                "No Radiation",
+                "No Side Effects",
+              ].map((item, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <div className="shrink-0 w-6 h-6 rounded-full bg-[#E0F4F4] flex items-center justify-center text-[#056271]">
+                    <CheckCircle className="w-4 h-4" />
+                  </div>
+                  <span className="text-[#1F2933] font-semibold text-sm md:text-base">
+                    {item}
+                  </span>
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold text-[#1F2933] mb-1">
-                    Cancer Treatment
-                  </h3>
-                  <p className="text-[#4B5563] text-sm leading-relaxed">
-                    We provide natural, personalized care using Ayurvedic herbs,
-                    detox, diet, and lifestyle adjustments.
-                  </p>
-                </div>
-              </div>
-
-              {/* Feature 2 */}
-              <div className="flex gap-4">
-                <div className="shrink-0 w-12 h-12 rounded-full bg-[#056271] flex items-center justify-center text-white">
-                  <Image
-                    src="/images/RedcrosImage.svg"
-                    alt="Leaf Icon"
-                    width={29}
-                    height={29}
-                    className="w-9 h-9"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-[#1F2933] mb-1">
-                    Easy Booking
-                  </h3>
-                  <p className="text-[#4B5563] text-sm leading-relaxed">
-                    We providing quality healthcare services to our community
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* Stat Card */}

@@ -13,10 +13,10 @@ export default function Footer() {
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about-us" },
     { name: "Services", path: "/services" },
-    { name: "Departments", path: "#departments" },
-    { name: "Testimonials", path: "#testimonials" },
-    { name: "FAQs", path: "#faqs" },
-    { name: "Contact Us", path: "#contact-us" },
+    { name: "Departments", path: "/departments" },
+    { name: "Testimonials", path: "/testimonials" },
+    { name: "FAQs", path: "/faqs" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   return (
@@ -115,7 +115,7 @@ export default function Footer() {
             </h3>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1GAeyyUxzo/"
                 className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-shadow group border border-gray-100"
               >
                 <Facebook className="w-5 h-5 text-teal-600 group-hover:scale-110 transition-transform" />
@@ -127,7 +127,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5 text-teal-600 group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="#"
+                href="https://youtube.com/@sambhavnaclinic?si=3ZDjD7mtjLgDJfkN"
                 className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-shadow group border border-gray-100"
               >
                 <Youtube className="w-5 h-5 text-teal-600 group-hover:scale-110 transition-transform" />

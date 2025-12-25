@@ -14,40 +14,28 @@ import { Button } from "@/components/ui/button";
 
 const doctors = [
   {
-    name: "Dr. Suresh Kumar",
-    speciality: "Senior Oncologist",
-    experience: "15+ Years Exp",
-    image: "/images/Doc_1.svg",
-  },
-  {
-    name: "Dr. Keshav Kumar",
-    speciality: "Ayurvedic Specialist",
-    experience: "10+ Years Exp",
-    image: "/images/Doc_2.svg",
-  },
-  {
-    name: "Dr. Suparna Kusre",
-    speciality: "Nutrition Expert",
-    experience: "8+ Years Exp",
-    image: "/images/Doc_3.svg",
-  },
-  {
-    name: "Dr. Rahul Sharma",
-    speciality: "Integrated Medicine",
-    experience: "12+ Years Exp",
-    image: "/images/Doc_2.svg",
-  },
-  {
-    name: "Dr. Aditi Gupta",
-    speciality: "Gastrointestinal Oncology",
-    experience: "11+ Years Exp",
-    image: "/images/Doc_3.svg",
-  },
-  {
-    name: "Dr. Manoj Verma",
-    speciality: "Palliative Care",
+    name: "Dr. Azad",
+    speciality: "Oncologist (Ayurvedic Cancer Specialist)",
     experience: "20+ Years Exp",
     image: "/images/Doc_1.svg",
+  },
+  {
+    name: "Dr. Nargish Tyagi",
+    speciality: "Orthopaedic Specialist",
+    experience: "15+ Years Exp",
+    image: "/images/Doc_3.svg",
+  },
+  {
+    name: "Dr. Malhotra",
+    speciality: "Gastroenterologist",
+    experience: "12+ Years Exp",
+    image: "/images/Doc_1.svg",
+  },
+  {
+    name: "Dr. Mohtram Tyagi",
+    speciality: "BAMS, Ayurveda Chariya",
+    experience: "10+ Years Exp",
+    image: "/images/Doc_2.svg",
   },
 ];
 

@@ -5,49 +5,34 @@ import React from "react";
 
 const treatments = [
   {
+    title: "Liver Cancer",
+    description:
+      "Ayurvedic care to support liver function, detoxify the body (Yakrut Shodhan), and boost immunity using targeted herbal therapies.",
+  },
+  {
+    title: "Kidney Cancer",
+    description:
+      "Focusing on restoring kidney health (Vrikka health) and balancing bodily fluids through specialized herbs and dietary adjustments.",
+  },
+  {
     title: "Breast Cancer",
     description:
-      "By balancing the Tridoshas, customized Rasayana therapies and formulations such as Haridra boost the immune system.",
+      "Holistic management focusing on hormonal balance, lymphatic drainage, and reducing tumor progression through natural remedies.",
   },
   {
-    title: "Lung Cancer",
+    title: "Urinary Bladder Cancer",
     description:
-      "By balancing the Tridoshas, customized Rasayana therapies and formulations such as Haridra boost the immune system.",
+      "Natural therapies to soothe the urinary tract, reduce inflammation, and strengthen bladder function (Basti health).",
   },
   {
-    title: "Colorectal Cancer",
+    title: "Blood Cancer",
     description:
-      "By balancing the Tridoshas, customized Rasayana therapies and formulations such as Haridra boost the immune system.",
+      "Purification therapies (Raktamokshana) and immunity-enhancing herbs to support healthy blood cell production and vitality.",
   },
   {
     title: "Prostate Cancer",
     description:
-      "By balancing the Tridoshas, customized Rasayana therapies and formulations such as Haridra boost the immune system.",
-  },
-  {
-    title: "Ovarian Cancer",
-    description:
-      "By balancing the Tridoshas, customized Rasayana therapies and formulations such as Haridra boost the immune system.",
-  },
-  {
-    title: "Liver Cancer",
-    description:
-      "By balancing the Tridoshas, customized Rasayana therapies and formulations such as Haridra boost the immune system.",
-  },
-  {
-    title: "Leukemia",
-    description:
-      "By balancing the Tridoshas, customized Rasayana therapies and formulations such as Haridra boost the immune system.",
-  },
-  {
-    title: "Brain Cancer",
-    description:
-      "By balancing the Tridoshas, customized Rasayana therapies and formulations such as Haridra boost the immune system.",
-  },
-  {
-    title: "Skin Cancer",
-    description:
-      "By balancing the Tridoshas, customized Rasayana therapies and formulations such as Haridra boost the immune system.",
+      "Specialized care for men's health focusing on reducing prostate enlargement and balancing male hormones naturally.",
   },
 ];
 

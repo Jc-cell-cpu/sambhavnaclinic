@@ -2,49 +2,72 @@
 
 import React from "react";
 import {
-  Beaker,
-  BedDouble,
+  Stethoscope,
+  Snowflake,
+  TestTube,
+  Scan,
+  Droplet,
+  CircleDot,
   Activity,
-  Pill,
-  Microscope,
+  Leaf,
   Ambulance,
+  ShieldCheck,
 } from "lucide-react";
 
 const facilities = [
   {
-    icon: Beaker,
-    title: "Advanced Lab",
+    icon: Stethoscope,
+    title: "OPD & IPD Facilities",
     description:
-      "State-of-the-art diagnostic laboratory for precise and timely reports.",
+      "Comprehensive Out-Patient and In-Patient departments for complete care.",
+  },
+  // {
+  //   icon: Snowflake,
+  //   title: "Fully Air-Conditioned Rooms",
+  //   description:
+  //     "Comfortable, temperature-controlled environment for patient recovery.",
+  // },
+  {
+    icon: TestTube,
+    title: "Advanced Laboratory Tests",
+    description:
+      "High-precision diagnostic testing for accurate health assessments.",
   },
   {
-    icon: BedDouble,
-    title: "In-Patient Services",
-    description:
-      "Comfortable and hygienic rooms for patients requiring extended care.",
+    icon: Scan,
+    title: "Ultrasound & X-Ray Services",
+    description: "Modern imaging diagnositics available on-site.",
+  },
+  {
+    icon: Droplet,
+    title: "Blood Testing Facilities",
+    description: "Full-spectrum hematology and blood investigations.",
+  },
+  {
+    icon: CircleDot,
+    title: "Cupping Therapy",
+    description: "Traditional Hijama and cupping therapies for pain and detox.",
   },
   {
     icon: Activity,
-    title: "Panchakarma Center",
-    description:
-      "Dedicated facility for specialized detox and rejuvenation therapies.",
+    title: "Regimental Therapy",
+    description: "Specialized Ilaj-bit-Tadbeer therapies for holistic healing.",
   },
   {
-    icon: Pill,
-    title: "Ayurvedic Pharmacy",
+    icon: Leaf,
+    title: "Panchkarma Treatment",
     description:
-      "In-house pharmacy compliant with GMP standards for authentic medicines.",
-  },
-  {
-    icon: Microscope,
-    title: "Research Wing",
-    description: "Ongoing clinical research to enhance treatment efficacy.",
+      "Complete Ayurvedic detoxification and rejuvenation procedures.",
   },
   {
     icon: Ambulance,
-    title: "Emergency Support",
-    description:
-      "24/7 medical support and ambulance services for critical needs.",
+    title: "24×7 Emergency Services",
+    description: "Round-the-clock emergency support and rapid response.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Clean, Safe & Patient-Friendly",
+    description: "Hygienic environment focused on patient safety and comfort.",
   },
 ];
 
