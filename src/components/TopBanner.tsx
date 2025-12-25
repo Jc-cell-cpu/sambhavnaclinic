@@ -27,7 +27,7 @@ export default function TopBanner() {
               height={16}
               className="invert brightness-0"
             />
-            <span>+011 3253 4567</span>
+            <span>70377 09494</span>
           </div>
           <div className="flex items-center gap-2">
             <Image

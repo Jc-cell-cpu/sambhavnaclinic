@@ -45,9 +45,9 @@ export default function ContactUs() {
                       Our Location
                     </h4>
                     <p className="text-[#4F4F4F]">
-                      Sambhavna Clinic, 123 Ayurveda Marg,
+                      E-66 Saradhapuri Phase-2, opposite Kailashi,
                       <br />
-                      Wellness City, State - 400001
+                      Kanker Khera, Baypass, Meerut, Uttar Pradesh 250001
                     </p>
                   </div>
                 </div>
@@ -66,8 +66,7 @@ export default function ContactUs() {
                     <h4 className="font-bold text-[#333333] mb-1">
                       Phone Number
                     </h4>
-                    <p className="text-[#4F4F4F]">+91 98765 43210</p>
-                    <p className="text-[#4F4F4F]">+91 12345 67890</p>
+                    <p className="text-[#4F4F4F]">70377 09494</p>
                   </div>
                 </div>
 

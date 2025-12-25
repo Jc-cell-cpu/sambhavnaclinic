@@ -39,7 +39,7 @@ export default function Footer() {
             <li className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-teal-600 shrink-0 mt-1" />
               <span className="text-gray-700 font-medium">
-                Bangalore, India
+                Meerut, Uttar Pradesh 250001
               </span>
             </li>
             <li className="flex items-center gap-3">
@@ -121,7 +121,7 @@ export default function Footer() {
                 <Facebook className="w-5 h-5 text-teal-600 group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/sambhavna_clinic?igsh=MzJua2E1bDdubTNh"
                 className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-shadow group border border-gray-100"
               >
                 <Instagram className="w-5 h-5 text-teal-600 group-hover:scale-110 transition-transform" />

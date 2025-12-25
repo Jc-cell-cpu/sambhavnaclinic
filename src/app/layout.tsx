@@ -32,7 +32,7 @@ export default function RootLayout({
         <Header />
         <main className="grow">{children}</main>
         <Footer />
-        <UnderDevelopmentPopup />
+        {/* <UnderDevelopmentPopup /> */}
       </body>
     </html>
   );
