@@ -5,7 +5,7 @@ import TopBanner from "@/components/TopBanner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import UnderDevelopmentPopup from "@/components/UnderDevelopmentPopup";
-import { Locale } from "../../i18n-config";
+import { i18n, type Locale } from "../../i18n-config";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   description: "Cancer Clinic Treatment",
 };
 
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
+
 import { getDictionary } from "../../get-dictionary";
 
 export default async function RootLayout({
@@ -25,12 +29,13 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: string }>;
 }>) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const locale = lang as Locale;
+  const dictionary = await getDictionary(locale);
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         suppressHydrationWarning
         className={`${notoSans.variable} antialiased flex flex-col min-h-screen font-sans overflow-x-hidden`}

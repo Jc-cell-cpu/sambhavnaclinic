@@ -1,4 +1,3 @@
-
 import Departments from "@/components/Departments";
 import AppointmentWithTestimonials from "@/components/AppointmentWithTestimonials";
 import MeetOurDoctors from "@/components/MeetOurDoctors";
@@ -16,10 +15,11 @@ import { Locale } from "../../i18n-config";
 export default async function Home({
   params,
 }: {
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const locale = lang as Locale;
+  const dictionary = await getDictionary(locale);
 
   return (
     <>
