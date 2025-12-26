@@ -10,6 +10,13 @@ import Step5Details from "./Step5Details";
 import Step6Summary from "./Step6Summary";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import {
+  bookingStep1Schema,
+  bookingStep2Schema,
+  bookingStep3Schema,
+  bookingStep4Schema,
+  bookingStep5Schema,
+} from "@/lib/schemas";
 
 interface BookingFormData {
   mobile: string;
@@ -51,9 +58,60 @@ export default function BookingWizard({ dictionary }: { dictionary: any }) {
     note: "",
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [errors, setErrors] = useState<any>({});
+
+  const validateStep = (step: number) => {
+    try {
+      setErrors({});
+      switch (step) {
+        case 1:
+          bookingStep1Schema.parse({ mobile: formData.mobile });
+          break;
+        case 2:
+          bookingStep2Schema.parse({ otp: formData.otp });
+          break;
+        case 3:
+          bookingStep3Schema.parse({ treatment: formData.treatment });
+          break;
+        case 4:
+          bookingStep4Schema.parse({
+            date: formData.date,
+            timeSlot: formData.timeSlot,
+          });
+          break;
+        case 5:
+          bookingStep5Schema.parse({
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            note: formData.note,
+          });
+          break;
+      }
+      return true;
+    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const zodError = error as any;
+      if (zodError.errors) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const fieldErrors: any = {};
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        zodError.errors.forEach((err: any) => {
+          if (err.path) {
+            fieldErrors[err.path[0]] = err.message;
+          }
+        });
+        setErrors(fieldErrors);
+      }
+      return false;
+    }
+  };
+
   const nextStep = () => {
-    // Basic validation logic could go here
-    if (currentStep < 6) setCurrentStep(currentStep + 1);
+    if (validateStep(currentStep)) {
+      if (currentStep < 6) setCurrentStep(currentStep + 1);
+    }
   };
 
   const prevStep = () => {
@@ -68,6 +126,7 @@ export default function BookingWizard({ dictionary }: { dictionary: any }) {
             mobile={formData.mobile}
             setMobile={(val) => setFormData({ ...formData, mobile: val })}
             labels={step1}
+            error={errors.mobile}
           />
         );
       case 2:
@@ -77,6 +136,7 @@ export default function BookingWizard({ dictionary }: { dictionary: any }) {
             setOtp={(val) => setFormData({ ...formData, otp: val })}
             mobile={formData.mobile}
             labels={step2}
+            // error={errors.otp} // Assuming Step2OTP accepts error
           />
         );
       case 3:
@@ -85,6 +145,7 @@ export default function BookingWizard({ dictionary }: { dictionary: any }) {
             selectedTreatment={formData.treatment}
             setTreatment={(val) => setFormData({ ...formData, treatment: val })}
             labels={step3}
+            // error={errors.treatment} // Assuming Step3Treatment accepts error
           />
         );
       case 4:
@@ -95,6 +156,7 @@ export default function BookingWizard({ dictionary }: { dictionary: any }) {
             selectedSlot={formData.timeSlot}
             setSlot={(val) => setFormData({ ...formData, timeSlot: val })}
             labels={step4}
+            // error={errors.date || errors.timeSlot} // Assuming Step4DateTime accepts error
           />
         );
       case 5:
@@ -105,6 +167,7 @@ export default function BookingWizard({ dictionary }: { dictionary: any }) {
               setFormData({ ...formData, [field]: val })
             }
             labels={step5}
+            // errors={errors} // Assuming Step5Details accepts errors object
           />
         );
       case 6:

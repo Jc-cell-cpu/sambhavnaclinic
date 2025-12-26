@@ -1,9 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useActionState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Star, User } from "lucide-react";
+import { ArrowRight, Star, User, Loader2 } from "lucide-react";
+import { submitQuickAppointment } from "@/app/actions/appointment";
+
+const initialState = {
+  success: false,
+  message: "",
+  errors: {},
+};
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function AppointmentWithTestimonials({
@@ -19,6 +26,10 @@ export default function AppointmentWithTestimonials({
     testimonials,
   } = dictionary.testimonialSection;
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [state, formAction, isPending] = useActionState(
+    submitQuickAppointment,
+    initialState
+  );
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -40,60 +51,134 @@ export default function AppointmentWithTestimonials({
               {appointmentHeading}
             </h2>
 
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Row 1 */}
-                <input
-                  type="text"
-                  placeholder={form.firstName}
-                  className="w-full px-6 py-4 rounded-xl bg-blue-50/50 border border-[#17889B]/50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 text-gray-700 placeholder-gray-400"
-                />
-                <input
-                  type="text"
-                  placeholder={form.lastName}
-                  className="w-full px-6 py-4 rounded-xl bg-blue-50/50 border border-[#17889B]/50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 text-gray-700 placeholder-gray-400"
-                />
-
-                {/* Row 2 */}
-                <input
-                  type="email"
-                  placeholder={form.email}
-                  className="w-full px-6 py-4 rounded-xl bg-blue-50/50 border border-[#17889B]/50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 text-gray-700 placeholder-gray-400"
-                />
-                <input
-                  type="tel"
-                  placeholder={form.phone}
-                  className="w-full px-6 py-4 rounded-xl bg-blue-50/50 border border-[#17889B]/50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 text-gray-700 placeholder-gray-400"
-                />
-
-                {/* Row 3 */}
-                <input
-                  type="date"
-                  className="w-full px-6 py-4 rounded-xl bg-blue-50/50 border border-[#17889B]/50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 text-gray-700 placeholder-gray-400"
-                />
-                <input
-                  type="time"
-                  className="w-full px-6 py-4 rounded-xl bg-blue-50/50 border border-[#17889B]/50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 text-gray-700 placeholder-gray-400"
-                />
+            {state.success ? (
+              <div className="bg-green-50 border border-green-200 text-green-700 px-6 py-4 rounded-xl">
+                <h3 className="text-lg font-bold mb-2">Request Sent!</h3>
+                <p>{state.message}</p>
               </div>
+            ) : (
+              <form action={formAction} className="space-y-6">
+                {state.message && !state.success && (
+                  <div className="p-3 bg-red-50 text-red-600 rounded-md text-sm">
+                    {state.message}
+                  </div>
+                )}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Row 1 */}
+                  <div className="space-y-2">
+                    <input
+                      type="text"
+                      name="firstName"
+                      placeholder={form.firstName}
+                      className="w-full px-6 py-4 rounded-xl bg-blue-50/50 border border-[#17889B]/50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 text-gray-700 placeholder-gray-400"
+                    />
+                    {state.errors?.firstName && (
+                      <p className="text-red-500 text-sm ml-1">
+                        {state.errors.firstName[0]}
+                      </p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <input
+                      type="text"
+                      name="lastName"
+                      placeholder={form.lastName}
+                      className="w-full px-6 py-4 rounded-xl bg-blue-50/50 border border-[#17889B]/50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 text-gray-700 placeholder-gray-400"
+                    />
+                    {state.errors?.lastName && (
+                      <p className="text-red-500 text-sm ml-1">
+                        {state.errors.lastName[0]}
+                      </p>
+                    )}
+                  </div>
 
-              {/* Textarea */}
-              <textarea
-                rows={5}
-                placeholder={form.messagePlaceholder}
-                className="w-full px-6 py-4 rounded-xl bg-blue-50/50 border border-[#17889B]/50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 text-gray-700 placeholder-gray-400 resize-none"
-              ></textarea>
+                  {/* Row 2 */}
+                  <div className="space-y-2">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder={form.email}
+                      className="w-full px-6 py-4 rounded-xl bg-blue-50/50 border border-[#17889B]/50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 text-gray-700 placeholder-gray-400"
+                    />
+                    {state.errors?.email && (
+                      <p className="text-red-500 text-sm ml-1">
+                        {state.errors.email[0]}
+                      </p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder={form.phone}
+                      className="w-full px-6 py-4 rounded-xl bg-blue-50/50 border border-[#17889B]/50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 text-gray-700 placeholder-gray-400"
+                    />
+                    {state.errors?.phone && (
+                      <p className="text-red-500 text-sm ml-1">
+                        {state.errors.phone[0]}
+                      </p>
+                    )}
+                  </div>
 
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full md:w-auto bg-teal-800 hover:bg-teal-700 text-white font-bold py-4 px-8 rounded-full flex items-center justify-center gap-3 transition-colors shadow-lg mt-4"
-              >
-                {/* <Calendar className="w-5 h-5" /> */}
-                <span>{form.submitButton}</span>
-                <ArrowRight className="w-5 h-5" />
-              </button>
-            </form>
+                  {/* Row 3 */}
+                  <div className="space-y-2">
+                    <input
+                      type="date"
+                      name="date"
+                      className="w-full px-6 py-4 rounded-xl bg-blue-50/50 border border-[#17889B]/50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 text-gray-700 placeholder-gray-400"
+                    />
+                    {state.errors?.date && (
+                      <p className="text-red-500 text-sm ml-1">
+                        {state.errors.date[0]}
+                      </p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <input
+                      type="time"
+                      name="time"
+                      className="w-full px-6 py-4 rounded-xl bg-blue-50/50 border border-[#17889B]/50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 text-gray-700 placeholder-gray-400"
+                    />
+                    {state.errors?.time && (
+                      <p className="text-red-500 text-sm ml-1">
+                        {state.errors.time[0]}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Textarea */}
+                <div className="space-y-2">
+                  <textarea
+                    rows={5}
+                    name="message"
+                    placeholder={form.messagePlaceholder}
+                    className="w-full px-6 py-4 rounded-xl bg-blue-50/50 border border-[#17889B]/50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 text-gray-700 placeholder-gray-400 resize-none"
+                  ></textarea>
+                  {state.errors?.message && (
+                    <p className="text-red-500 text-sm ml-1">
+                      {state.errors.message[0]}
+                    </p>
+                  )}
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isPending}
+                  className="w-full md:w-auto bg-teal-800 hover:bg-teal-700 text-white font-bold py-4 px-8 rounded-full flex items-center justify-center gap-3 transition-colors shadow-lg mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isPending ? (
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                  ) : (
+                    <>
+                      <span>{form.submitButton}</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </>
+                  )}
+                </button>
+              </form>
+            )}
           </div>
 
           {/* Right Column: Testimonial Slider (approx 40%) */}
@@ -158,22 +243,6 @@ export default function AppointmentWithTestimonials({
                 </motion.div>
               </AnimatePresence>
             </div>
-
-            {/* Dots custom navigation (Optional visual cue) */}
-            {/* <div className="flex gap-2">
-              {testimonials.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentTestimonial(idx)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all ${
-                    currentTestimonial === idx
-                      ? "bg-teal-600 w-6"
-                      : "bg-gray-300"
-                  }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div> */}
           </div>
         </div>
       </div>
