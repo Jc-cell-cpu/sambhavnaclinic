@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useRef } from "react";
@@ -12,34 +13,10 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const doctors = [
-  {
-    name: "Dr. Azad",
-    speciality: "Oncologist (Ayurvedic Cancer Specialist)",
-    experience: "20+ Years Exp",
-    image: "/images/Doc_1.svg",
-  },
-  {
-    name: "Dr. Nargish Tyagi",
-    speciality: "Orthopaedic Specialist",
-    experience: "15+ Years Exp",
-    image: "/images/Doc_3.svg",
-  },
-  {
-    name: "Dr. Malhotra",
-    speciality: "Gastroenterologist",
-    experience: "12+ Years Exp",
-    image: "/images/Doc_1.svg",
-  },
-  {
-    name: "Dr. Mohtram Tyagi",
-    speciality: "BAMS, Ayurveda Chariya",
-    experience: "10+ Years Exp",
-    image: "/images/Doc_2.svg",
-  },
-];
-
-export default function DepartmentDoctors() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function DepartmentDoctors({ dictionary }: { dictionary: any }) {
+  const { subtitle, title, consultNow, viewProfile, doctors } =
+    dictionary.departmentDoctors;
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
@@ -70,10 +47,10 @@ export default function DepartmentDoctors() {
         <div className="flex flex-col items-center mb-12 gap-8">
           <div className="text-center max-w-3xl">
             <h3 className="text-[#00256E] font-bold uppercase tracking-wider mb-2 text-sm md:text-base">
-              OUR EXPERTS
+              {subtitle}
             </h3>
             <h2 className="text-3xl md:text-5xl font-bold text-[#333333]">
-              Led by Experienced Professionals
+              {title}
             </h2>
           </div>
 
@@ -101,7 +78,7 @@ export default function DepartmentDoctors() {
           className="flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:px-0"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {doctors.map((doc, index) => (
+          {doctors.map((doc: any, index: number) => (
             <div
               key={index}
               className="min-w-full md:min-w-[320px] snap-center group relative bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden hover:-translate-y-2 transition-transform duration-300 flex flex-col"
@@ -121,14 +98,14 @@ export default function DepartmentDoctors() {
                 <div className="absolute bottom-9 left-0 w-full px-6 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 flex flex-col gap-3">
                   <Button className="w-full border-accent bg-white hover:bg-[#0e5c66] hover:text-white text-[#0e5c66] font-bold rounded-xl shadow-lg border">
                     <CalendarCheck size={18} className="mr-2" />
-                    Consult Now
+                    {consultNow}
                   </Button>
                   <Button
                     variant="outline"
                     className="w-full border-white text-[#0e5c66] hover:bg-[#0e5c66] hover:text-white font-semibold rounded-xl  backdrop-blur-sm"
                   >
                     <User size={18} className="mr-2" />
-                    View Profile
+                    {viewProfile}
                   </Button>
                 </div>
               </div>

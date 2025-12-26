@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import Image from "next/image";
@@ -5,42 +6,14 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
-export default function WhyChooseUsSection() {
-  const leftBullets = [
-    {
-      title: "Holistic, Individualized Treatment",
-      description:
-        "Personalized Ayurvedic protocols focused on restoring balance and eliminating toxins from the body.",
-    },
-    {
-      title: "Home-Based Herbal Care",
-      description:
-        "Receive herbal remedies and consultations from the comfort of your home with expert guidance.",
-    },
-    {
-      title: "Transparent, Affordable Care",
-      description:
-        "Natural therapies that prioritize wellness—without overwhelming financial burden.",
-    },
-  ];
-
-  const rightBullets = [
-    {
-      title: "Ancient Wisdom, Modern Comfort",
-      description:
-        "Traditional Ayurvedic therapies in serene, healing environments designed for modern comfort.",
-    },
-    {
-      title: "Focused Healing, Measurable Progress",
-      description:
-        "Time-tested remedies with clear protocols aimed at restoring vitality and strengthening immunity.",
-    },
-    {
-      title: "Compassion-Focused Healing",
-      description:
-        "Empathetic caregivers and supportive wellness staff that nurture body, mind, and spirit.",
-    },
-  ];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function WhyChooseUsSection({
+  dictionary,
+}: {
+  dictionary: any;
+}) {
+  const leftBullets = dictionary.whyChooseUs.leftBullets;
+  const rightBullets = dictionary.whyChooseUs.rightBullets;
 
   const BulletItem = ({
     title,
@@ -78,10 +51,10 @@ export default function WhyChooseUsSection() {
         {/* Top Heading Area */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-[#00256E] text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3 md:mb-4">
-            WHY CHOOSE US
+            {dictionary.whyChooseUs.label}
           </h2>
           <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#373737]">
-            The Health Partner You’ve Been Looking For
+            {dictionary.whyChooseUs.heading}
           </h3>
         </div>
 
@@ -89,7 +62,7 @@ export default function WhyChooseUsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)_minmax(0,1.1fr)] gap-10 lg:items-center">
           {/* Left Column (Bullets) */}
           <div className="space-y-8 order-3 lg:order-1">
-            {leftBullets.map((item, index) => (
+            {leftBullets.map((item: any, index: number) => (
               <BulletItem
                 key={index}
                 title={item.title}
@@ -112,7 +85,7 @@ export default function WhyChooseUsSection() {
 
           {/* Right Column (Bullets) */}
           <div className="space-y-8 order-4 lg:order-3">
-            {rightBullets.map((item, index) => (
+            {rightBullets.map((item: any, index: number) => (
               <BulletItem
                 key={index}
                 title={item.title}
@@ -125,13 +98,14 @@ export default function WhyChooseUsSection() {
 
       {/* Trusted Experts Section */}
       <div className="max-w-7xl mx-auto mt-16 md:mt-24">
-        <TrustedExperts />
+        <TrustedExperts content={dictionary.whyChooseUs.trustedExperts} />
       </div>
     </section>
   );
 }
 
-function TrustedExperts() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function TrustedExperts({ content }: { content: any }) {
   return (
     <div className="bg-white rounded-3xl p-8 md:p-12 lg:p-0 overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -164,16 +138,12 @@ function TrustedExperts() {
         >
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#373737] mb-6 leading-tight">
-              We’re Trusted Experts in Ayurvedic Cancer Healing
+              {content.heading}
             </h2>
             <p className="text-[#4B5563] text-base md:text-lg leading-relaxed">
-              Ayurveda, the science of life, offers natural and effective cancer
-              care. Our Ayurvedic doctors use centuries-old wisdom and
-              personalized herbal treatments to support healing, reduce side
-              effects, and enhance quality of life for patients at every stage.{" "}
+              {content.description}{" "}
               <span className="font-semibold text-[#056271]">
-                All types and all stages of cancer are treated with a healthy
-                and holistic approach.
+                {content.highlight}
               </span>
             </p>
           </div>
@@ -182,12 +152,7 @@ function TrustedExperts() {
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Features List */}
             <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-6">
-              {[
-                "Natural Treatment Method",
-                "No Chemotherapy",
-                "No Radiation",
-                "No Side Effects",
-              ].map((item, index) => (
+              {content.features.map((item: string, index: number) => (
                 <div key={index} className="flex items-center gap-3">
                   <div className="shrink-0 w-6 h-6 rounded-full bg-[#E0F4F4] flex items-center justify-center text-[#056271]">
                     <CheckCircle className="w-4 h-4" />
@@ -210,11 +175,15 @@ function TrustedExperts() {
                     height={39}
                   />
                 </div>
-                <div className="text-4xl font-semibold mb-5">25+</div>
+                <div className="text-4xl font-semibold mb-5">
+                  {content.statCard.value}
+                </div>
                 <div className="text-sm font-medium opacity-90 leading-tight">
-                  Certified Ayurvedic
-                  <br />
-                  Experts
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: content.statCard.label.replace(" ", "<br />"),
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -235,7 +204,7 @@ function TrustedExperts() {
                   className="object-contain"
                 />
               </div>
-              <Link href={"/appointment"}>Book Appointment</Link>
+              <Link href={"/appointment"}>{content.cta}</Link>
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
             </motion.button>
           </div>

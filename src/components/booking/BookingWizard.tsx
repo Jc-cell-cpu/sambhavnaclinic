@@ -23,7 +23,21 @@ interface BookingFormData {
   note: string;
 }
 
-export default function BookingWizard() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function BookingWizard({ dictionary }: { dictionary: any }) {
+  const {
+    heading,
+    subheading,
+    sidebar,
+    step1,
+    step2,
+    step3,
+    step4,
+    step5,
+    step6,
+    navigation,
+  } = dictionary.bookingWizard;
+
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<BookingFormData>({
     mobile: "",
@@ -53,6 +67,7 @@ export default function BookingWizard() {
           <Step1Contact
             mobile={formData.mobile}
             setMobile={(val) => setFormData({ ...formData, mobile: val })}
+            labels={step1}
           />
         );
       case 2:
@@ -61,6 +76,7 @@ export default function BookingWizard() {
             otp={formData.otp}
             setOtp={(val) => setFormData({ ...formData, otp: val })}
             mobile={formData.mobile}
+            labels={step2}
           />
         );
       case 3:
@@ -68,6 +84,7 @@ export default function BookingWizard() {
           <Step3Treatment
             selectedTreatment={formData.treatment}
             setTreatment={(val) => setFormData({ ...formData, treatment: val })}
+            labels={step3}
           />
         );
       case 4:
@@ -77,6 +94,7 @@ export default function BookingWizard() {
             setDate={(val) => setFormData({ ...formData, date: val })}
             selectedSlot={formData.timeSlot}
             setSlot={(val) => setFormData({ ...formData, timeSlot: val })}
+            labels={step4}
           />
         );
       case 5:
@@ -86,10 +104,11 @@ export default function BookingWizard() {
             updateField={(field, val) =>
               setFormData({ ...formData, [field]: val })
             }
+            labels={step5}
           />
         );
       case 6:
-        return <Step6Summary formData={formData} />;
+        return <Step6Summary formData={formData} labels={step6} />;
       default:
         return null;
     }
@@ -99,16 +118,16 @@ export default function BookingWizard() {
     <div className="container mx-auto px-4 py-12 md:px-8 max-w-7xl">
       <div className="text-center mb-12">
         <h4 className="text-[#0e5a65] font-bold tracking-wider text-sm uppercase mb-2">
-          Appointment Booking
+          {subheading}
         </h4>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800">
-          Please Fill In The Form
+          {heading}
         </h1>
       </div>
 
       <div className="flex flex-col md:flex-row gap-8 items-start">
         {/* Left Sidebar */}
-        <Sidebar currentStep={currentStep} />
+        <Sidebar currentStep={currentStep} labels={sidebar} />
 
         {/* Right Content Area */}
         <div className="flex-1 bg-white rounded-2xl shadow-sm border border-teal-100 p-8 min-h-[600px] flex flex-col justify-between relative">
@@ -124,7 +143,7 @@ export default function BookingWizard() {
                 className="text-gray-600 hover:text-[#0e5a65] hover:bg-teal-50 gap-2"
               >
                 <ArrowLeft className="w-4 h-4" />
-                Go Back
+                {navigation.goBack}
               </Button>
             )}
 
@@ -133,14 +152,14 @@ export default function BookingWizard() {
                 onClick={nextStep}
                 className="bg-linear-to-r from-[#17899B] to-[#109C8E] hover:from-[#137a8b] hover:to-[#0d8579] text-white px-8 rounded-xl shadow-lg shadow-teal-500/20"
               >
-                Next
+                {navigation.next}
                 {/* <ArrowRight className="w-4 h-4 ml-2" /> */}
               </Button>
             )}
 
             {currentStep === 6 && (
               <Button className="bg-[#0e5a65] hover:bg-[#0b4851] text-white px-8 rounded-xl">
-                Confirm Booking
+                {navigation.confirm}
               </Button>
             )}
           </div>

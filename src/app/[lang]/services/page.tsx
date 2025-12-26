@@ -4,20 +4,31 @@ import HowWeWork from "@/components/HowWeWork";
 import MoreInfo from "@/components/MoreInfo";
 import OurServices from "@/components/OurServices";
 import TreatmentsSection from "@/components/TreatmentsSection";
-export default function Services() {
+import { getDictionary } from "../../../get-dictionary";
+import { Locale } from "../../../i18n-config";
+
+export default async function Services({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}) {
+  const { lang } = await params;
+  const dictionary = await getDictionary(lang);
+  const { title, subtitle, breadcrumb } = dictionary.pages.services;
+
   return (
     <div className="font-sans">
       <HeroSection
-        title="Services"
-        subtitle="Tincidunt suspendisse semper integer elementum maecenas."
+        title={title}
+        subtitle={subtitle}
         backgroundImage="/images/About-us.svg"
-        currentPage="Services"
+        currentPage={breadcrumb}
       />
-      <OurServices />
-      <HowWeWork />
-      <TreatmentsSection />
-      <MoreInfo />
-      <AppointmentWithTestimonials />
+      <OurServices dictionary={dictionary} />
+      <HowWeWork dictionary={dictionary} />
+      <TreatmentsSection dictionary={dictionary} />
+      <MoreInfo dictionary={dictionary} />
+      <AppointmentWithTestimonials dictionary={dictionary} />
     </div>
   );
 }

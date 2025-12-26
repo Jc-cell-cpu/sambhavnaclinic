@@ -1,49 +1,26 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 
-const steps = [
-  {
-    number: "01",
-    title: "Book Appointment",
-    description:
-      "Schedule your visit online or via phone. Our team will guide you through the initial requirements.",
-  },
-  {
-    number: "02",
-    title: "Initial Consultation",
-    description:
-      "Meet with our Ayurvedic experts for a detailed pulse diagnosis (Nadi Pariksha) and health assessment.",
-  },
-  {
-    number: "03",
-    title: "Personalized Treatment",
-    description:
-      "Receive a customized plan including Rasayana therapies, dietary changes, and herbal medicines.",
-  },
-  {
-    number: "04",
-    title: "Recovery & Follow-up",
-    description:
-      "Regular monitoring and support to ensure your path to holistic healing and well-being.",
-  },
-];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function HowWeWork({ dictionary }: { dictionary: any }) {
+  const { label, heading, items } = dictionary.howWeWork;
 
-export default function HowWeWork() {
   return (
     <section className="bg-[#EEFCFE] py-16 px-4 md:px-8 font-sans">
       <div className="max-w-7xl mx-auto">
         {/* Headings */}
         <div className="text-center mb-12">
           <h3 className="uppercase text-[#00256E] font-bold tracking-wider mb-4 text-sm md:text-base opacity-80">
-            How We Work
+            {label}
           </h3>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#333333] max-w-4xl mx-auto leading-tight">
-            Your Path to Holistic Recovery
+            {heading}
           </h2>
         </div>
 
         {/* Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {steps.map((step, index) => (
+          {items.map((step: any, index: number) => (
             <div
               key={index}
               className="bg-white rounded-md shadow-lg p-6 md:p-8 flex items-start gap-6 hover:shadow-xl hover:shadow-emerald-700 transition-shadow duration-300"

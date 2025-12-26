@@ -1,6 +1,9 @@
 import Image from "next/image";
 
-export default function MoreAboutUs() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function MoreAboutUs({ dictionary }: { dictionary: any }) {
+  const { label, heading, description, details } = dictionary.moreAboutUs;
+
   return (
     <section className="relative py-20 px-4 md:px-8 font-sans overflow-hidden">
       {/* Watermark 'S' - Positioned behind text content */}
@@ -24,18 +27,13 @@ export default function MoreAboutUs() {
           {/* Header Section */}
           <div className="mb-10">
             <h3 className="text-blue-900 font-bold uppercase tracking-wider text-sm mb-4">
-              MORE ABOUT US
+              {label}
             </h3>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-800 leading-tight mb-6">
-              We Are An Ayurvedic Hospital, Providing Hope & Healing Through
-              Ayurveda
+              {heading}
             </h2>
             <p className="text-gray-500 leading-relaxed text-base md:text-lg">
-              We are a dedicated Ayurvedic Cancer Care Hospital committed to
-              providing natural, holistic, and personalized healing to patients
-              battling cancer. Our approach blends ancient Ayurvedic wisdom with
-              modern medical insights, ensuring compassionate and effective
-              treatment for every individual.
+              {description}
             </p>
           </div>
 
@@ -53,23 +51,9 @@ export default function MoreAboutUs() {
 
             {/* Detail Texts */}
             <div className="flex flex-col gap-3 text-gray-500 text-sm leading-relaxed">
-              <p>
-                We focus on restoring balance in the body through herbal
-                medicines, Panchakarma therapies, dietary guidance, and
-                lifestyle changes — promoting healing from within and enhancing
-                overall well-being.
-              </p>
-              <p>
-                We embrace ongoing research and innovation in Ayurvedic
-                oncology, striving to bring safe, sustainable, and
-                result-oriented care to all our patients.
-              </p>
-              <p>
-                Together, our team of experienced Ayurvedic doctors and
-                therapists bring decades of expertise, ensuring each patient
-                receives a customized treatment plan designed for long-term
-                recovery, rejuvenation, and improved quality of life.
-              </p>
+              {details.map((detail: string, index: number) => (
+                <p key={index}>{detail}</p>
+              ))}
             </div>
           </div>
         </div>

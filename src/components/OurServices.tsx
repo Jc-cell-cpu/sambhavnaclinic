@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -53,21 +54,24 @@ const services = [
   },
 ];
 
-export default function OurServices() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function OurServices({ dictionary }: { dictionary: any }) {
+  const { label, heading, items, learnMore } = dictionary.ourServices;
+
   return (
     <section className="py-16 px-4 md:px-8 bg-white font-sans">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h3 className="text-[#00256E] font-bold uppercase tracking-wider mb-2 text-sm md:text-base">
-            Our Services
+            {label}
           </h3>
           <h2 className="text-3xl md:text-4xl font-bold text-[#333333]">
-            Our Ayurvedic Clinic Services
+            {heading}
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
-          {services.map((service) => (
+          {items.map((service: any) => (
             <div
               key={service.id}
               className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col group hover:shadow-2xl hover:shadow-emerald-700 transition-shadow duration-300"
@@ -94,7 +98,7 @@ export default function OurServices() {
                   href={service.link}
                   className="inline-flex items-center gap-2 text-[#118B9A] font-bold hover:text-[#0e5c66] transition-colors mt-auto uppercase text-sm"
                 >
-                  Learn More <ArrowRight className="w-4 h-4" />
+                  {learnMore} <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>

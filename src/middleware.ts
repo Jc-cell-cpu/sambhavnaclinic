@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-import { i18n } from "./src/i18n-config";
+import { i18n } from "./i18n-config";
 
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
@@ -26,6 +26,7 @@ function getLocale(request: NextRequest): string | undefined {
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+  console.log(`Middleware processing path: ${pathname}`);
 
   // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
   // // If you have one
@@ -43,18 +44,33 @@ export function middleware(request: NextRequest) {
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
+  console.log(`Pathname: ${pathname}, Missing Locale: ${pathnameIsMissingLocale}`);
+
   // Redirect if there is no locale
   if (pathnameIsMissingLocale) {
-    const locale = getLocale(request);
+    try {
+      const locale = getLocale(request);
+      console.log(`Redirecting to locale: ${locale}`);
 
-    // e.g. incoming request is /products
-    // The new URL is now /en-US/products
-    return NextResponse.redirect(
-      new URL(
-        `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
-        request.url
-      )
-    );
+      // e.g. incoming request is /products
+      // The new URL is now /en-US/products
+      return NextResponse.redirect(
+        new URL(
+          `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
+          request.url
+        )
+      );
+    } catch (error) {
+      console.error("Middleware error:", error);
+      // Fallback to default locale if error occurs
+      const defaultLocale = i18n.defaultLocale;
+      return NextResponse.redirect(
+        new URL(
+          `/${defaultLocale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
+          request.url
+        )
+      );
+    }
   }
 }
 

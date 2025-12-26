@@ -3,12 +3,24 @@
 import Image from "next/image";
 import { Phone, Mail, MessageCircle } from "lucide-react";
 
-export default function NeedHelp() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function NeedHelp({ dictionary }: { dictionary: any }) {
+  const {
+    title,
+    bannerText,
+    phoneLabel,
+    emailLabel,
+    whatsappLabel,
+    phoneValue,
+    emailValue,
+    whatsappValue,
+  } = dictionary.needHelp;
+
   return (
     <section className="py-16 bg-[#F0F8FF]">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-[#17899B] mb-10">
-          NEED HELP?
+          {title}
         </h2>
 
         {/* className="relative w-full max-w-7xl mx-auto rounded-full flex items-center justify-center px-6 md:px-16 py-4 md:py-6 mb-12 shadow-lg overflow-visible" */}
@@ -34,7 +46,7 @@ export default function NeedHelp() {
           {/* Centered Text */}
           <div className="text-white z-10 pl-20 md:pl-0">
             <p className="text-lg md:text-3xl font-semibold leading-tight text-center">
-              Need Assistance for booking?
+              {bannerText}
             </p>
           </div>
         </div>
@@ -54,9 +66,9 @@ export default function NeedHelp() {
             </div>
             <div className="text-center">
               <p className="text-gray-500 font-medium text-sm uppercase tracking-wider">
-                Phone
+                {phoneLabel}
               </p>
-              <p className="text-gray-800 font-bold text-lg">70377 09494</p>
+              <p className="text-gray-800 font-bold text-lg">{phoneValue}</p>
             </div>
           </div>
 
@@ -73,11 +85,9 @@ export default function NeedHelp() {
             </div>
             <div className="text-center">
               <p className="text-gray-500 font-medium text-sm uppercase tracking-wider">
-                Email
+                {emailLabel}
               </p>
-              <p className="text-gray-800 font-bold text-lg">
-                support@sambhavna.com
-              </p>
+              <p className="text-gray-800 font-bold text-lg">{emailValue}</p>
             </div>
           </div>
 
@@ -94,9 +104,9 @@ export default function NeedHelp() {
             </div>
             <div className="text-center">
               <p className="text-gray-500 font-medium text-sm uppercase tracking-wider">
-                Whatsapp
+                {whatsappLabel}
               </p>
-              <p className="text-gray-800 font-bold text-lg">070377 09494</p>
+              <p className="text-gray-800 font-bold text-lg">{whatsappValue}</p>
             </div>
           </div>
         </div>

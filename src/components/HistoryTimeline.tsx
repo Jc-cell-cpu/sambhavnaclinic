@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState } from "react";
@@ -5,45 +6,12 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const historyData = [
-  {
-    year: "2000",
-    title: "Foundation Year",
-    description:
-      "Our Ayurvedic Cancer Hospital was founded with a vision to provide holistic, natural, and compassionate cancer care rooted in Ayurveda. The first center was established with a small team of dedicated Ayurvedic doctors and herbal specialists.",
-    mainImage: "/images/Rectangle 18.svg", // Using available placeholder
-    galleryImages: ["/images/Rectangle 14.svg", "/images/Rectangle 15.svg"], // Placeholders
-  },
-  {
-    year: "2010",
-    title: "Expansion & Research",
-    description:
-      "A decade later, we expanded our facilities to include a dedicated research wing for Ayurvedic oncology. We began documenting patient outcomes and integrating modern diagnostic tools with traditional practices.",
-    mainImage: "/images/Rectangle 18.svg",
-    galleryImages: ["/images/Rectangle 14.svg", "/images/Rectangle 15.svg"],
-  },
-  {
-    year: "2020",
-    title: "Global Recognition",
-    description:
-      "By 2020, our unique approach gained international recognition. We launched our telemedicine services, allowing patients from around the globe to access our specialized care protocols.",
-    mainImage: "/images/Rectangle 18.svg",
-    galleryImages: ["/images/Vector 1 (1).svg", "/images/Vector 1 (2).svg"],
-  },
-  {
-    year: "2025",
-    title: "Future of Holistic Care",
-    description:
-      "Looking ahead, we are establishing a new state-of-the-art integrative care center. Our mission continues: to bring the healing power of Ayurveda to every cancer patient in need.",
-    mainImage: "/images/Rectangle 18.svg",
-    galleryImages: ["/images/Rectangle 14.svg", "/images/Rectangle 15.svg"],
-  },
-];
-
-export default function HistoryTimeline() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function HistoryTimeline({ dictionary }: { dictionary: any }) {
+  const { label, heading, timeline } = dictionary.historyTimeline;
   const [activeYear, setActiveYear] = useState("2000");
 
-  const currentData = historyData.find((data) => data.year === activeYear);
+  const currentData = timeline.find((data: any) => data.year === activeYear);
 
   return (
     <section className="py-20 px-4 md:px-8 bg-cyan-50 font-sans">
@@ -51,10 +19,10 @@ export default function HistoryTimeline() {
         {/* Header */}
         <div className="text-center mb-16">
           <h3 className="text-blue-900 font-bold uppercase tracking-wider text-sm mb-4">
-            OUR HISTORY
+            {label}
           </h3>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
-            We appreciate our journey
+            {heading}
           </h2>
         </div>
 
@@ -67,7 +35,7 @@ export default function HistoryTimeline() {
 
             {/* Year List */}
             <div className="flex flex-row lg:flex-col gap-12 lg:gap-20 overflow-x-auto lg:overflow-visible w-full justify-between lg:justify-center items-center py-4 lg:py-0 relative z-10 px-2 lg:px-0 scrollbar-hide">
-              {historyData.map((data) => (
+              {timeline.map((data: any) => (
                 <button
                   key={data.year}
                   onClick={() => setActiveYear(data.year)}
@@ -115,19 +83,21 @@ export default function HistoryTimeline() {
 
                 {/* Gallery Images */}
                 <div className="grid grid-cols-2 gap-4">
-                  {currentData?.galleryImages.map((img, idx) => (
-                    <div
-                      key={idx}
-                      className="relative h-40 rounded-2xl overflow-hidden shadow-md bg-white"
-                    >
-                      <Image
-                        src={img}
-                        alt={`Gallery ${idx + 1}`}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
+                  {currentData?.galleryImages.map(
+                    (img: string, idx: number) => (
+                      <div
+                        key={idx}
+                        className="relative h-40 rounded-2xl overflow-hidden shadow-md bg-white"
+                      >
+                        <Image
+                          src={img}
+                          alt={`Gallery ${idx + 1}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
             </motion.div>

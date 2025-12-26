@@ -1,43 +1,23 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
 
-const featuredDoctor = {
-  name: "Dr. Azad",
-  title: "Oncologist (Ayurvedic Cancer Specialist)",
-  image: "/images/Doc_1.svg", // Placeholder
-};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function MeetOurDoctors({ dictionary }: { dictionary: any }) {
+  const { featuredDoctor, teamDoctors } = dictionary.doctorsSection;
 
-const teamDoctors = [
-  {
-    name: "Dr. Nargish Tyagi",
-    designation: "Orthopaedic Specialist",
-    image: "/images/Doc_2.svg",
-  },
-  {
-    name: "Dr. Malhotra",
-    designation: "Gastroenterologist",
-    image: "/images/Doc_3.svg",
-  },
-  {
-    name: "Dr. Mohtram Tyagi",
-    designation: "BAMS, Ayurveda Chariya",
-    image: "/images/Doc_2.svg", // Reusing placeholder as we only have 3 unique ones for now
-  },
-];
-
-export default function MeetOurDoctors() {
   return (
     <section className="py-20 px-4 md:px-8 font-sans bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h3 className="text-blue-900 font-bold uppercase tracking-wider text-sm mb-4">
-            MEET OUR DOCTORS
+            {dictionary.doctorsSection.label}
           </h3>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
-            Meet the smile behind your care
+            {dictionary.doctorsSection.heading}
           </h2>
         </div>
 
@@ -71,7 +51,7 @@ export default function MeetOurDoctors() {
                     height={20}
                     className="w-5 h-5"
                   />
-                  <span>Book An Appointment</span>
+                  <span>{featuredDoctor.cta}</span>
                 </button>{" "}
               </Link>
             </div>
@@ -80,7 +60,7 @@ export default function MeetOurDoctors() {
           {/* Column 2: The Team Container (Right Side - approx 60%) */}
           <div className="w-full lg:w-[60%] bg-cyan-50 rounded-3xl p-8 lg:p-12">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 h-full items-center">
-              {teamDoctors.map((doc, index) => (
+              {teamDoctors.map((doc: any, index: number) => (
                 <div
                   key={index}
                   className="flex flex-col items-center text-center"

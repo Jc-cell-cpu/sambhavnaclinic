@@ -55,5 +55,699 @@
       { "title": "Expert Doctors" },
       { "title": "Lifestyle and Diet" }
     ]
+  },
+  "aboutUsSection": {
+    "label": "ABOUT US",
+    "heading": "Holistic Cancer Care Through Ayurvedic Wisdom",
+    "description": "We provide compassionate, natural treatments rooted in ancient Ayurvedic principles. Our approach strengthens the body, mind, and spirit—supporting recovery and long-term well-being. Every patient receives personalized care through herbal therapies, detox programs, and dietary plans.",
+    "stats": {
+      "patientsHealed": {
+        "val": 6000,
+        "suffix": "+",
+        "label": "Patients Healed Naturally"
+      },
+      "satisfaction": {
+        "val": 4.95,
+        "suffix": "/5",
+        "label": "Healing Satisfaction Score"
+      },
+      "waitTime": {
+        "val": 1,
+        "suffix": " Day",
+        "label": "Average Wait Time"
+      }
+    },
+    "cta": "Learn More"
+  },
+  "whyChooseUs": {
+    "label": "WHY CHOOSE US",
+    "heading": "The Health Partner You’ve Been Looking For",
+    "leftBullets": [
+      {
+        "title": "Holistic, Individualized Treatment",
+        "description": "Personalized Ayurvedic protocols focused on restoring balance and eliminating toxins from the body."
+      },
+      {
+        "title": "Home-Based Herbal Care",
+        "description": "Receive herbal remedies and consultations from the comfort of your home with expert guidance."
+      },
+      {
+        "title": "Transparent, Affordable Care",
+        "description": "Natural therapies that prioritize wellness—without overwhelming financial burden."
+      }
+    ],
+    "rightBullets": [
+      {
+        "title": "Ancient Wisdom, Modern Comfort",
+        "description": "Traditional Ayurvedic therapies in serene, healing environments designed for modern comfort."
+      },
+      {
+        "title": "Focused Healing, Measurable Progress",
+        "description": "Time-tested remedies with clear protocols aimed at restoring vitality and strengthening immunity."
+      },
+      {
+        "title": "Compassion-Focused Healing",
+        "description": "Empathetic caregivers and supportive wellness staff that nurture body, mind, and spirit."
+      }
+    ],
+    "trustedExperts": {
+      "heading": "We’re Trusted Experts in Ayurvedic Cancer Healing",
+      "description": "Ayurveda, the science of life, offers natural and effective cancer care. Our Ayurvedic doctors use centuries-old wisdom and personalized herbal treatments to support healing, reduce side effects, and enhance quality of life for patients at every stage.",
+      "highlight": "All types and all stages of cancer are treated with a healthy and holistic approach.",
+      "features": [
+        "Natural Treatment Method",
+        "No Chemotherapy",
+        "No Radiation",
+        "No Side Effects"
+      ],
+      "statCard": {
+        "value": "25+",
+        "label": "Certified Ayurvedic Experts"
+      },
+      "cta": "Book Appointment"
+    }
+  },
+  "departmentsSection": {
+    "label": "Our Departments",
+    "heading": "We deliver holistic Ayurvedic Cancer Care Services",
+    "departments": [
+      {
+        "title": "Gynaecology (Ayurvedic)",
+        "description": "Specialized Ayurvedic care for women's reproductive health, hormonal balance, and wellness.",
+        "image": "/images/Vector 1.svg"
+      },
+      {
+        "title": "Oncology (Ayurvedic Cancer Care)",
+        "description": "Comprehensive cancer treatment focusing on stopping tumor growth and reducing side effects naturally.",
+        "image": "/images/Vector 1 (3).svg"
+      },
+      {
+        "title": "Orthopaedics",
+        "description": "Natural treatments for joint pain, arthritis, and musculoskeletal disorders using Vata-balancing therapies.",
+        "image": "/images/Vector 1 (5).svg"
+      }
+    ]
+  },
+  "doctorsSection": {
+    "label": "MEET OUR DOCTORS",
+    "heading": "Meet the smile behind your care",
+    "featuredDoctor": {
+      "name": "Dr. Azad",
+      "title": "Oncologist (Ayurvedic Cancer Specialist)",
+      "cta": "Book An Appointment",
+      "image": "/images/Doc_1.svg"
+    },
+    "teamDoctors": [
+      {
+        "name": "Dr. Nargish Tyagi",
+        "designation": "Orthopaedic Specialist",
+        "image": "/images/Doc_2.svg"
+      },
+      {
+        "name": "Dr. Malhotra",
+        "designation": "Gastroenterologist",
+        "image": "/images/Doc_3.svg"
+      },
+      {
+        "name": "Dr. Mohtram Tyagi",
+        "designation": "BAMS, Ayurveda Chariya",
+        "image": "/images/Doc_2.svg"
+      }
+    ]
+  },
+  "faqSection": {
+    "label": "COMMON QUESTIONS",
+    "heading": "Frequently Asked Questions",
+    "faqs": [
+      {
+        "question": "Do you accept health insurance?",
+        "answer": "Yes, we accept major health insurance providers. Please contact our front desk with your policy details so we can verify your coverage for Ayurvedic treatments."
+      },
+      {
+        "question": "What should I bring to my first appointment?",
+        "answer": "Please bring your past medical records, a list of current medications, and any recent lab reports. This helps our doctors create the most effective personalized treatment plan for you."
+      },
+      {
+        "question": "Are the consultations available online?",
+        "answer": "Yes, we offer video consultations for patients who cannot visit the clinic in person. Medicines can be shipped to your location after the consultation."
+      },
+      {
+        "question": "How long does a typical treatment last?",
+        "answer": "Treatment duration varies depending on the type and stage of cancer, as well as the patient's overall health. A typical course may last from 3 to 6 months, with regular follow-ups."
+      },
+      {
+        "question": "Is Ayurvedic treatment safe during chemotherapy?",
+        "answer": "Our Rasayana therapies are designed to be complementary. They can often be safely taken alongside conventional treatments to help reduce side effects and boost immunity, but always consult with your oncologist and our doctors first."
+      }
+    ]
+  },
+  "testimonialSection": {
+    "appointmentHeading": "Get an APPOINTMENT NOW",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "messagePlaceholder": "Brief your problem here...",
+      "submitButton": "Submit"
+    },
+    "testimonialLabel": "Our Testimonial",
+    "testimonialHeading": "Feedback from our patients",
+    "testimonials": [
+      {
+        "text": "The care I received was exceptional. The doctors were attentive and the holistic approach really helped me through my recovery journey. I felt supported every step of the way.",
+        "name": "Sarah Jenkins",
+        "title": "Breast Cancer Survivor",
+        "image": "/images/testimonial-1.jpg"
+      },
+      {
+        "text": "Professional, compassionate, and knowledgeable. The combination of modern medicine and Ayurvedic treatments made a huge difference in my energy levels.",
+        "name": "Rajesh Kumar",
+        "title": "Patient",
+        "image": "/images/testimonial-2.jpg"
+      },
+      {
+        "text": "I cannot thank the team enough. They treated me like family and the facility is top-notch. Highly recommended for anyone seeking comprehensive cancer care.",
+        "name": "Amanda Doe",
+        "title": "Ovarian Cancer Survivor",
+        "image": "/images/testimonial-3.jpg"
+      }
+    ]
+  },
+  "clinicMap": {
+    "label": "FIND US",
+    "heading": "Visit Our Clinic"
+  },
+  "pages": {
+    "aboutUs": {
+      "title": "About",
+      "subtitle": "Tincidunt suspendisse semper integer elementum maecenas.",
+      "breadcrumb": "About"
+    },
+    "departments": {
+      "title": "Departments",
+      "subtitle": "Specialized care units combining Ayurvedic wisdom with modern oncology for holistic healing.",
+      "breadcrumb": "Departments"
+    },
+    "services": {
+      "title": "Services",
+      "subtitle": "Tincidunt suspendisse semper integer elementum maecenas.",
+      "breadcrumb": "Services"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "This Site is under Development Please wait until we complete it",
+      "breadcrumb": "Contact Us"
+    },
+    "testimonials": {
+      "title": "Patient Testimonials",
+      "subtitle": "Read and watch the inspiring stories of recovery and hope from our patients.",
+      "breadcrumb": "Testimonials"
+    }
+  },
+  "historyTimeline": {
+    "label": "OUR HISTORY",
+    "heading": "We appreciate our journey",
+    "timeline": [
+      {
+        "year": "2000",
+        "title": "Foundation Year",
+        "description": "Our Ayurvedic Cancer Hospital was founded with a vision to provide holistic, natural, and compassionate cancer care rooted in Ayurveda. The first center was established with a small team of dedicated Ayurvedic doctors and herbal specialists.",
+        "mainImage": "/images/Rectangle 18.svg",
+        "galleryImages": ["/images/Rectangle 14.svg", "/images/Rectangle 15.svg"]
+      },
+      {
+        "year": "2010",
+        "title": "Expansion & Research",
+        "description": "A decade later, we expanded our facilities to include a dedicated research wing for Ayurvedic oncology. We began documenting patient outcomes and integrating modern diagnostic tools with traditional practices.",
+        "mainImage": "/images/Rectangle 18.svg",
+        "galleryImages": ["/images/Rectangle 14.svg", "/images/Rectangle 15.svg"]
+      },
+      {
+        "year": "2020",
+        "title": "Global Recognition",
+        "description": "By 2020, our unique approach gained international recognition. We launched our telemedicine services, allowing patients from around the globe to access our specialized care protocols.",
+        "mainImage": "/images/Rectangle 18.svg",
+        "galleryImages": ["/images/Vector 1 (1).svg", "/images/Vector 1 (2).svg"]
+      },
+      {
+        "year": "2025",
+        "title": "Future of Holistic Care",
+        "description": "Looking ahead, we are establishing a new state-of-the-art integrative care center. Our mission continues: to bring the healing power of Ayurveda to every cancer patient in need.",
+        "mainImage": "/images/Rectangle 18.svg",
+        "galleryImages": ["/images/Rectangle 14.svg", "/images/Rectangle 15.svg"]
+      }
+    ]
+  },
+  "moreAboutUs": {
+    "label": "MORE ABOUT US",
+    "heading": "We Are An Ayurvedic Hospital, Providing Hope & Healing Through Ayurveda",
+    "description": "We are a dedicated Ayurvedic Cancer Care Hospital committed to providing natural, holistic, and personalized healing to patients battling cancer. Our approach blends ancient Ayurvedic wisdom with modern medical insights, ensuring compassionate and effective treatment for every individual.",
+    "details": [
+      "We focus on restoring balance in the body through herbal medicines, Panchakarma therapies, dietary guidance, and lifestyle changes — promoting healing from within and enhancing overall well-being.",
+      "We embrace ongoing research and innovation in Ayurvedic oncology, striving to bring safe, sustainable, and result-oriented care to all our patients.",
+      "Together, our team of experienced Ayurvedic doctors and therapists bring decades of expertise, ensuring each patient receives a customized treatment plan designed for long-term recovery, rejuvenation, and improved quality of life."
+    ]
+  },
+  "moreInfo": {
+    "getStarted": "GET STARTED",
+    "bookCare": "Book Care in 60 Seconds To Be A Healthy Patient",
+    "bookNow": "Book now",
+    "guidanceHeading": "Need Personalized Guidance?",
+    "guidanceDescription": "Our expert Ayurvedic oncologists are here to provide comprehensive, personalized care. From initial consultation to post-treatment support, we are dedicated to your holistic well-being.",
+    "emergencyCall": "For Emergency Call",
+    "sendEmail": "Send Us Email",
+    "visitSite": "Visit our site"
+  },
+  "testimonialsCarousel": {
+    "label": "PATIENT STORIES",
+    "heading": "Real Stories of Hope and Healing",
+    "items": [
+      {
+        "id": 1,
+        "name": "Sarah Jenkins",
+        "role": "Breast Cancer Survivor",
+        "image": "/images/testimonial-1.jpg",
+        "text": "The care I received was exceptional. The doctors were attentive and the holistic approach really helped me through my recovery journey. I felt supported every step of the way.",
+        "rating": 5
+      },
+      {
+        "id": 2,
+        "name": "Rajesh Kumar",
+        "role": "Patient",
+        "image": "/images/testimonial-2.jpg",
+        "text": "Professional, compassionate, and knowledgeable. The combination of modern medicine and Ayurvedic treatments made a huge difference in my energy levels.",
+        "rating": 5
+      },
+      {
+        "id": 3,
+        "name": "Amanda Doe",
+        "role": "Ovarian Cancer Survivor",
+        "image": "/images/testimonial-3.jpg",
+        "text": "I cannot thank the team enough. They treated me like family and the facility is top-notch. Highly recommended for anyone seeking comprehensive cancer care.",
+        "rating": 5
+      },
+      {
+        "id": 4,
+        "name": "Michael Chen",
+        "role": "Family Member",
+        "image": "/images/testimonial-2.jpg",
+        "text": "My father received excellent palliative care here. The pain management techniques used were very effective and gentle.",
+        "rating": 5
+      },
+      {
+        "id": 5,
+        "name": "Priya Patel",
+        "role": "Preventive Care",
+        "image": "/images/testimonial-1.jpg",
+        "text": "The preventive oncology program gave me peace of mind. The lifestyle guidance and seasonal detox plans have improved my overall health significantly.",
+        "rating": 4
+      }
+    ]
+  },
+  "videoTestimonials": {
+    "label": "WATCH THEIR JOURNEY",
+    "heading": "Patient Video Testimonials",
+    "thumbnailText": "Video Thumbnail",
+    "items": [
+      {
+         "title": "Patient Success Story 1",
+         "subtitle": "Recovery from Stage 2 Cancer"
+      },
+      {
+         "title": "Patient Success Story 2",
+         "subtitle": "Recovery from Stage 2 Cancer"
+      },
+      {
+         "title": "Patient Success Story 3",
+         "subtitle": "Recovery from Stage 2 Cancer"
+      }
+    ]
+  },
+  "ourServices": {
+    "label": "Our Services",
+    "heading": "Our Ayurvedic Clinic Services",
+    "learnMore": "Learn More",
+    "items": [
+      {
+        "id": 1,
+        "title": "Panchakarma Therapy",
+        "description": "Deep detoxification therapies including Vamana, Virechana, and Basti to cleanse the body of toxins and restore balance.",
+        "image": "/images/Rectangle 14.svg",
+        "link": "/departments"
+      },
+      {
+        "id": 2,
+        "title": "Rasayana Rejuvenation",
+        "description": "Specialized herbal formulations to boost immunity, enhance vitality (Ojas), and promote cellular repair during recovery.",
+        "image": "/images/Rectangle 15.svg",
+        "link": "/departments"
+      },
+      {
+        "id": 3,
+        "title": "Diet & Lifestyle",
+        "description": "Personalized Ayurvedic diet plans (Pathya-Apathya) and lifestyle guidance to support healing and prevent recurrence.",
+        "image": "/images/Rectangle 18.svg",
+        "link": "/departments"
+      },
+      {
+        "id": 4,
+        "title": "Yoga & Meditation",
+        "description": "Therapeutic yoga asanas and Pranayama to reduce stress, improve mental resilience, and support physical well-being.",
+        "image": "/images/Rectangle 19.svg",
+        "link": "/departments"
+      },
+      {
+        "id": 5,
+        "title": "Palliative Care",
+        "description": "Integrative care focus on pain management and improving quality of life for patients with advanced stages of cancer.",
+        "image": "/images/Rectangle 20.svg",
+        "link": "/departments"
+      },
+      {
+        "id": 6,
+        "title": "Preventive Oncology",
+        "description": "Holistic strategies for high-risk individuals focusing on immune strengthening and early detection through Ayurveda.",
+        "image": "/images/Rectangle 14.svg",
+        "link": "/departments"
+      }
+    ]
+  },
+  "howWeWork": {
+    "label": "How We Work",
+    "heading": "Your Path to Holistic Recovery",
+    "items": [
+      {
+        "number": "01",
+        "title": "Book Appointment",
+        "description": "Schedule your visit online or via phone. Our team will guide you through the initial requirements."
+      },
+      {
+        "number": "02",
+        "title": "Initial Consultation",
+        "description": "Meet with our Ayurvedic experts for a detailed pulse diagnosis (Nadi Pariksha) and health assessment."
+      },
+      {
+        "number": "03",
+        "title": "Personalized Treatment",
+        "description": "Receive a customized plan including Rasayana therapies, dietary changes, and herbal medicines."
+      },
+      {
+        "number": "04",
+        "title": "Recovery & Follow-up",
+        "description": "Regular monitoring and support to ensure your path to holistic healing and well-being."
+      }
+    ]
+  },
+  "treatmentsSection": {
+    "label": "TREATMENTS",
+    "heading": "All Types of Cancer Treatment Under One Roof",
+    "items": [
+      {
+        "title": "Liver Cancer",
+        "description": "Ayurvedic care to support liver function, detoxify the body (Yakrut Shodhan), and boost immunity using targeted herbal therapies."
+      },
+      {
+        "title": "Kidney Cancer",
+        "description": "Focusing on restoring kidney health (Vrikka health) and balancing bodily fluids through specialized herbs and dietary adjustments."
+      },
+      {
+        "title": "Breast Cancer",
+        "description": "Holistic management focusing on hormonal balance, lymphatic drainage, and reducing tumor progression through natural remedies."
+      },
+      {
+        "title": "Urinary Bladder Cancer",
+        "description": "Natural therapies to soothe the urinary tract, reduce inflammation, and strengthen bladder function (Basti health)."
+      },
+      {
+        "title": "Blood Cancer",
+        "description": "Purification therapies (Raktamokshana) and immunity-enhancing herbs to support healthy blood cell production and vitality."
+      },
+      {
+        "title": "Prostate Cancer",
+        "description": "Specialized care for men's health focusing on reducing prostate enlargement and balancing male hormones naturally."
+      }
+    ]
+  },
+  "departmentDetails": {
+    "selectDepartment": "Select Department",
+    "keyFocusAreas": "Key Focus Areas",
+    "getDetailedInfo": "Get Detailed Info",
+    "departments": [
+      {
+        "id": "gynaecology",
+        "title": "Gynaecology (Ayurvedic)",
+        "shortTitle": "Gynaecology",
+        "description": "Our Gynaecology department offers specialized Ayurvedic care for women's reproductive health. We focus on hormonal balance, menstrual disorders, PCOD/PCOS, and uterine health using natural herbal therapies and lifestyle modifications.",
+        "image": "/images/Vector 1.svg",
+        "features": [
+          "Hormonal balance correction",
+          "PCOD/PCOS management",
+          "Menstrual disorder treatments",
+          "Fertility support"
+        ]
+      },
+      {
+        "id": "oncology",
+        "title": "Oncology (Ayurvedic Cancer Care)",
+        "shortTitle": "Oncology",
+        "description": "Our Oncology department provides comprehensive cancer treatment focusing on stopping tumor growth, preventing metastasis, and reducing the side effects of conventional treatments like chemotherapy and radiation.",
+        "image": "/images/Vector 1 (3).svg",
+        "features": [
+          "Tumor growth management",
+          "Immunity boosting",
+          "Side-effect reduction",
+          "Metastasis prevention"
+        ]
+      },
+      {
+        "id": "orthopaedics",
+        "title": "Orthopaedics",
+        "shortTitle": "Orthopaedics",
+        "description": "The Orthopaedics department specializes in natural treatments for joint pain, arthritis, osteoarthritis, and other musculoskeletal disorders. We use Vata-balancing herbs and therapies to restore mobility and reduce pain.",
+        "image": "/images/Vector 1 (5).svg",
+        "features": [
+          "Joint pain relief",
+          "Arthritis management",
+          "Spine & back care",
+          "Mobility restoration"
+        ]
+      }
+    ]
+  },
+  "medicalFacilities": {
+    "label": "INFRASTRUCTURE",
+    "heading": "World-Class Medical Facilities",
+    "items": [
+      {
+        "title": "OPD & IPD Facilities",
+        "description": "Comprehensive Out-Patient and In-Patient departments for complete care."
+      },
+      {
+        "title": "Advanced Laboratory Tests",
+        "description": "High-precision diagnostic testing for accurate health assessments."
+      },
+      {
+        "title": "Ultrasound & X-Ray Services",
+        "description": "Modern imaging diagnositics available on-site."
+      },
+      {
+        "title": "Blood Testing Facilities",
+        "description": "Full-spectrum hematology and blood investigations."
+      },
+      {
+        "title": "Cupping Therapy",
+        "description": "Traditional Hijama and cupping therapies for pain and detox."
+      },
+      {
+        "title": "Regimental Therapy",
+        "description": "Specialized Ilaj-bit-Tadbeer therapies for holistic healing."
+      },
+      {
+        "title": "Panchkarma Treatment",
+        "description": "Complete Ayurvedic detoxification and rejuvenation procedures."
+      },
+      {
+        "title": "24×7 Emergency Services",
+        "description": "Round-the-clock emergency support and rapid response."
+      },
+      {
+        "title": "Clean, Safe & Patient-Friendly",
+        "description": "Hygienic environment focused on patient safety and comfort."
+      }
+    ]
+  },
+  "departmentDoctors": {
+    "subtitle": "OUR EXPERTS",
+    "title": "Led by Experienced Professionals",
+    "consultNow": "Consult Now",
+    "viewProfile": "View Profile",
+    "doctors": [
+      {
+        "name": "Dr. Azad",
+        "speciality": "Oncologist (Ayurvedic Cancer Specialist)",
+        "experience": "20+ Years Exp",
+        "image": "/images/Doc_1.svg"
+      },
+      {
+        "name": "Dr. Nargish Tyagi",
+        "speciality": "Orthopaedic Specialist",
+        "experience": "15+ Years Exp",
+        "image": "/images/Doc_3.svg"
+      },
+      {
+        "name": "Dr. Malhotra",
+        "speciality": "Gastroenterologist",
+        "experience": "12+ Years Exp",
+        "image": "/images/Doc_1.svg"
+      },
+      {
+        "name": "Dr. Mohtram Tyagi",
+        "speciality": "BAMS, Ayurveda Chariya",
+        "experience": "10+ Years Exp",
+        "image": "/images/Doc_2.svg"
+      }
+    ]
+  },
+  "bookingWizard": {
+    "heading": "Please Fill In The Form",
+    "subheading": "Appointment Booking",
+    "sidebar": {
+      "details": "Details",
+      "treatment": "Treatment",
+      "dateTime": "Date and Time",
+      "basicDetails": "Basic Details",
+      "summary": "Summary"
+    },
+    "step1": {
+      "title": "Contact Information & Booking Intent",
+      "subtitle": "Enter Mobile Number",
+      "placeholder": "Enter mobile number",
+      "helper": "Enter the mobile number and fetch the patient details",
+      "illustrationText": "Medical App Illustration"
+    },
+    "step2": {
+      "title": "Verify Mobile Number",
+      "subtitle": "Enter the OTP sent to",
+      "placeholder": "Enter 6-digit OTP",
+      "resend": "Resend OTP",
+      "didntReceive": "Didn't receive code?"
+    },
+    "step3": {
+      "title": "Select Treatment",
+      "durationLabel": "Duration:",
+      "priceLabel": "Price:",
+      "treatments": {
+        "breast-cancer": "Breast Cancer",
+        "skin-cancer": "Skin Cancer",
+        "lung-cancer": "Lung Cancer",
+        "prostate-cancer": "Prostate Cancer",
+        "colon-cancer": "Colon Cancer",
+        "leukemia": "Leukemia",
+        "lymphoma": "Lymphoma",
+        "thyroid-cancer": "Thyroid Cancer",
+        "stomach-cancer": "Stomach Cancer"
+      }
+    },
+    "step4": {
+      "title": "Select Date and Time",
+      "morning": "Morning",
+      "afternoon": "Afternoon"
+    },
+    "step5": {
+      "title": "Enter Basic Details",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your firstname",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your Last Name",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your Email Address",
+      "note": "Note",
+      "notePlaceholder": "Enter any notes..."
+    },
+    "step6": {
+      "title": "Summary",
+      "subtitle": "Your appointment booking summary",
+      "patientName": "Patient Name",
+      "dateTime": "Date and Time",
+      "treatment": "Treatment",
+      "dateNotSelected": "Date not selected",
+      "disclaimer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    "navigation": {
+      "goBack": "Go Back",
+      "next": "Next",
+      "confirm": "Confirm Booking"
+    }
+  },
+  "needHelp": {
+    "title": "NEED HELP?",
+    "bannerText": "Need Assistance for booking?",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "whatsappLabel": "Whatsapp",
+    "phoneValue": "70377 09494",
+    "emailValue": "support@sambhavna.com",
+    "whatsappValue": "070377 09494"
+  },
+  "contactHero": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us for any queries or assistance",
+    "breadcrumb": "Contact Us"
+  },
+  "contactUs": {
+    "contactInfoTitle": "Contact Information",
+    "contactInfoDesc": "We are here to help you on your journey to recovery with authentic Ayurvedic treatments. Reach out to us for appointments or queries.",
+    "locationTitle": "Our Location",
+    "locationAddress": "E-66 Saradhapuri Phase-2, opposite Kailashi, Kanker Khera, Baypass, Meerut, Uttar Pradesh 250001",
+    "phoneTitle": "Phone Number",
+    "emailTitle": "Email Address",
+    "workingHoursTitle": "Working Hours",
+    "workingHoursDays": "Mon - Sat: 10:00 AM - 07:00 PM",
+    "workingHoursSunday": "Sunday: Closed",
+    "sendMessageTitle": "Send Us a Message",
+    "labels": {
+      "fullName": "Full Name",
+      "phone": "Phone Number",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "placeholders": {
+      "fullName": "John Doe",
+      "phone": "+91 98765 43210",
+      "email": "john@example.com",
+      "message": "How can we help you?"
+    },
+    "subjectOptions": {
+      "default": "Select a subject",
+      "consultation": "Book Consultation",
+      "treatment": "Treatment Inquiry",
+      "general": "General Inquiry"
+    },
+    "buttonText": "Send Message"
+  },
+  "patientJourney": {
+    "tagline": "YOUR PATH TO HEALTH",
+    "title": "What to Expect",
+    "stepLabel": "Step",
+    "steps": [
+      {
+        "title": "Book Appointment",
+        "description": "Schedule your visit online or via phone. Our team will guide you through the initial requirements."
+      },
+      {
+        "title": "Initial Consultation",
+        "description": "Meet with our Ayurvedic experts for a detailed pulse diagnosis (Nadi Pariksha) and health assessment."
+      },
+      {
+        "title": "Personalized Treatment",
+        "description": "Receive a customized plan including Rasayana therapies, dietary changes, and herbal medicines."
+      },
+      {
+        "title": "Recovery & Follow-up",
+        "description": "Regular monitoring and support to ensure your path to holistic healing and well-being."
+      }
+    ]
   }
 }

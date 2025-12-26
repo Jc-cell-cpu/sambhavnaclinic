@@ -3,7 +3,26 @@
 import React from "react";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 
-export default function ContactUs() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function ContactUs({ dictionary }: { dictionary: any }) {
+  const {
+    contactInfoTitle,
+    contactInfoDesc,
+    locationTitle,
+    locationAddress,
+    phoneTitle,
+    emailTitle,
+    workingHoursTitle,
+    workingHoursDays,
+    workingHoursSunday,
+    sendMessageTitle,
+    labels,
+    placeholders,
+    subjectOptions,
+    buttonText,
+  } = dictionary.contactUs;
+  const { phoneValue, emailValue } = dictionary.needHelp;
+
   return (
     <section className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 md:px-6">
@@ -21,12 +40,10 @@ export default function ContactUs() {
           <div className="space-y-8">
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 h-full">
               <h3 className="text-2xl font-bold text-[#333333] mb-6">
-                Contact Information
+                {contactInfoTitle}
               </h3>
               <p className="text-[#4F4F4F] mb-8 leading-relaxed">
-                We are here to help you on your journey to recovery with
-                authentic Ayurvedic treatments. Reach out to us for appointments
-                or queries.
+                {contactInfoDesc}
               </p>
 
               <div className="space-y-6">
@@ -42,13 +59,9 @@ export default function ContactUs() {
                   </div>
                   <div>
                     <h4 className="font-bold text-[#333333] mb-1">
-                      Our Location
+                      {locationTitle}
                     </h4>
-                    <p className="text-[#4F4F4F]">
-                      E-66 Saradhapuri Phase-2, opposite Kailashi,
-                      <br />
-                      Kanker Khera, Baypass, Meerut, Uttar Pradesh 250001
-                    </p>
+                    <p className="text-[#4F4F4F]">{locationAddress}</p>
                   </div>
                 </div>
 
@@ -64,9 +77,9 @@ export default function ContactUs() {
                   </div>
                   <div>
                     <h4 className="font-bold text-[#333333] mb-1">
-                      Phone Number
+                      {phoneTitle}
                     </h4>
-                    <p className="text-[#4F4F4F]">70377 09494</p>
+                    <p className="text-[#4F4F4F]">{phoneValue}</p>
                   </div>
                 </div>
 
@@ -82,12 +95,10 @@ export default function ContactUs() {
                   </div>
                   <div>
                     <h4 className="font-bold text-[#333333] mb-1">
-                      Email Address
+                      {emailTitle}
                     </h4>
                     <p className="text-[#4F4F4F]">info@sambhavnaclinic.com</p>
-                    <p className="text-[#4F4F4F]">
-                      support@sambhavnaclinic.com
-                    </p>
+                    <p className="text-[#4F4F4F]">{emailValue}</p>
                   </div>
                 </div>
 
@@ -103,12 +114,10 @@ export default function ContactUs() {
                   </div>
                   <div>
                     <h4 className="font-bold text-[#333333] mb-1">
-                      Working Hours
+                      {workingHoursTitle}
                     </h4>
-                    <p className="text-[#4F4F4F]">
-                      Mon - Sat: 10:00 AM - 07:00 PM
-                    </p>
-                    <p className="text-[#4F4F4F]">Sunday: Closed</p>
+                    <p className="text-[#4F4F4F]">{workingHoursDays}</p>
+                    <p className="text-[#4F4F4F]">{workingHoursSunday}</p>
                   </div>
                 </div>
               </div>
@@ -118,7 +127,7 @@ export default function ContactUs() {
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
             <h3 className="text-2xl font-bold text-[#333333] mb-6">
-              Send Us a Message
+              {sendMessageTitle}
             </h3>
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -127,12 +136,12 @@ export default function ContactUs() {
                     htmlFor="name"
                     className="text-sm font-medium text-[#333333]"
                   >
-                    Full Name
+                    {labels.fullName}
                   </label>
                   <input
                     type="text"
                     id="name"
-                    placeholder="John Doe"
+                    placeholder={placeholders.fullName}
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#17899B] focus:ring-1 focus:ring-[#17899B] outline-none transition-all"
                   />
                 </div>
@@ -141,12 +150,12 @@ export default function ContactUs() {
                     htmlFor="phone"
                     className="text-sm font-medium text-[#333333]"
                   >
-                    Phone Number
+                    {labels.phone}
                   </label>
                   <input
                     type="tel"
                     id="phone"
-                    placeholder="+91 98765 43210"
+                    placeholder={placeholders.phone}
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#17899B] focus:ring-1 focus:ring-[#17899B] outline-none transition-all"
                   />
                 </div>
@@ -157,12 +166,12 @@ export default function ContactUs() {
                   htmlFor="email"
                   className="text-sm font-medium text-[#333333]"
                 >
-                  Email Address
+                  {labels.email}
                 </label>
                 <input
                   type="email"
                   id="email"
-                  placeholder="john@example.com"
+                  placeholder={placeholders.email}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#17899B] focus:ring-1 focus:ring-[#17899B] outline-none transition-all"
                 />
               </div>
@@ -172,16 +181,18 @@ export default function ContactUs() {
                   htmlFor="subject"
                   className="text-sm font-medium text-[#333333]"
                 >
-                  Subject
+                  {labels.subject}
                 </label>
                 <select
                   id="subject"
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#17899B] focus:ring-1 focus:ring-[#17899B] outline-none transition-all bg-white"
                 >
-                  <option value="">Select a subject</option>
-                  <option value="consultation">Book Consultation</option>
-                  <option value="treatment">Treatment Inquiry</option>
-                  <option value="general">General Inquiry</option>
+                  <option value="">{subjectOptions.default}</option>
+                  <option value="consultation">
+                    {subjectOptions.consultation}
+                  </option>
+                  <option value="treatment">{subjectOptions.treatment}</option>
+                  <option value="general">{subjectOptions.general}</option>
                 </select>
               </div>
 
@@ -190,12 +201,12 @@ export default function ContactUs() {
                   htmlFor="message"
                   className="text-sm font-medium text-[#333333]"
                 >
-                  Message
+                  {labels.message}
                 </label>
                 <textarea
                   id="message"
                   rows={4}
-                  placeholder="How can we help you?"
+                  placeholder={placeholders.message}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#17899B] focus:ring-1 focus:ring-[#17899B] outline-none transition-all resize-none"
                 ></textarea>
               </div>
@@ -208,7 +219,7 @@ export default function ContactUs() {
                     "linear-gradient(184.51deg, #17899B 4.02%, #109C8E 96.72%)",
                 }}
               >
-                Send Message
+                {buttonText}
                 <Send size={20} />
               </button>
             </form>

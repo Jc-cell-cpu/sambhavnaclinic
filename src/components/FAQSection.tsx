@@ -1,37 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
-const faqs = [
-  {
-    question: "Do you accept health insurance?",
-    answer:
-      "Yes, we accept major health insurance providers. Please contact our front desk with your policy details so we can verify your coverage for Ayurvedic treatments.",
-  },
-  {
-    question: "What should I bring to my first appointment?",
-    answer:
-      "Please bring your past medical records, a list of current medications, and any recent lab reports. This helps our doctors create the most effective personalized treatment plan for you.",
-  },
-  {
-    question: "Are the consultations available online?",
-    answer:
-      "Yes, we offer video consultations for patients who cannot visit the clinic in person. Medicines can be shipped to your location after the consultation.",
-  },
-  {
-    question: "How long does a typical treatment last?",
-    answer:
-      "Treatment duration varies depending on the type and stage of cancer, as well as the patient's overall health. A typical course may last from 3 to 6 months, with regular follow-ups.",
-  },
-  {
-    question: "Is Ayurvedic treatment safe during chemotherapy?",
-    answer:
-      "Our Rasayana therapies are designed to be complementary. They can often be safely taken alongside conventional treatments to help reduce side effects and boost immunity, but always consult with your oncologist and our doctors first.",
-  },
-];
-
-export default function FAQSection() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function FAQSection({ dictionary }: { dictionary: any }) {
+  const { label, heading, faqs } = dictionary.faqSection;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFAQ = (index: number) => {
@@ -43,15 +18,15 @@ export default function FAQSection() {
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         <div className="text-center mb-16">
           <h3 className="text-[#00256E] font-bold uppercase tracking-wider mb-2 text-sm md:text-base">
-            COMMON QUESTIONS
+            {label}
           </h3>
           <h2 className="text-3xl md:text-5xl font-bold text-[#333333]">
-            Frequently Asked Questions
+            {heading}
           </h2>
         </div>
 
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
+          {faqs.map((faq: any, index: number) => (
             <div
               key={index}
               className={`bg-white rounded-xl overflow-hidden border transition-all duration-300 ${

@@ -1,37 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-interface Department {
-  title: string;
-  description: string;
-  image: string;
-}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function Departments({ dictionary }: { dictionary: any }) {
+  const departments = dictionary.departmentsSection.departments;
 
-const departments: Department[] = [
-  {
-    title: "Gynaecology (Ayurvedic)",
-    description:
-      "Specialized Ayurvedic care for women's reproductive health, hormonal balance, and wellness.",
-    image: "/images/Vector 1.svg",
-  },
-  {
-    title: "Oncology (Ayurvedic Cancer Care)",
-    description:
-      "Comprehensive cancer treatment focusing on stopping tumor growth and reducing side effects naturally.",
-    image: "/images/Vector 1 (3).svg",
-  },
-  {
-    title: "Orthopaedics",
-    description:
-      "Natural treatments for joint pain, arthritis, and musculoskeletal disorders using Vata-balancing therapies.",
-    image: "/images/Vector 1 (5).svg",
-  },
-];
-
-export default function Departments() {
   return (
     <section
       id="departments"
@@ -41,16 +18,16 @@ export default function Departments() {
         {/* Header */}
         <div className="text-center mb-12">
           <h3 className="text-blue-900 font-bold uppercase tracking-wider text-sm mb-4">
-            Our Departments
+            {dictionary.departmentsSection.label}
           </h3>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight max-w-4xl mx-auto">
-            We deliver holistic Ayurvedic Cancer Care Services
+            {dictionary.departmentsSection.heading}
           </h2>
         </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {departments.map((dept, index) => (
+          {departments.map((dept: any, index: number) => (
             <div
               key={index}
               className="relative aspect-4/5 md:aspect-square lg:aspect-4/5 group"

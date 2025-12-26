@@ -48,7 +48,8 @@ function CountUp({
   return <span ref={ref}>0{suffix}</span>;
 }
 
-export default function Aboutus() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function Aboutus({ dictionary }: { dictionary: any }) {
   const router = useRouter();
   const shouldReduceMotion = useReducedMotion();
 
@@ -176,7 +177,7 @@ export default function Aboutus() {
               className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-3 md:mb-4"
               style={{ color: "#00256E" }}
             >
-              ABOUT US
+              {dictionary.aboutUsSection.label}
             </motion.p>
 
             {/* Heading */}
@@ -189,7 +190,7 @@ export default function Aboutus() {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.7rem] font-bold leading-[1.1] mb-4 md:mb-6"
               style={{ color: "#0D3B4C" }}
             >
-              Holistic Cancer Care Through Ayurvedic Wisdom
+              {dictionary.aboutUsSection.heading}
             </motion.h2>
 
             {/* Description */}
@@ -201,11 +202,7 @@ export default function Aboutus() {
               transition={{ delay: 0.2 }}
               className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 md:mb-10 max-w-2xl mx-auto lg:mx-0"
             >
-              We provide compassionate, natural treatments rooted in ancient
-              Ayurvedic principles. Our approach strengthens the body, mind, and
-              spirit—supporting recovery and long-term well-being. Every patient
-              receives personalized care through herbal therapies, detox
-              programs, and dietary plans.
+              {dictionary.aboutUsSection.description}
             </motion.p>
 
             {/* Stats Cards */}
@@ -233,10 +230,16 @@ export default function Aboutus() {
                 </div>
                 <div>
                   <p className="text-2xl md:text-3xl font-bold mb-7">
-                    <CountUp end={6000} duration={2.5} suffix="+" />
+                    <CountUp
+                      end={dictionary.aboutUsSection.stats.patientsHealed.val}
+                      duration={2.5}
+                      suffix={
+                        dictionary.aboutUsSection.stats.patientsHealed.suffix
+                      }
+                    />
                   </p>
                   <p className="text-xs md:text-sm font-normal opacity-90 leading-tight">
-                    Patients Healed Naturally
+                    {dictionary.aboutUsSection.stats.patientsHealed.label}
                   </p>
                 </div>
               </motion.div>
@@ -262,17 +265,19 @@ export default function Aboutus() {
                     style={{ color: "#056271" }}
                   >
                     <CountUp
-                      end={4.95}
+                      end={dictionary.aboutUsSection.stats.satisfaction.val}
                       duration={2.5}
                       decimals={2}
-                      suffix="/5"
+                      suffix={
+                        dictionary.aboutUsSection.stats.satisfaction.suffix
+                      }
                     />
                   </p>
                   <p
                     className="text-xs md:text-sm font-medium leading-tight"
                     style={{ color: "#056271" }}
                   >
-                    Healing Satisfaction Score
+                    {dictionary.aboutUsSection.stats.satisfaction.label}
                   </p>
                 </div>
               </motion.div>
@@ -297,13 +302,17 @@ export default function Aboutus() {
                     className="text-2xl md:text-3xl font-bold mb-7"
                     style={{ color: "#056271" }}
                   >
-                    <CountUp end={1} duration={1.5} suffix=" Day" />
+                    <CountUp
+                      end={dictionary.aboutUsSection.stats.waitTime.val}
+                      duration={1.5}
+                      suffix={dictionary.aboutUsSection.stats.waitTime.suffix}
+                    />
                   </p>
                   <p
                     className="text-xs md:text-sm font-medium leading-tight"
                     style={{ color: "#056271" }}
                   >
-                    Average Wait Time
+                    {dictionary.aboutUsSection.stats.waitTime.label}
                   </p>
                 </div>
               </motion.div>
@@ -320,7 +329,7 @@ export default function Aboutus() {
               className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full text-white font-semibold text-sm md:text-base transition-all hover:opacity-95 hover:gap-3"
               style={{ backgroundColor: "#056271" }}
             >
-              Learn More
+              {dictionary.aboutUsSection.cta}
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
             </motion.button>
           </div>

@@ -2,16 +2,19 @@
 
 import React from "react";
 
-export default function ClinicMap() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function ClinicMap({ dictionary }: { dictionary: any }) {
+  const { label, heading } = dictionary.clinicMap;
+
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h3 className="text-[#00256E] font-bold uppercase tracking-wider mb-2 text-sm md:text-base">
-            FIND US
+            {label}
           </h3>
           <h2 className="text-3xl md:text-5xl font-bold text-[#333333]">
-            Visit Our Clinic
+            {heading}
           </h2>
         </div>
 

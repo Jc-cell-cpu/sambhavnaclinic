@@ -1,52 +1,52 @@
 "use client";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface Step3TreatmentProps {
   selectedTreatment: string | null;
   setTreatment: (value: string) => void;
+  labels: {
+    title: string;
+    durationLabel: string;
+    priceLabel: string;
+    treatments: { [key: string]: string };
+  };
 }
 
 const treatments = [
   {
     id: "breast-cancer",
-    name: "Breast Cancer",
     duration: "30 Min",
     price: "Rs500",
   },
   {
     id: "skin-cancer",
-    name: "Skin Cancer",
     duration: "30 Min",
     price: "Rs500",
   },
   {
     id: "lung-cancer",
-    name: "Lung Cancer",
     duration: "30 Min",
     price: "Rs500",
   },
   {
     id: "prostate-cancer",
-    name: "Prostate Cancer",
     duration: "30 Min",
     price: "Rs500",
   },
   {
     id: "colon-cancer",
-    name: "Colon Cancer",
     duration: "30 Min",
     price: "Rs500",
   },
-  { id: "leukemia", name: "Leukemia", duration: "30 Min", price: "Rs500" },
-  { id: "lymphoma", name: "Lymphoma", duration: "30 Min", price: "Rs500" },
+  { id: "leukemia", duration: "30 Min", price: "Rs500" },
+  { id: "lymphoma", duration: "30 Min", price: "Rs500" },
   {
     id: "thyroid-cancer",
-    name: "Thyroid Cancer",
     duration: "30 Min",
     price: "Rs500",
   },
   {
     id: "stomach-cancer",
-    name: "Stomach Cancer",
     duration: "30 Min",
     price: "Rs500",
   },
@@ -55,11 +55,12 @@ const treatments = [
 export default function Step3Treatment({
   selectedTreatment,
   setTreatment,
+  labels,
 }: Step3TreatmentProps) {
   return (
     <div className="space-y-6">
       <div className="text-left">
-        <h2 className="text-xl font-bold text-[#0e5a65]">Select Treatment</h2>
+        <h2 className="text-xl font-bold text-[#0e5a65]">{labels.title}</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -96,15 +97,15 @@ export default function Step3Treatment({
               {/* Details */}
               <div className="flex flex-col">
                 <h3 className="font-bold text-gray-900 leading-tight">
-                  {treatment.name}
+                  {labels.treatments[treatment.id]}
                 </h3>
                 <div className="flex items-center gap-3 text-sm mt-1">
                   <span className="text-gray-500">
-                    Duration:{" "}
+                    {labels.durationLabel}{" "}
                     <span className="font-medium">{treatment.duration}</span>
                   </span>
                   <span className="font-semibold text-[#0e5a65]">
-                    Price: {treatment.price}
+                    {labels.priceLabel} {treatment.price}
                   </span>
                 </div>
               </div>

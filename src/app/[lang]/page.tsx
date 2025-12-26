@@ -24,14 +24,14 @@ export default async function Home({
   return (
     <>
       <Hero dictionary={dictionary.hero} />
-      <AboutUs />
-      <WhyChooseUsSection />
-      <Departments />
-      <MeetOurDoctors />
-      <FAQSection />
-      <AppointmentWithTestimonials />
+      <AboutUs dictionary={dictionary} />
+      <WhyChooseUsSection dictionary={dictionary} />
+      <Departments dictionary={dictionary} />
+      <MeetOurDoctors dictionary={dictionary} />
+      <FAQSection dictionary={dictionary} />
+      <AppointmentWithTestimonials dictionary={dictionary} />
       {/* <ContactUs /> */}
-      <ClinicMap />
+      <ClinicMap dictionary={dictionary} />
     </>
   );
 }

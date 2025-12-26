@@ -2,12 +2,22 @@
 
 import { Calendar, User } from "lucide-react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface Step6SummaryProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   formData: any; // Using any for brevity in this specific props interface, but better to use shared type
+  labels: {
+    title: string;
+    subtitle: string;
+    patientName: string;
+    dateTime: string;
+    treatment: string;
+    dateNotSelected: string;
+    disclaimer: string;
+  };
 }
 
-export default function Step6Summary({ formData }: Step6SummaryProps) {
+export default function Step6Summary({ formData, labels }: Step6SummaryProps) {
   // Format Date
   const dateStr = formData.date
     ? formData.date.toLocaleDateString("en-US", {
@@ -15,7 +25,7 @@ export default function Step6Summary({ formData }: Step6SummaryProps) {
         day: "numeric",
         year: "numeric",
       })
-    : "Date not selected";
+    : labels.dateNotSelected;
 
   return (
     <div className="space-y-8 flex flex-col items-center">
@@ -25,16 +35,14 @@ export default function Step6Summary({ formData }: Step6SummaryProps) {
         <div className="flex flex-col items-center gap-2 text-teal-300">
           <User className="w-16 h-16 opacity-50" />
           <span className="text-xs font-semibold uppercase tracking-widest">
-            Summary
+            {labels.title}
           </span>
         </div>
       </div>
 
       <div className="text-center space-y-2">
-        <h2 className="text-xl font-bold text-gray-900">Summary</h2>
-        <p className="text-sm text-gray-500">
-          Your appointment booking summary
-        </p>
+        <h2 className="text-xl font-bold text-gray-900">{labels.title}</h2>
+        <p className="text-sm text-gray-500">{labels.subtitle}</p>
       </div>
 
       <div className="w-full max-w-lg space-y-4">
@@ -45,7 +53,7 @@ export default function Step6Summary({ formData }: Step6SummaryProps) {
           </div>
           <div>
             <p className="text-xs text-gray-400 font-medium uppercase">
-              Patient Name
+              {labels.patientName}
             </p>
             <p className="font-semibold text-gray-700 text-lg">
               {formData.firstName} {formData.lastName || ""}
@@ -60,7 +68,7 @@ export default function Step6Summary({ formData }: Step6SummaryProps) {
           </div>
           <div>
             <p className="text-xs text-gray-400 font-medium uppercase">
-              Date and Time
+              {labels.dateTime}
             </p>
             <p className="font-semibold text-gray-700">
               {dateStr}, {formData.timeSlot}
@@ -81,7 +89,7 @@ export default function Step6Summary({ formData }: Step6SummaryProps) {
           </div>
           <div>
             <p className="text-xs text-gray-400 font-medium uppercase">
-              Treatment
+              {labels.treatment}
             </p>
             <p className="font-semibold text-gray-700 text-lg">
               {/* Map ID to name if we had the list here, or just capitalize */}
@@ -97,8 +105,7 @@ export default function Step6Summary({ formData }: Step6SummaryProps) {
         <div className="bg-gray-50 rounded-xl p-4 flex gap-3 items-start mt-4">
           <span className="text-yellow-500 text-xl">📄</span>
           <p className="text-xs text-gray-500 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            {labels.disclaimer}
           </p>
         </div>
       </div>

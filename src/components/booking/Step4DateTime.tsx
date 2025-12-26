@@ -3,11 +3,17 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface Step4DateTimeProps {
   selectedDate: Date | null;
   setDate: (date: Date) => void;
   selectedSlot: string | null;
   setSlot: (slot: string) => void;
+  labels: {
+    title: string;
+    morning: string;
+    afternoon: string;
+  };
 }
 
 // Mock slots
@@ -38,6 +44,7 @@ export default function Step4DateTime({
   setDate,
   selectedSlot,
   setSlot,
+  labels,
 }: Step4DateTimeProps) {
   const [currentDate, setCurrentDate] = useState(new Date(2025, 9, 1)); // Oct 2025 as per mockup
   const daysInMonth = getDaysInMonth(
@@ -61,7 +68,7 @@ export default function Step4DateTime({
     <div className="space-y-6">
       <div className="text-left">
         <h2 className="text-xl font-bold text-[#0e5a65] mb-4">
-          Select Date and Time
+          {labels.title}
         </h2>
       </div>
 
@@ -131,7 +138,7 @@ export default function Step4DateTime({
           {/* Morning */}
           <div>
             <h3 className="text-[#0e5a65]/80 font-bold mb-3 text-sm">
-              Morning
+              {labels.morning}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {morningSlots.map((slot, i) => (
@@ -153,7 +160,7 @@ export default function Step4DateTime({
           {/* Afternoon */}
           <div>
             <h3 className="text-[#0e5a65]/80 font-bold mb-3 text-sm">
-              Afternoon
+              {labels.afternoon}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {afternoonSlots.map((slot, i) => (

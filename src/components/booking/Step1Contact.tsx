@@ -2,25 +2,35 @@
 
 import { Input } from "../ui/input";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface Step1ContactProps {
   mobile: string;
   setMobile: (value: string) => void;
+  labels: {
+    title: string;
+    subtitle: string;
+    placeholder: string;
+    helper: string;
+    illustrationText: string;
+  };
 }
 
-export default function Step1Contact({ mobile, setMobile }: Step1ContactProps) {
+export default function Step1Contact({
+  mobile,
+  setMobile,
+  labels,
+}: Step1ContactProps) {
   return (
     <div className="w-full h-full flex flex-col items-center justify-center min-h-[400px]">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center md:text-left space-y-2">
-          <h2 className="text-xl font-bold text-[#0e5a65]">
-            Contact Information & Booking Intent
-          </h2>
-          <p className="text-sm text-gray-500">Enter Mobile Number</p>
+          <h2 className="text-xl font-bold text-[#0e5a65]">{labels.title}</h2>
+          <p className="text-sm text-gray-500">{labels.subtitle}</p>
         </div>
 
         <Input
           type="tel"
-          placeholder="Enter mobile number"
+          placeholder={labels.placeholder}
           value={mobile}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setMobile(e.target.value)
@@ -46,13 +56,13 @@ export default function Step1Contact({ mobile, setMobile }: Step1ContactProps) {
               />
             </svg>
             <span className="text-sm font-medium">
-              Medical App Illustration
+              {labels.illustrationText}
             </span>
           </div>
         </div>
 
         <p className="text-center text-sm font-semibold text-[#0e5a65]">
-          Enter the mobile number and fetch the patient details
+          {labels.helper}
         </p>
       </div>
     </div>

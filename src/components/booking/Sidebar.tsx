@@ -2,11 +2,19 @@
 
 import { Check } from "lucide-react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface SidebarProps {
   currentStep: number;
+  labels: {
+    details: string;
+    treatment: string;
+    dateTime: string;
+    basicDetails: string;
+    summary: string;
+  };
 }
 
-export default function Sidebar({ currentStep }: SidebarProps) {
+export default function Sidebar({ currentStep, labels }: SidebarProps) {
   // Steps configuration mapped to UI states
 
   // Steps 1 & 2 are preliminary (Contact & OTP) and might not need to be shown as active "Treatment" steps yet,
@@ -37,7 +45,7 @@ export default function Sidebar({ currentStep }: SidebarProps) {
 
   const sidebarItems = [
     {
-      label: "Details",
+      label: labels.details,
       icon: (
         <svg
           className="w-5 h-5"
@@ -56,7 +64,7 @@ export default function Sidebar({ currentStep }: SidebarProps) {
       activeSteps: [1, 2],
     },
     {
-      label: "Treatment",
+      label: labels.treatment,
       icon: (
         <svg
           className="w-5 h-5"
@@ -75,7 +83,7 @@ export default function Sidebar({ currentStep }: SidebarProps) {
       activeSteps: [3],
     },
     {
-      label: "Date and Time",
+      label: labels.dateTime,
       icon: (
         <svg
           className="w-5 h-5"
@@ -94,7 +102,7 @@ export default function Sidebar({ currentStep }: SidebarProps) {
       activeSteps: [4],
     },
     {
-      label: "Basic Details",
+      label: labels.basicDetails,
       icon: (
         <svg
           className="w-5 h-5"
@@ -113,7 +121,7 @@ export default function Sidebar({ currentStep }: SidebarProps) {
       activeSteps: [5],
     },
     {
-      label: "Summary",
+      label: labels.summary,
       icon: (
         <svg
           className="w-5 h-5"
