@@ -4,13 +4,12 @@
 import { Ribbon } from "lucide-react";
 import React from "react";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function TreatmentsSection({ dictionary }: { dictionary: any }) {
   const { label, heading, items } = dictionary.treatmentsSection;
 
   return (
     <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h3 className="text-[#00256E] font-bold uppercase tracking-wider mb-2 text-sm md:text-base">
             {label}

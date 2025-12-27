@@ -124,7 +124,7 @@ export default function Header({
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-white/60 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-b border-white/30">
-      <div className="container mx-auto md:max-w-7xl flex justify-between items-center px-4 md:px-8 py-3 md:py-4">
+      <div className="container mx-auto md:max-w-7xl flex justify-between items-center px-4 py-3 md:py-4">
         {/* Logo */}
         <Link href={`/${currentLocale}`} className="flex items-center z-50">
           <Image

@@ -13,10 +13,11 @@ export const contactFormSchema = z.object({
 });
 
 export const bookingStep1Schema = z.object({
-  mobile: z
-    .string()
-    .min(10, "Mobile number must be at least 10 digits")
-    .regex(/^\d+$/, "Mobile number must contain only digits"),
+  contact: z.string().refine((val) => {
+    const isMobile = /^\d{10}$/.test(val);
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    return isMobile || isEmail;
+  }, "Please enter a valid 10-digit mobile number or email address"),
 });
 
 export const bookingStep2Schema = z.object({
@@ -35,10 +36,29 @@ export const bookingStep4Schema = z.object({
 });
 
 export const bookingStep5Schema = z.object({
-  firstName: z.string().min(10, "First name must be at least 10 characters"),
-  lastName: z.string().min(10, "Last name must be at least 10 characters"),
+  firstName: z.string().min(2, "First name must be at least 2 characters"),
+  lastName: z.string().min(2, "Last name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
+  phoneNumber: z
+    .string()
+    .length(10, "Phone number must be exactly 10 digits")
+    .regex(/^\d+$/, "Phone number must contain only digits")
+    .optional()
+    .or(z.literal("")),
   note: z.string().optional(),
+});
+
+export const wizardBookingSchema = z.object({
+  mobile: z.string(),
+  treatment: z.string(),
+  date: z.date(),
+  timeSlot: z.string(),
+  firstName: z.string().min(2),
+  lastName: z.string().min(2),
+  email: z.string().email(),
+  phoneNumber: z.string().optional(),
+  note: z.string().optional(),
+  emailLanguage: z.string().optional(),
 });
 
 export const quickAppointmentSchema = z.object({

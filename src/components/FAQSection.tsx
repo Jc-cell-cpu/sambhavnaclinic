@@ -4,7 +4,6 @@
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function FAQSection({ dictionary }: { dictionary: any }) {
   const { label, heading, faqs } = dictionary.faqSection;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -15,7 +14,7 @@ export default function FAQSection({ dictionary }: { dictionary: any }) {
 
   return (
     <section className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+      <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-16">
           <h3 className="text-[#00256E] font-bold uppercase tracking-wider mb-2 text-sm md:text-base">
             {label}

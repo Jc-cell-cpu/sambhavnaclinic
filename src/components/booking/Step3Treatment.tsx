@@ -1,6 +1,17 @@
-"use client";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Check,
+  Heart,
+  Wind,
+  Droplet,
+  Activity,
+  ShieldAlert,
+  Zap,
+  Flame,
+  Dna,
+  Atom,
+} from "lucide-react";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface Step3TreatmentProps {
   selectedTreatment: string | null;
   setTreatment: (value: string) => void;
@@ -10,109 +21,156 @@ interface Step3TreatmentProps {
     priceLabel: string;
     treatments: { [key: string]: string };
   };
+  error?: string;
 }
 
 const treatments = [
-  {
-    id: "breast-cancer",
-    duration: "30 Min",
-    price: "Rs500",
-  },
-  {
-    id: "skin-cancer",
-    duration: "30 Min",
-    price: "Rs500",
-  },
-  {
-    id: "lung-cancer",
-    duration: "30 Min",
-    price: "Rs500",
-  },
-  {
-    id: "prostate-cancer",
-    duration: "30 Min",
-    price: "Rs500",
-  },
-  {
-    id: "colon-cancer",
-    duration: "30 Min",
-    price: "Rs500",
-  },
-  { id: "leukemia", duration: "30 Min", price: "Rs500" },
-  { id: "lymphoma", duration: "30 Min", price: "Rs500" },
-  {
-    id: "thyroid-cancer",
-    duration: "30 Min",
-    price: "Rs500",
-  },
-  {
-    id: "stomach-cancer",
-    duration: "30 Min",
-    price: "Rs500",
-  },
+  { id: "breast-cancer", duration: "30 Min", price: "Rs500", icon: Heart },
+  { id: "skin-cancer", duration: "30 Min", price: "Rs500", icon: ShieldAlert },
+  { id: "lung-cancer", duration: "30 Min", price: "Rs500", icon: Wind },
+  { id: "prostate-cancer", duration: "30 Min", price: "Rs500", icon: Activity },
+  { id: "colon-cancer", duration: "30 Min", price: "Rs500", icon: Zap },
+  { id: "leukemia", duration: "30 Min", price: "Rs500", icon: Droplet },
+  { id: "lymphoma", duration: "30 Min", price: "Rs500", icon: Dna },
+  { id: "thyroid-cancer", duration: "30 Min", price: "Rs500", icon: Flame },
+  { id: "stomach-cancer", duration: "30 Min", price: "Rs500", icon: Atom },
 ];
 
 export default function Step3Treatment({
   selectedTreatment,
   setTreatment,
   labels,
+  error,
 }: Step3TreatmentProps) {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring" as const,
+        stiffness: 100,
+        damping: 12,
+      },
+    },
+  };
+
   return (
-    <div className="space-y-6">
-      <div className="text-left">
-        <h2 className="text-xl font-bold text-[#0e5a65]">{labels.title}</h2>
+    <div className="space-y-8">
+      <div className="text-left border-l-4 border-[#17899B] pl-4 py-1">
+        <h2 className="text-2xl font-black text-[#0e5a65] tracking-tight">
+          {labels.title}
+        </h2>
+        <p className="text-gray-500 text-sm font-medium mt-1">
+          Select the specialized treatment center you require
+        </p>
+        {error && (
+          <p className="text-red-500 text-xs font-black uppercase tracking-wider mt-2 animate-pulse">
+            ⚠️ {error}
+          </p>
+        )}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
         {treatments.map((treatment) => {
           const isSelected = selectedTreatment === treatment.id;
+          const Icon = treatment.icon;
           return (
-            <div
+            <motion.div
               key={treatment.id}
+              variants={cardVariants}
+              whileHover={{ y: -5, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => setTreatment(treatment.id)}
-              className={`relative cursor-pointer flex items-center gap-4 p-4 rounded-xl border transition-all duration-200 bg-white shadow-sm hover:shadow-md ${
-                isSelected
-                  ? "border-2 border-[#0e5a65] ring-1 ring-[#0e5a65]/20"
-                  : "border-gray-100 hover:border-teal-200"
-              }`}
+              className={`group relative cursor-pointer overflow-hidden rounded-3xl border-2 transition-all duration-300 bg-white p-5
+                ${
+                  isSelected
+                    ? "border-[#17899B] shadow-xl shadow-teal-500/10 bg-linear-to-b from-[#f0f9fa] to-white"
+                    : "border-gray-100 hover:border-teal-200 shadow-sm"
+                }`}
             >
-              {/* Icon Container */}
-              <div className="w-12 h-12 rounded-lg bg-linear-to-r from-[#17899B] to-[#109C8E] flex items-center justify-center shrink-0">
-                {/* Ribbon Icon */}
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12.705 3.328a2 2 0 00-1.41 0c-1.85.67-6.295 2.508-6.295 7.672 0 4.316 2.478 8.167 6.138 9.94a2 2 0 001.724 0c3.66-1.773 6.138-5.624 6.138-9.94 0-5.164-4.445-7.002-6.295-7.672zm-2.12 7.086c0-1.657 1.343-3 3-3s3 1.343 3 3a2.98 2.98 0 01-.194 1.054l-1.685 4.492a.75.75 0 01-1.408-.528l1.458-3.886a1.49 1.49 0 00-.171-1.132 1.5 1.5 0 00-2.586 1.132v.25a.75.75 0 01-1.5 0v-.25c0-.368.081-.715.226-1.028a3.001 3.001 0 01-.14-.104z" />
-                  {/* Simplified Ribbon Path */}
-                  <path
-                    d="M11.962 1.834a3.5 3.5 0 00-2.43.085c-2.31 1.023-5.532 3.193-5.532 8.081 0 5.483 3.428 9.873 7.558 11.832a.75.75 0 00.916-.145c.012-.012.022-.025.031-.039 3.99-2.025 7.495-6.386 7.495-11.648 0-4.888-3.222-7.058-5.532-8.081a3.5 3.5 0 00-2.506 0zM12 4.25a2.25 2.25 0 110 4.5 2.25 2.25 0 010-4.5zM12.92 14.187l1.768-4.714a.75.75 0 10-1.408-.528l-1.398 3.726a3.736 3.736 0 01-1.053-.42.75.75 0 10-.75 1.3 5.253 5.253 0 003.58.556 5.3 5.3 0 00-.739.08z"
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
+              <AnimatePresence>
+                {isSelected && (
+                  <motion.div
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0, opacity: 0 }}
+                    className="absolute top-4 right-4 z-10 p-1.5 bg-[#17899B] rounded-full text-white shadow-lg"
+                  >
+                    <Check className="w-4 h-4" strokeWidth={3} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
-              {/* Details */}
-              <div className="flex flex-col">
-                <h3 className="font-bold text-gray-900 leading-tight">
-                  {labels.treatments[treatment.id]}
-                </h3>
-                <div className="flex items-center gap-3 text-sm mt-1">
-                  <span className="text-gray-500">
-                    {labels.durationLabel}{" "}
-                    <span className="font-medium">{treatment.duration}</span>
-                  </span>
-                  <span className="font-semibold text-[#0e5a65]">
-                    {labels.priceLabel} {treatment.price}
-                  </span>
+              <div className="flex items-start gap-5">
+                {/* Icon Container with Glow */}
+                <div className="relative shrink-0">
+                  <div
+                    className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300
+                    ${
+                      isSelected
+                        ? "bg-[#17899B] text-white shadow-lg shadow-teal-500/30"
+                        : "bg-teal-50 text-[#17899B] group-hover:bg-[#17899B] group-hover:text-white"
+                    }`}
+                  >
+                    <Icon className="w-7 h-7" />
+                  </div>
+                  {isSelected && (
+                    <div className="absolute inset-0 bg-[#17899B] blur-xl opacity-20" />
+                  )}
+                </div>
+
+                <div className="space-y-2">
+                  <h3
+                    className={`text-lg font-extrabold transition-colors duration-300
+                    ${isSelected ? "text-[#0e5a65]" : "text-gray-800"}`}
+                  >
+                    {labels.treatments[treatment.id]}
+                  </h3>
+
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-center gap-1.5 text-xs text-gray-500 font-bold uppercase tracking-wider">
+                      <span className="opacity-60">{labels.durationLabel}</span>
+                      <span className={isSelected ? "text-[#17899B]" : ""}>
+                        {treatment.duration}
+                      </span>
+                    </div>
+                    <div className="text-sm font-black text-[#0e5a65]">
+                      {labels.priceLabel}{" "}
+                      <span className="text-lg">{treatment.price}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+
+              {/* Decorative Corner Element */}
+              <div
+                className={`absolute -bottom-6 -right-6 w-16 h-16 rounded-full transition-all duration-500
+                ${
+                  isSelected
+                    ? "bg-[#17899B] opacity-5 scale-150"
+                    : "bg-gray-100 opacity-0"
+                }`}
+              />
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 }

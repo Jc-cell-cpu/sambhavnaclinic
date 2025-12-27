@@ -141,7 +141,7 @@ export default function Aboutus({ dictionary }: { dictionary: any }) {
         />
       </motion.div>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 xl:gap-24">
           {/* Left Side - Child Image */}
           <motion.div

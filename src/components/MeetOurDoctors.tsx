@@ -4,12 +4,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function MeetOurDoctors({ dictionary }: { dictionary: any }) {
   const { featuredDoctor, teamDoctors } = dictionary.doctorsSection;
 
   return (
-    <section className="py-20 px-4 md:px-8 font-sans bg-white">
+    <section className="py-20 px-4 font-sans bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

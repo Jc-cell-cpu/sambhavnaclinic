@@ -44,7 +44,7 @@ export default function Footer({
 
   return (
     <footer
-      className="bg-white pt-16 pb-12 px-4 md:px-8 font-sans"
+      className="bg-white pt-16 pb-12 px-4 font-sans"
       style={{
         borderTop: "1px solid",
         borderImageSource:

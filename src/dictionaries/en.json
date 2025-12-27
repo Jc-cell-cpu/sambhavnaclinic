@@ -241,7 +241,7 @@
   "pages": {
     "aboutUs": {
       "title": "About",
-      "subtitle": "Tincidunt suspendisse semper integer elementum maecenas.",
+      "subtitle": "Compassionate Ayurvedic Care for Holistic Cancer Recovery.",
       "breadcrumb": "About"
     },
     "departments": {
@@ -251,7 +251,7 @@
     },
     "services": {
       "title": "Services",
-      "subtitle": "Tincidunt suspendisse semper integer elementum maecenas.",
+      "subtitle": "Comprehensive Ayurvedic Treatments for Mind, Body, and Spirit.",
       "breadcrumb": "Services"
     },
     "contact": {
@@ -621,9 +621,10 @@
     },
     "step1": {
       "title": "Contact Information & Booking Intent",
-      "subtitle": "Enter Mobile Number",
-      "placeholder": "Enter mobile number",
-      "helper": "Enter the mobile number and fetch the patient details",
+      "subtitle": "Mobile or Email",
+      "placeholder": "Enter mobile or email",
+      "helper": "Enter the mobile number or email to fetch the patient details",
+      "sendIn": "Send verification code in:",
       "illustrationText": "Medical App Illustration"
     },
     "step2": {
@@ -656,14 +657,24 @@
     },
     "step5": {
       "title": "Enter Basic Details",
+      "subtitle": "Please provide your contact information for booking confirmations",
       "firstName": "First Name",
       "firstNamePlaceholder": "Enter your firstname",
       "lastName": "Last Name",
       "lastNamePlaceholder": "Enter your Last Name",
+      "mobile": "Mobile Number",
+      "mobilePlaceholder": "Enter your Mobile Number",
       "email": "Email Address",
       "emailPlaceholder": "Enter your Email Address",
       "note": "Note",
-      "notePlaceholder": "Enter any notes..."
+      "notePlaceholder": "Enter any notes...",
+      "verified": "Verified",
+      "optional": "Optional",
+      "contactNote": "Note: We use your verified contact method for critical updates, and the secondary contact for sending appointment confirmations.",
+      "confirmationLanguage": "Confirmation Language",
+      "receiveDetailsIn": "Receive your booking details in:",
+      "hindi": "Hindi",
+      "english": "English"
     },
     "step6": {
       "title": "Summary",
@@ -672,7 +683,27 @@
       "dateTime": "Date and Time",
       "treatment": "Treatment",
       "dateNotSelected": "Date not selected",
-      "disclaimer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      "disclaimer": "By clicking confirm, you agree to our terms and conditions. We will send an appointment confirmation to your email shortly.",
+      "success": {
+        "title": "Booking Complete!",
+        "message": "Your appointment has been successfully scheduled. We've sent a confirmation email to your inbox.",
+        "backHome": "Back to Home",
+        "viewDetails": "Print Receipt",
+        "receipt": {
+          "receiptHeader": "Appointment Receipt",
+          "receiptSubheader": "Sambhavna Clinic - Holistic Cancer Care",
+          "patientDetails": "Patient Details",
+          "appointmentDetails": "Appointment Details",
+          "clinicDetails": "Clinic Location",
+          "verifiedLabel": "Verified",
+          "treatmentLabel": "Treatment Center",
+          "dateLabel": "Scheduled Date",
+          "timeLabel": "Time Slot",
+          "noteLabel": "Patient Remarks",
+          "signatureLabel": "Authorized Signature",
+          "thankYou": "Wishing you a path to holistic healing and recovery."
+        }
+      }
     },
     "navigation": {
       "goBack": "Go Back",
@@ -686,9 +717,9 @@
     "phoneLabel": "Phone",
     "emailLabel": "Email",
     "whatsappLabel": "Whatsapp",
-    "phoneValue": "70377 09494",
-    "emailValue": "support@sambhavna.com",
-    "whatsappValue": "070377 09494"
+    "phoneValue": "+91 96905 45276",
+    "emailValue": "info@sambhavnaclinic.com",
+    "whatsappValue": "+91 70377 09494"
   },
   "contactHero": {
     "title": "Contact Us",
