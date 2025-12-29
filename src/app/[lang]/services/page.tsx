@@ -28,7 +28,7 @@ export default async function Services({
       <HowWeWork dictionary={dictionary} />
       <TreatmentsSection dictionary={dictionary} />
       <MoreInfo dictionary={dictionary} />
-      <AppointmentWithTestimonials dictionary={dictionary} />
+      <AppointmentWithTestimonials dictionary={dictionary} lang={lang} />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function HowWeWork({ dictionary }: { dictionary: any }) {
   const { label, heading, items } = dictionary.howWeWork;
 

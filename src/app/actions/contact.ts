@@ -2,9 +2,13 @@
 "use server";
 
 import nodemailer from "nodemailer";
-import { contactFormSchema } from "@/lib/schemas";
+import { getContactFormSchema } from "@/lib/schemas";
+import { getDictionary } from "../../get-dictionary";
+import { Locale } from "../../i18n-config";
 
-export async function submitContactForm(prevState: any, formData: FormData) {
+export async function submitContactForm(lang: Locale, prevState: any, formData: FormData) {
+  const dictionary = await getDictionary(lang);
+
   const data = {
     name: formData.get("name") as string,
     phone: formData.get("phone") as string,
@@ -13,7 +17,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     message: formData.get("message") as string,
   };
 
-  const validation = contactFormSchema.safeParse(data);
+  const validation = getContactFormSchema(dictionary.validation).safeParse(data);
 
   if (!validation.success) {
     return {

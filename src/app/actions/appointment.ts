@@ -2,9 +2,13 @@
 "use server";
 
 import nodemailer from "nodemailer";
-import { quickAppointmentSchema } from "@/lib/schemas";
+import { getQuickAppointmentSchema } from "@/lib/schemas";
+import { getDictionary } from "../../get-dictionary";
+import { Locale } from "../../i18n-config";
 
-export async function submitQuickAppointment(prevState: any, formData: FormData) {
+export async function submitQuickAppointment(lang: Locale, prevState: any, formData: FormData) {
+  const dictionary = await getDictionary(lang);
+  
   const data = {
     firstName: formData.get("firstName") as string,
     lastName: formData.get("lastName") as string,
@@ -15,7 +19,7 @@ export async function submitQuickAppointment(prevState: any, formData: FormData)
     message: formData.get("message") as string,
   };
 
-  const validation = quickAppointmentSchema.safeParse(data);
+  const validation = getQuickAppointmentSchema(dictionary.validation).safeParse(data);
 
   if (!validation.success) {
     return {

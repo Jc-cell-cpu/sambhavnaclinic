@@ -29,7 +29,7 @@ export default async function Home({
       <Departments dictionary={dictionary} />
       <MeetOurDoctors dictionary={dictionary} />
       <FAQSection dictionary={dictionary} />
-      <AppointmentWithTestimonials dictionary={dictionary} />
+      <AppointmentWithTestimonials dictionary={dictionary} lang={locale} />
       {/* <ContactUs /> */}
       <ClinicMap dictionary={dictionary} />
     </>

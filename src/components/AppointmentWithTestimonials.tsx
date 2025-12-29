@@ -12,10 +12,14 @@ const initialState = {
   errors: {},
 };
 
+import { Locale } from "@/i18n-config";
+
 export default function AppointmentWithTestimonials({
   dictionary,
+  lang,
 }: {
   dictionary: any;
+  lang: Locale;
 }) {
   const {
     appointmentHeading,
@@ -26,7 +30,7 @@ export default function AppointmentWithTestimonials({
   } = dictionary.testimonialSection;
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [state, formAction, isPending] = useActionState(
-    submitQuickAppointment,
+    submitQuickAppointment.bind(null, lang),
     initialState
   );
 

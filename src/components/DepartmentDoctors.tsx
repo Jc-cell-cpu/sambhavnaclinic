@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function DepartmentDoctors({ dictionary }: { dictionary: any }) {
   const { subtitle, title, consultNow, viewProfile, doctors } =
     dictionary.departmentDoctors;

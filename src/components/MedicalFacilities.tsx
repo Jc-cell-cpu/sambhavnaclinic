@@ -4,7 +4,6 @@
 import React from "react";
 import {
   Stethoscope,
-  Snowflake,
   TestTube,
   Scan,
   Droplet,
@@ -27,7 +26,6 @@ const icons = [
   ShieldCheck,
 ];
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function MedicalFacilities({ dictionary }: { dictionary: any }) {
   const { label, heading, items } = dictionary.medicalFacilities;
 

@@ -26,7 +26,7 @@ export default async function Departments({
       <DepartmentDetails dictionary={dictionary} />
       <MedicalFacilities dictionary={dictionary} />
       <DepartmentDoctors dictionary={dictionary} />
-      <AppointmentWithTestimonials dictionary={dictionary} />
+      <AppointmentWithTestimonials dictionary={dictionary} lang={lang} />
     </div>
   );
 }

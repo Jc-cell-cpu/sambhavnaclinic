@@ -6,14 +6,12 @@ import Image from "next/image";
 import { ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function DepartmentDetails({ dictionary }: { dictionary: any }) {
   const { selectDepartment, keyFocusAreas, getDetailedInfo, departments } =
     dictionary.departmentDetails;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   const [activeTab, setActiveTab] = useState(departments[0].id);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const activeDepartment =
     departments.find((d: any) => d.id === activeTab) || departments[0];
 

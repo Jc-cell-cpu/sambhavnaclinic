@@ -617,7 +617,9 @@
       "treatment": "Treatment",
       "dateTime": "Date and Time",
       "basicDetails": "Basic Details",
-      "summary": "Summary"
+      "summary": "Summary",
+      "inProgress": "In Progress",
+      "completed": "Completed"
     },
     "step1": {
       "title": "Contact Information & Booking Intent",
@@ -793,6 +795,13 @@
     "invalidEmail": "Invalid email address",
     "phoneLength": "Phone number must be exactly 10 digits",
     "phoneDigits": "Phone number must contain only digits",
-    "submitError": "An unexpected error occurred."
+    "submitError": "An unexpected error occurred.",
+    "nameRegex": "Name can contain only letters, spaces, and . ' - characters",
+    "messageMin": "Message must be at least 10 characters",
+    "messageMax": "Message must be at most 1000 characters",
+    "messageRegex": "Message can contain only letters, numbers, and spaces",
+    "noteMin": "Note must be at least 5 characters",
+    "noteMax": "Note must be at most 1000 characters",
+    "noteRegex": "Note can contain only letters, numbers, and spaces"
   }
 }

@@ -31,7 +31,7 @@ export default async function AboutUs({
       <MoreAboutUs dictionary={dictionary} />
       {/* <WhyChooseUsSection /> */}
       <MoreInfo dictionary={dictionary} />
-      <AppointmentWithTestimonials dictionary={dictionary} />
+      <AppointmentWithTestimonials dictionary={dictionary} lang={lang} />
       <MeetOurDoctors dictionary={dictionary} />
     </div>
   );

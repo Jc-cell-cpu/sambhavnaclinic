@@ -1,14 +1,21 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React from "react";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 import { useActionState } from "react";
 import { submitContactForm } from "@/app/actions/contact";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function ContactUs({ dictionary }: { dictionary: any }) {
+import { Locale } from "@/i18n-config";
+
+export default function ContactUs({
+  dictionary,
+  lang,
+}: {
+  dictionary: any;
+  lang: Locale;
+}) {
   const {
     contactInfoTitle,
     contactInfoDesc,
@@ -27,7 +34,10 @@ export default function ContactUs({ dictionary }: { dictionary: any }) {
   } = dictionary.contactUs;
   const { phoneValue, emailValue } = dictionary.needHelp;
 
-  const [state, action, isPending] = useActionState(submitContactForm, null);
+  const [state, action, isPending] = useActionState(
+    submitContactForm.bind(null, lang),
+    null
+  );
 
   return (
     <section className="py-16 md:py-24 bg-gray-50">

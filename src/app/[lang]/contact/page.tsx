@@ -25,7 +25,7 @@ export default async function Contact({
         backgroundImage="/images/About-us.svg"
         currentPage={dictionary.contactHero.breadcrumb}
       />
-      <ContactUs dictionary={dictionary} />
+      <ContactUs dictionary={dictionary} lang={lang} />
       <PatientJourney dictionary={dictionary} />
       <ClinicMap dictionary={dictionary} />
       <FAQSection dictionary={dictionary} />

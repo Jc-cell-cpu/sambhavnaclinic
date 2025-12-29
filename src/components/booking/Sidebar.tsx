@@ -18,6 +18,8 @@ interface SidebarProps {
     dateTime: string;
     basicDetails: string;
     summary: string;
+    inProgress: string;
+    completed: string;
   };
 }
 
@@ -146,7 +148,7 @@ export default function Sidebar({ currentStep, labels }: SidebarProps) {
                       animate={{ opacity: 1, height: "auto", y: 0 }}
                       className="text-xs text-teal-600 font-semibold tracking-wide uppercase mt-0.5"
                     >
-                      In Progress
+                      {labels.inProgress}
                     </motion.span>
                   )}
                   {isCompleted && (
@@ -155,7 +157,7 @@ export default function Sidebar({ currentStep, labels }: SidebarProps) {
                       animate={{ opacity: 1 }}
                       className="text-xs text-emerald-600 font-medium mt-0.5"
                     >
-                      Completed
+                      {labels.completed}
                     </motion.span>
                   )}
                 </motion.div>
