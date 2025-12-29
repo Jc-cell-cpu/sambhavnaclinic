@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { usePathname } from "next/navigation";
+import { i18n } from "@/i18n-config";
 
 const SLIDES = [
   {
@@ -52,6 +54,9 @@ export default function Hero({
     },
     [Autoplay({ delay: 4000, stopOnInteraction: true })]
   );
+
+  const pathname = usePathname();
+  const currentLocale = pathname.split("/")[1] || i18n.defaultLocale;
 
   return (
     <section className="relative w-full min-h-[85vh] flex flex-col justify-between overflow-hidden">
@@ -100,7 +105,7 @@ export default function Hero({
                       }}
                     >
                       <Link
-                        href="/appointment"
+                        href={`/${currentLocale}/appointment`}
                         className="flex items-center gap-2"
                       >
                         <Calendar className="w-5 h-5" />
