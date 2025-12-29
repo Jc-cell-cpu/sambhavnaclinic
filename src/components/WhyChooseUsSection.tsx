@@ -8,7 +8,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { i18n } from "@/i18n-config";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function WhyChooseUsSection({
   dictionary,
 }: {
@@ -106,7 +105,6 @@ export default function WhyChooseUsSection({
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function TrustedExperts({ content }: { content: any }) {
   const pathname = usePathname();
   const currentLocale = pathname.split("/")[1] || i18n.defaultLocale;

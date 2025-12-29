@@ -5,7 +5,6 @@ import React, { useRef } from "react";
 import TestimonialCard, { TestimonialProps } from "./TestimonialCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function TestimonialsCarousel({
   dictionary,
 }: {

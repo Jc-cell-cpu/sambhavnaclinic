@@ -6,7 +6,6 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function HistoryTimeline({ dictionary }: { dictionary: any }) {
   const { label, heading, timeline } = dictionary.historyTimeline;
   const [activeYear, setActiveYear] = useState("2000");

@@ -2,7 +2,6 @@
 "use client";
 import { Play } from "lucide-react";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function VideoTestimonials({ dictionary }: { dictionary: any }) {
   const { label, heading, thumbnailText, items } = dictionary.videoTestimonials;
 

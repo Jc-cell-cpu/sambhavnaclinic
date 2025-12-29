@@ -3,58 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-const services = [
-  {
-    id: 1,
-    title: "Panchakarma Therapy",
-    description:
-      "Deep detoxification therapies including Vamana, Virechana, and Basti to cleanse the body of toxins and restore balance.",
-    image: "/images/Rectangle 14.svg",
-    link: "/departments",
-  },
-  {
-    id: 2,
-    title: "Rasayana Rejuvenation",
-    description:
-      "Specialized herbal formulations to boost immunity, enhance vitality (Ojas), and promote cellular repair during recovery.",
-    image: "/images/Rectangle 15.svg",
-    link: "/departments",
-  },
-  {
-    id: 3,
-    title: "Diet & Lifestyle",
-    description:
-      "Personalized Ayurvedic diet plans (Pathya-Apathya) and lifestyle guidance to support healing and prevent recurrence.",
-    image: "/images/Rectangle 18.svg",
-    link: "/departments",
-  },
-  {
-    id: 4,
-    title: "Yoga & Meditation",
-    description:
-      "Therapeutic yoga asanas and Pranayama to reduce stress, improve mental resilience, and support physical well-being.",
-    image: "/images/Rectangle 19.svg",
-    link: "/departments",
-  },
-  {
-    id: 5,
-    title: "Palliative Care",
-    description:
-      "Integrative care focus on pain management and improving quality of life for patients with advanced stages of cancer.",
-    image: "/images/Rectangle 20.svg",
-    link: "/departments",
-  },
-  {
-    id: 6,
-    title: "Preventive Oncology",
-    description:
-      "Holistic strategies for high-risk individuals focusing on immune strengthening and early detection through Ayurveda.",
-    image: "/images/Rectangle 14.svg",
-    link: "/departments",
-  },
-];
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function OurServices({ dictionary }: { dictionary: any }) {
   const { label, heading, items, learnMore } = dictionary.ourServices;
 
