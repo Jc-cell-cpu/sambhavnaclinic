@@ -14,11 +14,11 @@ import { ArrowLeft, Loader2 } from "lucide-react";
 import { sendOTP } from "@/app/actions/otp";
 import { submitWizardBooking } from "@/app/actions/appointment";
 import {
-  bookingStep1Schema,
-  bookingStep2Schema,
-  bookingStep3Schema,
-  bookingStep4Schema,
-  bookingStep5Schema,
+  getBookingStep1Schema,
+  getBookingStep2Schema,
+  getBookingStep3Schema,
+  getBookingStep4Schema,
+  getBookingStep5Schema,
 } from "@/lib/schemas";
 
 interface BookingFormData {
@@ -94,32 +94,40 @@ export default function BookingWizard({ dictionary }: { dictionary: any }) {
       setErrors({});
       switch (step) {
         case 1:
-          bookingStep1Schema.parse({ contact: formData.mobile });
+          getBookingStep1Schema(dictionary.validation).parse({
+            contact: formData.mobile,
+          });
           break;
         case 2:
-          bookingStep2Schema.parse({ otp: formData.otp });
+          getBookingStep2Schema(dictionary.validation).parse({
+            otp: formData.otp,
+          });
           if (sentOTP && formData.otp !== sentOTP) {
             throw {
               errors: [
                 {
                   path: ["otp"],
-                  message: "Invalid OTP. Please check your email.",
+                  message:
+                    dictionary.validation?.otpMismatch ||
+                    "Invalid OTP. Please check your email.",
                 },
               ],
             };
           }
           break;
         case 3:
-          bookingStep3Schema.parse({ treatment: formData.treatment });
+          getBookingStep3Schema(dictionary.validation).parse({
+            treatment: formData.treatment,
+          });
           break;
         case 4:
-          bookingStep4Schema.parse({
+          getBookingStep4Schema(dictionary.validation).parse({
             date: formData.date,
             timeSlot: formData.timeSlot,
           });
           break;
         case 5:
-          bookingStep5Schema.parse({
+          getBookingStep5Schema(dictionary.validation).parse({
             firstName: formData.firstName,
             lastName: formData.lastName,
             email: formData.email,
@@ -131,7 +139,9 @@ export default function BookingWizard({ dictionary }: { dictionary: any }) {
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const zodError = error as any;
+      console.log("Validation Error:", zodError);
       const validationIssues = zodError.issues || zodError.errors;
+      console.log("Validation Issues:", validationIssues);
 
       if (validationIssues) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -69,7 +69,7 @@ export default function Step1Contact({
           />
         </div>
         {error && (
-          <p className="text-red-500 text-xs font-bold text-center animate-in fade-in">
+          <p className="text-red-500 text-xs font-bold text-center mt-2">
             {error}
           </p>
         )}

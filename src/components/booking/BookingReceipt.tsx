@@ -59,7 +59,7 @@ export default function BookingReceipt({
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b-2 border-teal-50 pb-8">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 bg-gradient-to-br from-[#0e5a65] to-[#17899B] rounded-2xl flex items-center justify-center text-white shadow-lg shadow-teal-900/10 print:shadow-none">
+            <div className="w-14 h-14 bg-linear-to-br from-[#0e5a65] to-[#17899B] rounded-2xl flex items-center justify-center text-white shadow-lg shadow-teal-900/10 print:shadow-none">
               <Stethoscope className="w-8 h-8" />
             </div>
             <div>
@@ -81,7 +81,7 @@ export default function BookingReceipt({
                 #{receiptId}
               </p>
             </div>
-            <div className="md:hidden h-10 w-[1px] bg-gray-100"></div>
+            <div className="md:hidden h-10 w-px bg-gray-100"></div>
             <div>
               <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">
                 Date

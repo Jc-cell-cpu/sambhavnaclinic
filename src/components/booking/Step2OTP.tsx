@@ -67,7 +67,7 @@ export default function Step2OTP({
               }`}
           />
           {error && (
-            <p className="text-red-500 text-xs font-bold text-center mt-2 animate-in fade-in slide-in-from-top-1">
+            <p className="text-red-500 text-xs font-bold text-center mt-2">
               {error}
             </p>
           )}

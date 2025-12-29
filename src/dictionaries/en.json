@@ -780,5 +780,19 @@
         "description": "Regular monitoring and support to ensure your path to holistic healing and well-being."
       }
     ]
+  },
+  "validation": {
+    "invalidContact": "Please enter a valid 10-digit mobile number or email address",
+    "otpLength": "OTP must be 6 digits",
+    "otpMismatch": "Invalid OTP. Please check your email.",
+    "requiredTreatment": "Please select a treatment",
+    "requiredDate": "Please select a date",
+    "requiredTimeSlot": "Please select a time slot",
+    "firstNameMin": "First name must be at least 2 characters",
+    "lastNameMin": "Last name must be at least 2 characters",
+    "invalidEmail": "Invalid email address",
+    "phoneLength": "Phone number must be exactly 10 digits",
+    "phoneDigits": "Phone number must contain only digits",
+    "submitError": "An unexpected error occurred."
   }
 }

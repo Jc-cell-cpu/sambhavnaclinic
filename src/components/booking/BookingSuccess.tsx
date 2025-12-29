@@ -169,11 +169,11 @@ export default function BookingSuccess({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-md flex items-center justify-center p-4 print:p-0 print:bg-white print:block"
+            className="fixed inset-0 z-100 bg-black/70 backdrop-blur-md flex items-center justify-center p-4 print:p-0 print:bg-white print:block"
             onClick={() => setShowReceipt(false)}
           >
             {/* Close Button - Responsive Position */}
-            <div className="absolute top-4 right-4 z-[110] print:hidden">
+            <div className="absolute top-4 right-4 z-110 print:hidden">
               <button
                 onClick={(e) => {
                   e.stopPropagation();
