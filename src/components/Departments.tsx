@@ -4,10 +4,14 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { i18n } from "@/i18n-config";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Departments({ dictionary }: { dictionary: any }) {
   const departments = dictionary.departmentsSection.departments;
+  const pathname = usePathname();
+  const currentLocale = pathname.split("/")[1] || i18n.defaultLocale;
 
   return (
     <section
@@ -69,7 +73,7 @@ export default function Departments({ dictionary }: { dictionary: any }) {
               </div>
 
               {/* Floating Button - positioned in the empty space */}
-              <Link href={"/departments"}>
+              <Link href={`/${currentLocale}/departments`}>
                 {" "}
                 <button
                   className="absolute top-8 right-0 w-12 h-12 hover:bg-teal-600 text-teal-600 hover:text-white border-teal-600 border transition-colors duration-300 rounded-full flex items-center justify-center shadow-lg z-20"

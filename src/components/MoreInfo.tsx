@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { Phone, Mail, Globe, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { i18n } from "@/i18n-config";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function MoreInfo({ dictionary }: { dictionary: any }) {
@@ -17,6 +19,9 @@ export default function MoreInfo({ dictionary }: { dictionary: any }) {
     visitSite,
   } = dictionary.moreInfo;
 
+  const pathname = usePathname();
+  const currentLocale = pathname.split("/")[1] || i18n.defaultLocale;
+
   return (
     <section className="relative w-full py-16 px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto relative flex flex-col lg:flex-row items-center">
@@ -30,7 +35,7 @@ export default function MoreInfo({ dictionary }: { dictionary: any }) {
               {bookCare}
             </h2>
             <button className="flex items-center gap-3 px-8 py-3.5 rounded-full border border-white/20 text-white text-sm font-medium hover:bg-white hover:text-[#0e5a65] transition-all group w-fit">
-              <Link href={"/appointment"}>{bookNow}</Link>
+              <Link href={`/${currentLocale}/appointment`}>{bookNow}</Link>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>

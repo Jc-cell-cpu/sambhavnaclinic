@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+import { i18n } from "@/i18n-config";
 
 import { ArrowRight } from "lucide-react";
 import {
@@ -51,6 +52,8 @@ function CountUp({
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Aboutus({ dictionary }: { dictionary: any }) {
   const router = useRouter();
+  const pathname = usePathname();
+  const currentLocale = pathname.split("/")[1] || i18n.defaultLocale;
   const shouldReduceMotion = useReducedMotion();
 
   // Animation variants
@@ -325,7 +328,7 @@ export default function Aboutus({ dictionary }: { dictionary: any }) {
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInUp}
               transition={{ delay: 0.4 }}
-              onClick={() => router.push("/about-us")}
+              onClick={() => router.push(`/${currentLocale}/about-us`)}
               className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full text-white font-semibold text-sm md:text-base transition-all hover:opacity-95 hover:gap-3"
               style={{ backgroundColor: "#056271" }}
             >

@@ -15,6 +15,8 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import BookingReceipt from "./BookingReceipt";
+import { usePathname } from "next/navigation";
+import { i18n } from "@/i18n-config";
 
 interface BookingSuccessProps {
   formData: any;
@@ -32,6 +34,8 @@ export default function BookingSuccess({
   labels,
 }: BookingSuccessProps) {
   const [showReceipt, setShowReceipt] = useState(false);
+  const pathname = usePathname();
+  const currentLocale = pathname.split("/")[1] || i18n.defaultLocale;
 
   // Disable scrolling when receipt is shown
   useEffect(() => {
@@ -141,7 +145,7 @@ export default function BookingSuccess({
           transition={{ delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4"
         >
-          <Link href="/">
+          <Link href={`/${currentLocale}`}>
             <Button
               variant="outline"
               className="border-gray-200 text-gray-600 hover:text-[#0e5a65] hover:bg-teal-50 px-8 py-6 rounded-2xl font-bold"

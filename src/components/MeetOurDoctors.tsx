@@ -3,9 +3,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { i18n } from "@/i18n-config";
 
 export default function MeetOurDoctors({ dictionary }: { dictionary: any }) {
   const { featuredDoctor, teamDoctors } = dictionary.doctorsSection;
+  const pathname = usePathname();
+  const currentLocale = pathname.split("/")[1] || i18n.defaultLocale;
 
   return (
     <section className="py-20 px-4 font-sans bg-white">
@@ -40,7 +44,7 @@ export default function MeetOurDoctors({ dictionary }: { dictionary: any }) {
                 {featuredDoctor.title}
               </p>
 
-              <Link href={"/appointment"}>
+              <Link href={`/${currentLocale}/appointment`}>
                 {" "}
                 <button className="bg-white text-rose-500 border-2 border-rose-500 hover:bg-rose-50 font-bold py-3 px-8 rounded-full flex items-center gap-3 transition-colors shadow-lg">
                   <Image

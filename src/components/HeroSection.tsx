@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { i18n } from "@/i18n-config";
 
 interface HeroSectionProps {
   title: string;
@@ -16,6 +20,9 @@ export default function HeroSection({
   parentPage = "Home",
   currentPage,
 }: HeroSectionProps) {
+  const pathname = usePathname();
+  const currentLocale = pathname.split("/")[1] || i18n.defaultLocale;
+
   return (
     <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -39,7 +46,10 @@ export default function HeroSection({
 
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm md:text-base text-white/80">
-          <Link href="/" className="hover:text-white transition-colors">
+          <Link
+            href={`/${currentLocale}`}
+            className="hover:text-white transition-colors"
+          >
             {parentPage}
           </Link>
           <span>/</span>

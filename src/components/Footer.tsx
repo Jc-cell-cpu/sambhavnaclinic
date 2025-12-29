@@ -1,3 +1,5 @@
+"use client";
+
 import {
   MapPin,
   Mail,
@@ -7,6 +9,8 @@ import {
   Youtube,
 } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { i18n } from "@/i18n-config";
 
 export default function Footer({
   dictionary,
@@ -32,14 +36,23 @@ export default function Footer({
     };
   };
 }) {
+  const pathname = usePathname();
+  const currentLocale = pathname.split("/")[1] || i18n.defaultLocale;
+
   const quickLinks = [
-    { name: dictionary.links.home, path: "/" },
-    { name: dictionary.links.about, path: "/about-us" },
-    { name: dictionary.links.services, path: "/services" },
-    { name: dictionary.links.departments, path: "/departments" },
-    { name: dictionary.links.testimonials, path: "/testimonials" },
-    { name: dictionary.links.faqs, path: "/faqs" },
-    { name: dictionary.links.contact, path: "/contact" },
+    { name: dictionary.links.home, path: `/${currentLocale}` },
+    { name: dictionary.links.about, path: `/${currentLocale}/about-us` },
+    { name: dictionary.links.services, path: `/${currentLocale}/services` },
+    {
+      name: dictionary.links.departments,
+      path: `/${currentLocale}/departments`,
+    },
+    {
+      name: dictionary.links.testimonials,
+      path: `/${currentLocale}/testimonials`,
+    },
+    { name: dictionary.links.faqs, path: `/${currentLocale}/faqs` },
+    { name: dictionary.links.contact, path: `/${currentLocale}/contact` },
   ];
 
   return (
@@ -68,7 +81,7 @@ export default function Footer({
             <li className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-teal-600 shrink-0" />
               <span className="text-gray-700 font-medium">
-                Sambhavnaclinic@gmail.com
+                info@sambhavnaclinic.com
               </span>
             </li>
             <li className="flex items-center gap-3">

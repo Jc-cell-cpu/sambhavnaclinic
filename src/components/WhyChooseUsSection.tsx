@@ -5,6 +5,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { i18n } from "@/i18n-config";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function WhyChooseUsSection({
@@ -106,6 +108,9 @@ export default function WhyChooseUsSection({
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function TrustedExperts({ content }: { content: any }) {
+  const pathname = usePathname();
+  const currentLocale = pathname.split("/")[1] || i18n.defaultLocale;
+
   return (
     <div className="bg-white rounded-3xl p-8 md:p-12 lg:p-0 overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -204,7 +209,7 @@ function TrustedExperts({ content }: { content: any }) {
                   className="object-contain"
                 />
               </div>
-              <Link href={"/appointment"}>{content.cta}</Link>
+              <Link href={`/${currentLocale}/appointment`}>{content.cta}</Link>
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
             </motion.button>
           </div>
